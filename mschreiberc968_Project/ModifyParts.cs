@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mschreiberc968_Project
 {
-    public partial class Form2 : Form
+    public partial class modifyPart : Form
     {
-        public Form2()
+        public modifyPart()
         {
             InitializeComponent();
         }
