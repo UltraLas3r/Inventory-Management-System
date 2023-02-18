@@ -62,6 +62,7 @@ namespace mschreiberc968_Project
             this.btn_AddProductCancel.TabIndex = 59;
             this.btn_AddProductCancel.Text = "Cancel";
             this.btn_AddProductCancel.UseVisualStyleBackColor = true;
+            this.btn_AddProductCancel.Click += new System.EventHandler(this.btn_AddProductCancel_Click);
             // 
             // btn_AddProductSave
             // 

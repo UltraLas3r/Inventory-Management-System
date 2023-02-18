@@ -3,9 +3,10 @@ namespace mschreiberc968_Project
 {
     partial class MainScreen
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+      
+
+
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -36,8 +37,8 @@ namespace mschreiberc968_Project
             this.modifyProducts = new System.Windows.Forms.Button();
             this.exitApplication = new System.Windows.Forms.Button();
             this.deleteProducts = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_Parts = new System.Windows.Forms.DataGridView();
+            this.dgv_Products = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.partsSearchButton = new System.Windows.Forms.Button();
             this.productsSearchButton = new System.Windows.Forms.Button();
@@ -45,8 +46,8 @@ namespace mschreiberc968_Project
             this.productsSearchBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Parts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Products)).BeginInit();
             this.SuspendLayout();
             // 
             // modifyParts
@@ -68,6 +69,7 @@ namespace mschreiberc968_Project
             this.addParts.TabIndex = 3;
             this.addParts.Text = "Add";
             this.addParts.UseVisualStyleBackColor = true;
+            this.addParts.Click += new System.EventHandler(this.addParts_Click);
             // 
             // deleteParts
             // 
@@ -81,7 +83,7 @@ namespace mschreiberc968_Project
             // 
             // addProducts
             // 
-            this.addProducts.Location = new System.Drawing.Point(1153, 515);
+            this.addProducts.Location = new System.Drawing.Point(1124, 515);
             this.addProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addProducts.Name = "addProducts";
             this.addProducts.Size = new System.Drawing.Size(119, 56);
@@ -108,6 +110,7 @@ namespace mschreiberc968_Project
             this.exitApplication.TabIndex = 7;
             this.exitApplication.Text = "Exit";
             this.exitApplication.UseVisualStyleBackColor = true;
+            this.exitApplication.Click += new System.EventHandler(this.exitApplication_Click);
             // 
             // deleteProducts
             // 
@@ -119,26 +122,27 @@ namespace mschreiberc968_Project
             this.deleteProducts.Text = "Delete";
             this.deleteProducts.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv_Parts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 171);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(758, 317);
-            this.dataGridView1.TabIndex = 8;
+            this.dgv_Parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Parts.Location = new System.Drawing.Point(20, 171);
+            this.dgv_Parts.Name = "dgv_Parts";
+            this.dgv_Parts.RowHeadersWidth = 62;
+            this.dgv_Parts.RowTemplate.Height = 28;
+            this.dgv_Parts.Size = new System.Drawing.Size(758, 317);
+            this.dgv_Parts.TabIndex = 8;
+            this.dgv_Parts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
             // 
-            // dataGridView2
+            // dgv_Products
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(832, 171);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(758, 317);
-            this.dataGridView2.TabIndex = 9;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dgv_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Products.Location = new System.Drawing.Point(832, 171);
+            this.dgv_Products.Name = "dgv_Products";
+            this.dgv_Products.RowHeadersWidth = 62;
+            this.dgv_Products.RowTemplate.Height = 28;
+            this.dgv_Products.Size = new System.Drawing.Size(758, 317);
+            this.dgv_Products.TabIndex = 9;
+            this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label1
             // 
@@ -216,8 +220,8 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.productsSearchButton);
             this.Controls.Add(this.partsSearchButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_Products);
+            this.Controls.Add(this.dgv_Parts);
             this.Controls.Add(this.exitApplication);
             this.Controls.Add(this.deleteProducts);
             this.Controls.Add(this.modifyProducts);
@@ -227,8 +231,8 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.modifyParts);
             this.Name = "MainScreen";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Parts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Products)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,8 +247,8 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.Button modifyProducts;
         private System.Windows.Forms.Button exitApplication;
         private System.Windows.Forms.Button deleteProducts;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgv_Parts;
+        private System.Windows.Forms.DataGridView dgv_Products;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button partsSearchButton;
         private System.Windows.Forms.Button productsSearchButton;

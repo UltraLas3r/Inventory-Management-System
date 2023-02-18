@@ -21,5 +21,10 @@ namespace mschreiberc968_Project
         {
 
         }
+
+        private void btn_AddProductCancel_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mschreiberc968_Project.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace mschreiberc968_Project
 {
     public partial class MainScreen : Form
     {
+        
         public MainScreen()
         {
             InitializeComponent();
+
+            //makes grid read only and disables multiselect
+            dgv_Parts.ReadOnly = true;
+            dgv_Parts.MultiSelect = false;
+
+            //sets data source and inputs mock data 
+            dgv_Parts.DataSource = Part.PartsList;
+
+            //selects full horizontal row
+            dgv_Parts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //remove bottom field
+            dgv_Parts.AllowUserToAddRows = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +50,22 @@ namespace mschreiberc968_Project
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addParts_Click(object sender, EventArgs e)
+        {
+            AddPart addPart = new AddPart();
+            addPart.Show();
+        }
+
+        private void exitApplication_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgv_Parts.ClearSelection();
         }
     }
 }

@@ -58,6 +58,8 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ProductsDGV.cs" />
+    <Compile Include="Model\PartsDGV.cs" />
     <Compile Include="ModifyProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,5 +117,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
