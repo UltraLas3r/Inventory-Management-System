@@ -79,12 +79,13 @@ namespace mschreiberc968_Project
 
         private void modifyPartName_TextChanged(object sender, EventArgs e)
         {
+            
 
         }
 
-        private void modifyPartID_TextChanged(object sender, EventArgs e)
+        private void modifyProductsID_TextChanged(object sender, EventArgs e)
         {
-
+           // string newId = modifyProductsID.Text;
         }
 
         private void label8_Click(object sender, EventArgs e)

@@ -22,8 +22,9 @@ namespace mschreiberc968_Project.Model
         static Part()
         {
             PartsList.Add(
-                new Part{ IdCode = 1, Name = "Front Wheel", Inventory = 4, Max = 5, Min = 1, Price = 55.99 }
-                );
+                new Part { IdCode = 1, Name = "Front Wheel", Inventory = 4, Max = 5, Min = 1, Price = 55.99 });
+            PartsList.Add(
+                new Part { IdCode = 2, Name = "Rear Wheel", Inventory = 9, Max = 3, Min = 1, Price = 75.84 });
             //add a few more ports to this :D
 
         }
@@ -32,7 +33,7 @@ namespace mschreiberc968_Project.Model
         {
             return "[" + IdCode + "] --> + " + Name + " - " + Inventory + " (" + Price + ")";
         }
-
+        
     }
 }
 

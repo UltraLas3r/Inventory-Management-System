@@ -34,7 +34,7 @@ namespace mschreiberc968_Project
             this.txt_modifyPartPriceCost = new System.Windows.Forms.TextBox();
             this.txt_modifyPartInventory = new System.Windows.Forms.TextBox();
             this.txt_modifyPartName = new System.Windows.Forms.TextBox();
-            this.txt_modifyPartID = new System.Windows.Forms.TextBox();
+            this.txt_modifyProductID = new System.Windows.Forms.TextBox();
             this.lbl_ModProductMin = new System.Windows.Forms.Label();
             this.lbl_ModProductMax = new System.Windows.Forms.Label();
             this.lbl_ModProductPrice = new System.Windows.Forms.Label();
@@ -99,14 +99,14 @@ namespace mschreiberc968_Project
             this.txt_modifyPartName.TabIndex = 26;
             this.txt_modifyPartName.TextChanged += new System.EventHandler(this.modifyPartName_TextChanged);
             // 
-            // txt_modifyPartID
+            // txt_modifyProductID
             // 
-            this.txt_modifyPartID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyPartID.Location = new System.Drawing.Point(172, 111);
-            this.txt_modifyPartID.Name = "txt_modifyPartID";
-            this.txt_modifyPartID.Size = new System.Drawing.Size(394, 35);
-            this.txt_modifyPartID.TabIndex = 25;
-            this.txt_modifyPartID.TextChanged += new System.EventHandler(this.modifyPartID_TextChanged);
+            this.txt_modifyProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_modifyProductID.Location = new System.Drawing.Point(172, 111);
+            this.txt_modifyProductID.Name = "txt_modifyProductID";
+            this.txt_modifyProductID.Size = new System.Drawing.Size(394, 35);
+            this.txt_modifyProductID.TabIndex = 25;
+            this.txt_modifyProductID.TextChanged += new System.EventHandler(this.modifyProductsID_TextChanged);
             // 
             // lbl_ModProductMin
             // 
@@ -287,7 +287,7 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.txt_modifyPartPriceCost);
             this.Controls.Add(this.txt_modifyPartInventory);
             this.Controls.Add(this.txt_modifyPartName);
-            this.Controls.Add(this.txt_modifyPartID);
+            this.Controls.Add(this.txt_modifyProductID);
             this.Controls.Add(this.lbl_ModProductMin);
             this.Controls.Add(this.lbl_ModProductMax);
             this.Controls.Add(this.lbl_ModProductPrice);
@@ -311,7 +311,7 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.TextBox txt_modifyPartPriceCost;
         private System.Windows.Forms.TextBox txt_modifyPartInventory;
         private System.Windows.Forms.TextBox txt_modifyPartName;
-        private System.Windows.Forms.TextBox txt_modifyPartID;
+        private System.Windows.Forms.TextBox txt_modifyProductID;
         private System.Windows.Forms.Label lbl_ModProductMin;
         private System.Windows.Forms.Label lbl_ModProductMax;
         private System.Windows.Forms.Label lbl_ModProductPrice;
