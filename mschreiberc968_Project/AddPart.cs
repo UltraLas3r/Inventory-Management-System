@@ -66,5 +66,15 @@ namespace mschreiberc968_Project
         {
 
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_forRadioChoice.Text = "Company Name:";
+        }
+
+        private void rb_InHouse_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_forRadioChoice.Text = "Machine Id:";
+        }
     }
 }

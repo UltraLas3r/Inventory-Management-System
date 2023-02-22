@@ -43,7 +43,7 @@ namespace mschreiberc968_Project
             dgv_Products.AllowUserToAddRows = false;
 
             dgv_Products.DataSource = BindingSource;
-            BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
+           // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
 
 
 
