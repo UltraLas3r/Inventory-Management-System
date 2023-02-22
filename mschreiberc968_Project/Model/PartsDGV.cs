@@ -22,9 +22,15 @@ namespace mschreiberc968_Project.Model
         static Part()
         {
             PartsList.Add(
-                new Part { IdCode = 1, Name = "Front Wheel", Inventory = 4, Max = 5, Min = 1, Price = 55.99 });
+                new Part { IdCode = 1, Name = "Tuner Peg", Inventory = 4, Max = 5, Min = 1, Price = 9.99 });
             PartsList.Add(
-                new Part { IdCode = 2, Name = "Rear Wheel", Inventory = 9, Max = 3, Min = 1, Price = 75.84 });
+                new Part { IdCode = 2, Name = "Fretboard", Inventory = 9, Max = 3, Min = 1, Price = 150.84 });
+            PartsList.Add(
+                new Part { IdCode = 3, Name = "Pickup", Inventory = 18, Max = 9, Min = 1, Price = 100.84 });
+            PartsList.Add(
+                new Part { IdCode = 4, Name = "Body", Inventory = 25, Max = 8, Min = 1, Price = 350.00 });
+            PartsList.Add(
+                new Part { IdCode = 4, Name = "Electronic Components", Inventory = 3, Max = 4, Min = 1, Price = 350.00 });
             //add a few more ports to this :D
 
         }

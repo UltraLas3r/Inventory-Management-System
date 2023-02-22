@@ -46,7 +46,6 @@ namespace mschreiberc968_Project
            // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
 
 
-
         }
 
 
@@ -91,10 +90,7 @@ namespace mschreiberc968_Project
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                DataGridViewCell cellClick = dgv_Parts.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                string columnName = dgv_Parts.Columns[e.ColumnIndex].Name;
-
-                MessageBox.Show("You selected " + cellClick.Value.ToString() + ". ID Value " + dgv_Parts.CurrentRow.Cells["Idcode"].Value + ", in Column" + columnName);
+                MessageBox.Show("You selected a value");
             }
 
 
@@ -113,6 +109,9 @@ namespace mschreiberc968_Project
 
         }
 
+        private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
