@@ -29,18 +29,18 @@ namespace mschreiberc968_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_saveModifyPart = new System.Windows.Forms.Button();
+            this.btn_closeModifyPart = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_modifyPartHeader = new System.Windows.Forms.Label();
+            this.lbl_forIDTextBox = new System.Windows.Forms.Label();
+            this.lvl_forNameTextBox = new System.Windows.Forms.Label();
+            this.lbl_forInventoryTextBox = new System.Windows.Forms.Label();
+            this.lbl_ForPriceTextBox = new System.Windows.Forms.Label();
+            this.lbl_forMaxTextBox = new System.Windows.Forms.Label();
+            this.lbl_forMinTextBox = new System.Windows.Forms.Label();
+            this.lbl_ForRadioChange = new System.Windows.Forms.Label();
             this.modifyPartID = new System.Windows.Forms.TextBox();
             this.modifyPartName = new System.Windows.Forms.TextBox();
             this.modifyPartInventory = new System.Windows.Forms.TextBox();
@@ -50,134 +50,139 @@ namespace mschreiberc968_Project
             this.modifyPartCompanyName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_saveModifyPart
             // 
-            this.button1.Location = new System.Drawing.Point(320, 497);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_saveModifyPart.Location = new System.Drawing.Point(320, 497);
+            this.btn_saveModifyPart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_saveModifyPart.Name = "btn_saveModifyPart";
+            this.btn_saveModifyPart.Size = new System.Drawing.Size(112, 35);
+            this.btn_saveModifyPart.TabIndex = 0;
+            this.btn_saveModifyPart.Text = "Save";
+            this.btn_saveModifyPart.UseVisualStyleBackColor = true;
+            this.btn_saveModifyPart.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_closeModifyPart
             // 
-            this.button2.Location = new System.Drawing.Point(468, 497);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_closeModifyPart.Location = new System.Drawing.Point(468, 497);
+            this.btn_closeModifyPart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_closeModifyPart.Name = "btn_closeModifyPart";
+            this.btn_closeModifyPart.Size = new System.Drawing.Size(112, 35);
+            this.btn_closeModifyPart.TabIndex = 1;
+            this.btn_closeModifyPart.Text = "Cancel";
+            this.btn_closeModifyPart.UseVisualStyleBackColor = true;
+            this.btn_closeModifyPart.Click += new System.EventHandler(this.btn_closeModifyPart_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButton1.Location = new System.Drawing.Point(186, 66);
+            this.radioButton1.Location = new System.Drawing.Point(186, 51);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(135, 33);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "In-House";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButton2.Location = new System.Drawing.Point(395, 66);
+            this.radioButton2.Location = new System.Drawing.Point(395, 51);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(163, 33);
             this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Outsourced";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // label1
+            // lbl_modifyPartHeader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(24, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Modify Part";
+            this.lbl_modifyPartHeader.AutoSize = true;
+            this.lbl_modifyPartHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_modifyPartHeader.Location = new System.Drawing.Point(24, 22);
+            this.lbl_modifyPartHeader.Name = "lbl_modifyPartHeader";
+            this.lbl_modifyPartHeader.Size = new System.Drawing.Size(133, 29);
+            this.lbl_modifyPartHeader.TabIndex = 4;
+            this.lbl_modifyPartHeader.Text = "Modify Part";
             // 
-            // label2
+            // lbl_forIDTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(29, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 29);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "ID";
+            this.lbl_forIDTextBox.AutoSize = true;
+            this.lbl_forIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_forIDTextBox.Location = new System.Drawing.Point(24, 122);
+            this.lbl_forIDTextBox.Name = "lbl_forIDTextBox";
+            this.lbl_forIDTextBox.Size = new System.Drawing.Size(36, 29);
+            this.lbl_forIDTextBox.TabIndex = 5;
+            this.lbl_forIDTextBox.Text = "ID";
             // 
-            // label3
+            // lvl_forNameTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(24, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 29);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Name";
+            this.lvl_forNameTextBox.AutoSize = true;
+            this.lvl_forNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lvl_forNameTextBox.Location = new System.Drawing.Point(24, 179);
+            this.lvl_forNameTextBox.Name = "lvl_forNameTextBox";
+            this.lvl_forNameTextBox.Size = new System.Drawing.Size(78, 29);
+            this.lvl_forNameTextBox.TabIndex = 6;
+            this.lvl_forNameTextBox.Text = "Name";
             // 
-            // label4
+            // lbl_forInventoryTextBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(24, 228);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 29);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Inventory";
+            this.lbl_forInventoryTextBox.AutoSize = true;
+            this.lbl_forInventoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_forInventoryTextBox.Location = new System.Drawing.Point(24, 234);
+            this.lbl_forInventoryTextBox.Name = "lbl_forInventoryTextBox";
+            this.lbl_forInventoryTextBox.Size = new System.Drawing.Size(109, 29);
+            this.lbl_forInventoryTextBox.TabIndex = 7;
+            this.lbl_forInventoryTextBox.Text = "Inventory";
             // 
-            // label5
+            // lbl_ForPriceTextBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(24, 284);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 29);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Price / Cost";
+            this.lbl_ForPriceTextBox.AutoSize = true;
+            this.lbl_ForPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_ForPriceTextBox.Location = new System.Drawing.Point(24, 287);
+            this.lbl_ForPriceTextBox.Name = "lbl_ForPriceTextBox";
+            this.lbl_ForPriceTextBox.Size = new System.Drawing.Size(137, 29);
+            this.lbl_ForPriceTextBox.TabIndex = 8;
+            this.lbl_ForPriceTextBox.Text = "Price / Cost";
             // 
-            // label6
+            // lbl_forMaxTextBox
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(390, 348);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 29);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Max";
+            this.lbl_forMaxTextBox.AutoSize = true;
+            this.lbl_forMaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_forMaxTextBox.Location = new System.Drawing.Point(395, 352);
+            this.lbl_forMaxTextBox.Name = "lbl_forMaxTextBox";
+            this.lbl_forMaxTextBox.Size = new System.Drawing.Size(57, 29);
+            this.lbl_forMaxTextBox.TabIndex = 9;
+            this.lbl_forMaxTextBox.Text = "Max";
             // 
-            // label7
+            // lbl_forMinTextBox
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(109, 345);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 29);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Min";
+            this.lbl_forMinTextBox.AutoSize = true;
+            this.lbl_forMinTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_forMinTextBox.Location = new System.Drawing.Point(105, 355);
+            this.lbl_forMinTextBox.Name = "lbl_forMinTextBox";
+            this.lbl_forMinTextBox.Size = new System.Drawing.Size(52, 29);
+            this.lbl_forMinTextBox.TabIndex = 10;
+            this.lbl_forMinTextBox.Text = "Min";
+            this.lbl_forMinTextBox.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label8
+            // lbl_ForRadioChange
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(29, 427);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(186, 29);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Company Name";
+            this.lbl_ForRadioChange.AutoSize = true;
+            this.lbl_ForRadioChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_ForRadioChange.Location = new System.Drawing.Point(24, 429);
+            this.lbl_ForRadioChange.Name = "lbl_ForRadioChange";
+            this.lbl_ForRadioChange.Size = new System.Drawing.Size(186, 29);
+            this.lbl_ForRadioChange.TabIndex = 11;
+            this.lbl_ForRadioChange.Text = "Company Name";
             // 
             // modifyPartID
             // 
             this.modifyPartID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.modifyPartID.Location = new System.Drawing.Point(186, 126);
+            this.modifyPartID.Location = new System.Drawing.Point(186, 116);
             this.modifyPartID.Name = "modifyPartID";
             this.modifyPartID.Size = new System.Drawing.Size(394, 35);
             this.modifyPartID.TabIndex = 12;
@@ -225,9 +230,9 @@ namespace mschreiberc968_Project
             // modifyPartCompanyName
             // 
             this.modifyPartCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.modifyPartCompanyName.Location = new System.Drawing.Point(221, 417);
+            this.modifyPartCompanyName.Location = new System.Drawing.Point(250, 423);
             this.modifyPartCompanyName.Name = "modifyPartCompanyName";
-            this.modifyPartCompanyName.Size = new System.Drawing.Size(359, 35);
+            this.modifyPartCompanyName.Size = new System.Drawing.Size(330, 35);
             this.modifyPartCompanyName.TabIndex = 18;
             // 
             // modifyPart
@@ -242,18 +247,18 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.modifyPartInventory);
             this.Controls.Add(this.modifyPartName);
             this.Controls.Add(this.modifyPartID);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_ForRadioChange);
+            this.Controls.Add(this.lbl_forMinTextBox);
+            this.Controls.Add(this.lbl_forMaxTextBox);
+            this.Controls.Add(this.lbl_ForPriceTextBox);
+            this.Controls.Add(this.lbl_forInventoryTextBox);
+            this.Controls.Add(this.lvl_forNameTextBox);
+            this.Controls.Add(this.lbl_forIDTextBox);
+            this.Controls.Add(this.lbl_modifyPartHeader);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_closeModifyPart);
+            this.Controls.Add(this.btn_saveModifyPart);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "modifyPart";
             this.Text = "Modify Part";
@@ -264,18 +269,18 @@ namespace mschreiberc968_Project
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_saveModifyPart;
+        private System.Windows.Forms.Button btn_closeModifyPart;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_modifyPartHeader;
+        private System.Windows.Forms.Label lbl_forIDTextBox;
+        private System.Windows.Forms.Label lvl_forNameTextBox;
+        private System.Windows.Forms.Label lbl_forInventoryTextBox;
+        private System.Windows.Forms.Label lbl_ForPriceTextBox;
+        private System.Windows.Forms.Label lbl_forMaxTextBox;
+        private System.Windows.Forms.Label lbl_forMinTextBox;
+        private System.Windows.Forms.Label lbl_ForRadioChange;
         private System.Windows.Forms.TextBox modifyPartID;
         private System.Windows.Forms.TextBox modifyPartName;
         private System.Windows.Forms.TextBox modifyPartInventory;

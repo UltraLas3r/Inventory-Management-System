@@ -113,9 +113,9 @@ namespace mschreiberc968_Project
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Btn_ModProductCancel  (object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

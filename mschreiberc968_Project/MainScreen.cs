@@ -15,10 +15,11 @@ namespace mschreiberc968_Project
     {
         private BindingSource BindingSource;
 
-
         public MainScreen()
         {
             InitializeComponent();
+            
+
 
             //makes grid read only and disables multiselect
             dgv_Parts.ReadOnly = true;
@@ -48,7 +49,7 @@ namespace mschreiberc968_Project
 
         }
 
-
+     
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -65,8 +66,12 @@ namespace mschreiberc968_Project
         private void addParts_Click(object sender, EventArgs e)
         {
             AddPart addPart = new AddPart();
+            
             addPart.Show();
 
+            this.Visible = false;
+
+         
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -88,11 +93,7 @@ namespace mschreiberc968_Project
 
         private void dgv_Parts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                MessageBox.Show("You selected a value");
-            }
-
+      
 
         }
 
@@ -104,7 +105,17 @@ namespace mschreiberc968_Project
                 return;
             }
 
+            else 
+            {
 
+                modifyPart modifyParts = new modifyPart();
+                    modifyParts.Show();
+
+               
+
+                
+            }
+            this.Visible = false;
 
 
         }

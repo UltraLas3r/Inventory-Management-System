@@ -72,6 +72,7 @@ namespace mschreiberc968_Project
             this.btn_AddProductSave.TabIndex = 58;
             this.btn_AddProductSave.Text = "Save";
             this.btn_AddProductSave.UseVisualStyleBackColor = true;
+            this.btn_AddProductSave.Click += new System.EventHandler(this.btn_AddProductSave_Click);
             // 
             // btn_DeleteParts
             // 
