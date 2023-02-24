@@ -27,7 +27,7 @@ namespace mschreiberc968_Project
         {
 
 
-            this.Close();
+            this.Hide();
             mainS.Visible = true;
         }
 
@@ -35,7 +35,7 @@ namespace mschreiberc968_Project
         {
             //save all changes and apply them to the appropriate DGV spaces
 
-            this.Close();
+            this.Hide();
             mainS.Visible = true;
         }
     }

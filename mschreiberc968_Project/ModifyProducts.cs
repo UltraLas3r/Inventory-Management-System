@@ -15,6 +15,15 @@ namespace mschreiberc968_Project
         public ModifyProducts()
         {
             InitializeComponent();
+            
+
+
+        }
+
+        public object mainScreenView()
+        {
+            MainScreen mainScreen = new MainScreen();
+            return (mainScreen.Visible = true);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -115,12 +124,14 @@ namespace mschreiberc968_Project
 
         private void Btn_ModProductCancel  (object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            mainScreenView();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            mainScreenView();
         }
     }
 }

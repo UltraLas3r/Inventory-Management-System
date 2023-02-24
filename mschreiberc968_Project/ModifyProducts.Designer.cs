@@ -56,6 +56,7 @@ namespace mschreiberc968_Project
             // 
             // txt_modifyPartMax
             // 
+            this.txt_modifyPartMax.BackColor = System.Drawing.Color.LightCoral;
             this.txt_modifyPartMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_modifyPartMax.Location = new System.Drawing.Point(444, 333);
             this.txt_modifyPartMax.Name = "txt_modifyPartMax";
@@ -65,6 +66,7 @@ namespace mschreiberc968_Project
             // 
             // txt_modifyPartMin
             // 
+            this.txt_modifyPartMin.BackColor = System.Drawing.Color.LightCoral;
             this.txt_modifyPartMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_modifyPartMin.Location = new System.Drawing.Point(172, 334);
             this.txt_modifyPartMin.Name = "txt_modifyPartMin";
@@ -74,6 +76,7 @@ namespace mschreiberc968_Project
             // 
             // txt_modifyPartPriceCost
             // 
+            this.txt_modifyPartPriceCost.BackColor = System.Drawing.Color.LightCoral;
             this.txt_modifyPartPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_modifyPartPriceCost.Location = new System.Drawing.Point(172, 272);
             this.txt_modifyPartPriceCost.Name = "txt_modifyPartPriceCost";
@@ -83,6 +86,7 @@ namespace mschreiberc968_Project
             // 
             // txt_modifyPartInventory
             // 
+            this.txt_modifyPartInventory.BackColor = System.Drawing.Color.LightCoral;
             this.txt_modifyPartInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_modifyPartInventory.Location = new System.Drawing.Point(172, 213);
             this.txt_modifyPartInventory.Name = "txt_modifyPartInventory";
@@ -92,6 +96,7 @@ namespace mschreiberc968_Project
             // 
             // txt_modifyPartName
             // 
+            this.txt_modifyPartName.BackColor = System.Drawing.Color.LightCoral;
             this.txt_modifyPartName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_modifyPartName.Location = new System.Drawing.Point(172, 158);
             this.txt_modifyPartName.Name = "txt_modifyPartName";

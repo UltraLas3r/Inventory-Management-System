@@ -134,6 +134,7 @@ namespace mschreiberc968_Project
             // 
             // txt_AddProductMax
             // 
+            this.txt_AddProductMax.BackColor = System.Drawing.Color.LightCoral;
             this.txt_AddProductMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_AddProductMax.Location = new System.Drawing.Point(457, 329);
             this.txt_AddProductMax.Name = "txt_AddProductMax";
@@ -142,6 +143,7 @@ namespace mschreiberc968_Project
             // 
             // txt_AddProductMin
             // 
+            this.txt_AddProductMin.BackColor = System.Drawing.Color.LightCoral;
             this.txt_AddProductMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_AddProductMin.Location = new System.Drawing.Point(185, 330);
             this.txt_AddProductMin.Name = "txt_AddProductMin";
@@ -150,6 +152,7 @@ namespace mschreiberc968_Project
             // 
             // txt_AddProductPriceCost
             // 
+            this.txt_AddProductPriceCost.BackColor = System.Drawing.Color.LightCoral;
             this.txt_AddProductPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_AddProductPriceCost.Location = new System.Drawing.Point(185, 268);
             this.txt_AddProductPriceCost.Name = "txt_AddProductPriceCost";
@@ -158,6 +161,7 @@ namespace mschreiberc968_Project
             // 
             // txt_AddProductInventory
             // 
+            this.txt_AddProductInventory.BackColor = System.Drawing.Color.LightCoral;
             this.txt_AddProductInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_AddProductInventory.Location = new System.Drawing.Point(185, 209);
             this.txt_AddProductInventory.Name = "txt_AddProductInventory";
@@ -166,6 +170,7 @@ namespace mschreiberc968_Project
             // 
             // txt_AddProductName
             // 
+            this.txt_AddProductName.BackColor = System.Drawing.Color.LightCoral;
             this.txt_AddProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txt_AddProductName.Location = new System.Drawing.Point(185, 154);
             this.txt_AddProductName.Name = "txt_AddProductName";

@@ -17,6 +17,12 @@ namespace mschreiberc968_Project
             InitializeComponent();
         }
 
+        public object mainScreenView()
+        {
+            MainScreen mainScreen = new MainScreen();
+            return (mainScreen.Visible = true);
+        }
+
         private void btn_modifyPart(object sender, EventArgs e)
         {
             
@@ -29,7 +35,7 @@ namespace mschreiberc968_Project
             MainScreen mainScreen = new MainScreen();
             mainScreen.Visible = true;
 
-            this.Close();
+            this.Hide();
 
 
 
@@ -53,11 +59,8 @@ namespace mschreiberc968_Project
         {
             //On Click take the textbox objects from this form and send them to the DGV into the appropriate cell spaces
 
-            this.Visible = false;
-
-            MainScreen mainScreen = new MainScreen();
-
-            mainScreen.Visible = true;
+            this.Hide();
+            mainScreenView();
         }
     }
 }

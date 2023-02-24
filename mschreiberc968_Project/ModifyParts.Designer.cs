@@ -189,6 +189,7 @@ namespace mschreiberc968_Project
             // 
             // modifyPartName
             // 
+            this.modifyPartName.BackColor = System.Drawing.Color.LightCoral;
             this.modifyPartName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartName.Location = new System.Drawing.Point(186, 173);
             this.modifyPartName.Name = "modifyPartName";
@@ -197,6 +198,7 @@ namespace mschreiberc968_Project
             // 
             // modifyPartInventory
             // 
+            this.modifyPartInventory.BackColor = System.Drawing.Color.LightCoral;
             this.modifyPartInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartInventory.Location = new System.Drawing.Point(186, 228);
             this.modifyPartInventory.Name = "modifyPartInventory";
@@ -205,6 +207,7 @@ namespace mschreiberc968_Project
             // 
             // modifyPartPriceCost
             // 
+            this.modifyPartPriceCost.BackColor = System.Drawing.Color.LightCoral;
             this.modifyPartPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartPriceCost.Location = new System.Drawing.Point(186, 287);
             this.modifyPartPriceCost.Name = "modifyPartPriceCost";
@@ -213,6 +216,7 @@ namespace mschreiberc968_Project
             // 
             // modifyPartMin
             // 
+            this.modifyPartMin.BackColor = System.Drawing.Color.LightCoral;
             this.modifyPartMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartMin.Location = new System.Drawing.Point(186, 349);
             this.modifyPartMin.Name = "modifyPartMin";
@@ -221,6 +225,7 @@ namespace mschreiberc968_Project
             // 
             // modifyPartMax
             // 
+            this.modifyPartMax.BackColor = System.Drawing.Color.LightCoral;
             this.modifyPartMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartMax.Location = new System.Drawing.Point(458, 348);
             this.modifyPartMax.Name = "modifyPartMax";
@@ -229,6 +234,7 @@ namespace mschreiberc968_Project
             // 
             // modifyPartCompanyName
             // 
+            this.modifyPartCompanyName.BackColor = System.Drawing.Color.LightCoral;
             this.modifyPartCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartCompanyName.Location = new System.Drawing.Point(250, 423);
             this.modifyPartCompanyName.Name = "modifyPartCompanyName";

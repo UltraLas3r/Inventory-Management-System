@@ -49,7 +49,11 @@ namespace mschreiberc968_Project
 
         }
 
-     
+        public object mainScreenView()
+        {
+            MainScreen mainScreen = new MainScreen();
+            return (mainScreen.Visible = true);
+        }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -109,13 +113,12 @@ namespace mschreiberc968_Project
             {
 
                 modifyPart modifyParts = new modifyPart();
-                    modifyParts.Show();
+                modifyParts.Show();
+                this.Visible = false;
 
-               
-
-                
             }
-            this.Visible = false;
+            
+            
 
 
         }
@@ -123,6 +126,31 @@ namespace mschreiberc968_Project
         private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void addProducts_Click(object sender, EventArgs e)
+        {
+            AddProduct addProduct = new AddProduct();
+            addProduct.Visible = true;
+            this.Hide();
+        }
+
+        private void modifyProducts_Click(object sender, EventArgs e)
+        {
+            ModifyProducts modifyProduct = new ModifyProducts();
+            modifyProduct.Visible = true;
+            this.Hide();
+
+        }
+
+        private void deleteParts_Click(object sender, EventArgs e)
+        {
+            //THIS ISNT WORKING???
+            //if (dgv_Parts.SelectedRows.Count > 0)
+            //{
+            //    dgv_Parts.Rows.RemoveAt(dgv_Parts.SelectedRows[0].Index);
+            //    ((DataTable)dgv_Parts.DataSource).AcceptChanges();
+            //}
         }
     }
 }
