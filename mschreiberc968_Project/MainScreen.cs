@@ -13,20 +13,18 @@ namespace mschreiberc968_Project
 {
     public partial class MainScreen : Form
     {
-        private BindingSource BindingSource;
 
         public MainScreen()
         {
             InitializeComponent();
+            display();
             
-
-
             //makes grid read only and disables multiselect
             dgv_Parts.ReadOnly = true;
             dgv_Parts.MultiSelect = false;
 
             //sets data source and inputs mock data 
-            dgv_Parts.DataSource = Part.PartsList;
+            dgv_Parts.DataSource = PartContainer.MyList;
 
             //selects full horizontal row
             dgv_Parts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -43,10 +41,26 @@ namespace mschreiberc968_Project
 
             dgv_Products.AllowUserToAddRows = false;
 
-            dgv_Products.DataSource = BindingSource;
+            
            // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
 
 
+        }
+
+        public class PartListMockData : Part
+        {
+
+            public PartListMockData() =>
+            
+                PartContainer.MyList.Add(new Part(1, "Tuner Peg", 8, 9, 20, 1, 8));
+
+            
+        }
+
+        private void display()
+        {
+            dgv_Parts.AutoGenerateColumns = false;
+            dgv_Parts.DataSource = PartContainer.MyList;
         }
 
         public object mainScreenView()
@@ -68,11 +82,9 @@ namespace mschreiberc968_Project
 
 
         private void addParts_Click(object sender, EventArgs e)
-        {
+        { //this opens the addParts window
             AddPart addPart = new AddPart();
-            
             addPart.Show();
-
             this.Visible = false;
 
          
@@ -80,9 +92,11 @@ namespace mschreiberc968_Project
 
         private void exitApplication_Click(object sender, EventArgs e)
         {
-            //create an exit window that pops up and asks the user if they want to exit the application, if they click YES it will application.exit
-            //if they click NO then the window will close and the application wont exit.
-            Application.Exit(); //THIS IS TEMPORARY UNTIL THE ABOVE FUNCTIONALITY IS IMPLETMENTED
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -111,20 +125,18 @@ namespace mschreiberc968_Project
 
             else 
             {
-
                 modifyPart modifyParts = new modifyPart();
                 modifyParts.Show();
                 this.Visible = false;
-
             }
-            
-            
-
-
         }
 
         private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {   //on click, take the row data and assign it to the currentIdx variable
+            PartContainer.CurrentIndex = dgv_Parts.CurrentCell.RowIndex;
+            //show data being stored
+            Console.WriteLine(PartContainer.CurrentIndex);
+            //CurrentObj = mylist[CurrentIndex];
 
         }
 
@@ -140,17 +152,21 @@ namespace mschreiberc968_Project
             ModifyProducts modifyProduct = new ModifyProducts();
             modifyProduct.Visible = true;
             this.Hide();
-
         }
 
         private void deleteParts_Click(object sender, EventArgs e)
         {
-            //THIS ISNT WORKING???
-            //if (dgv_Parts.SelectedRows.Count > 0)
-            //{
-            //    dgv_Parts.Rows.RemoveAt(dgv_Parts.SelectedRows[0].Index);
-            //    ((DataTable)dgv_Parts.DataSource).AcceptChanges();
-            //}
+           
+            if (PartContainer.CurrentIndex >= 0)
+            {
+                PartContainer.MyList.RemoveAt(PartContainer.CurrentIndex);
+                display();
+                PartContainer.CurrentIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("Please Select a row to delete");
+            }
         }
     }
 }
