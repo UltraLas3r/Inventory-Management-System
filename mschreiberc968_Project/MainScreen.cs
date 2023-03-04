@@ -19,42 +19,31 @@ namespace mschreiberc968_Project
             InitializeComponent();
             display();
             
-            //makes grid read only and disables multiselect
+            //The below statements are rules for the Parts Data Grid View
             dgv_Parts.ReadOnly = true;
             dgv_Parts.MultiSelect = false;
+            dgv_Parts.AllowUserToAddRows = false;
+            dgv_Parts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //The below statements are rules for the Products DataGridView
+            dgv_Products.ReadOnly = true;
+            dgv_Products.MultiSelect = false;
+            dgv_Products.AllowUserToAddRows = false;
+            dgv_Products.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
 
             //sets data source and inputs mock data 
             dgv_Parts.DataSource = PartContainer.MyList;
-
-            //selects full horizontal row
-            dgv_Parts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            //remove bottom field
-            dgv_Parts.AllowUserToAddRows = false;
-
-
-            //The below statements are for the Products DataGridView
-            dgv_Products.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            dgv_Products.ReadOnly = true;
-            dgv_Products.MultiSelect = false;
-
-            dgv_Products.AllowUserToAddRows = false;
-
-            
-           // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
-
-
         }
 
-        public class PartListMockData : Part
+        public class PartListMockData : PartContainer
         {
-
-            public PartListMockData() =>
-            
+            public PartListMockData()
+            {
                 PartContainer.MyList.Add(new Part(1, "Tuner Peg", 8, 9, 20, 1, 8));
 
-            
+            }
         }
 
         private void display()
