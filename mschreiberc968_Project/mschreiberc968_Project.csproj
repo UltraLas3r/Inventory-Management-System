@@ -58,9 +58,11 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Inventory.cs" />
     <Compile Include="Model\InHouse.cs" />
+    <Compile Include="Model\OutSourced.cs" />
     <Compile Include="Model\Part.cs" />
-    <Compile Include="Model\ProductDGV.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="ModifyProducts.cs">
       <SubType>Form</SubType>
     </Compile>

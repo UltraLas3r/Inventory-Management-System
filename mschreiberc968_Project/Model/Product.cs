@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace mschreiberc968_Project.Model
 {
-
-
-    class ProductDGV
+    class Product 
     {
+        BindingList<Part> AssociatedParts = new BindingList<Part>();
     }
 }

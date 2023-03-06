@@ -17,7 +17,8 @@ namespace mschreiberc968_Project
         public MainScreen()
         {
             InitializeComponent();
-            display();
+            Display();
+           
             
             //The below statements are rules for the Parts Data Grid View
             dgv_Parts.ReadOnly = true;
@@ -31,26 +32,20 @@ namespace mschreiberc968_Project
             dgv_Products.AllowUserToAddRows = false;
             dgv_Products.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty };
+            // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty};
 
-            //sets data source and inputs mock data 
-            dgv_Parts.DataSource = PartContainer.MyList;
+            
+        
+
         }
-
-        public class PartListMockData : PartContainer
-        {
-            public PartListMockData()
-            {
-                PartContainer.MyList.Add(new Part(1, "Tuner Peg", 8, 9, 20, 1, 8));
-
-            }
-        }
-
-        private void display()
+        private void Display()
         {
             dgv_Parts.AutoGenerateColumns = false;
-            dgv_Parts.DataSource = PartContainer.MyList;
+            dgv_Parts.DataSource = Inventory.Parts;
+            
         }
+
+    
 
         public object mainScreenView()
         {
@@ -122,9 +117,9 @@ namespace mschreiberc968_Project
 
         private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {   //on click, take the row data and assign it to the currentIdx variable
-            PartContainer.CurrentIndex = dgv_Parts.CurrentCell.RowIndex;
+          //  PartContainer.CurrentIndex = dgv_Parts.CurrentCell.RowIndex;
             //show data being stored
-            Console.WriteLine(PartContainer.CurrentIndex);
+           // Console.WriteLine(PartContainer.CurrentIndex);
             //CurrentObj = mylist[CurrentIndex];
 
         }
@@ -143,19 +138,24 @@ namespace mschreiberc968_Project
             this.Hide();
         }
 
-        private void deleteParts_Click(object sender, EventArgs e)
+        private void MainScreen_Load(object sender, EventArgs e)
         {
-           
-            if (PartContainer.CurrentIndex >= 0)
-            {
-                PartContainer.MyList.RemoveAt(PartContainer.CurrentIndex);
-                display();
-                PartContainer.CurrentIndex = -1;
-            }
-            else
-            {
-                MessageBox.Show("Please Select a row to delete");
-            }
+
         }
+
+        //private void deleteParts_Click(object sender, EventArgs e)
+        //{
+
+        //    if (PartContainer.CurrentIndex >= 0)
+        //    {
+        //        PartContainer.MyList.RemoveAt(PartContainer.CurrentIndex);
+        //        display();
+        //        PartContainer.CurrentIndex = -1;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Please Select a row to delete");
+        //    }
+        //}
     }
 }
