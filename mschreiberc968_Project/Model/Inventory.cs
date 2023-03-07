@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace mschreiberc968_Project.Model
 {
@@ -13,27 +14,51 @@ namespace mschreiberc968_Project.Model
         public static BindingList<Part> Parts = new BindingList<Part>();
 
         public static BindingList<Product> Products = new BindingList<Product>();
-      
+
+        //the following is used to create mock data 
+        public class MockData : Part
+        {
+            public MockData(int partID, string name, double price, int inStock, int min, int max, int machineID)
+            {
+                PartID = partID;
+                Name = name;
+                Price = price;
+                InStock = inStock;
+                Min = min;
+                Max = max;
+                MachineID = machineID;
+
+                Part mockParts = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+                Parts.Add(mockParts);
+            }
+           
+                 public static void AddPart(Part part)
+            {
+                Parts.Add(part);
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         public static void AddPart(Part part)
         {
             Parts.Add(part);
         }
 
-        //the following is used to create mock data 
-        public class MyMockData : Part
-        {
-            public MyMockData()
-            {
-                //inhouse part
-                Parts.Add(new InHouse(PartID = 1, Name = "tuner peg", Price = 3.99, InStock = 25, Min = 1, Max = 9, MachineID = 11923));
-             
-                //outsourced part
-                Parts.Add(new InHouse(2, "strings", 23.99, 200, 1, 15, "Mock Company"));
-            }
-        }
-
     }
 
-
-   
 }
