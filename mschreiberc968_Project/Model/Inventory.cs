@@ -18,6 +18,7 @@ namespace mschreiberc968_Project.Model
         //the following is used to create mock data 
         public class MockData : Part
         {
+           
             public MockData(int partID, string name, double price, int inStock, int min, int max, int machineID)
             {
                 PartID = partID;
@@ -28,17 +29,26 @@ namespace mschreiberc968_Project.Model
                 Max = max;
                 MachineID = machineID;
 
-                Part mockParts = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
-                Parts.Add(mockParts);
+                // POSSIBLY DELETE THE BELOW CODE
+                ////Create mock parts
+                //Part mockPart1 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+
+                ////Add the mock parts to the bindingList using the AddPart function
+                //Parts.Add(mockPart1);
             }
-           
-                 public static void AddPart(Part part)
+
+             public static void LoadMockData()
+            {
+                Part mockPart1 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+                Part mockPart2 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+                Parts.Add(mockPart1);
+                Parts.Add(mockPart2);
+            }
+
+            public static void AddPart(Part part)
             {
                 Parts.Add(part);
             }
-
-
-
 
         }
 

@@ -17,6 +17,7 @@ namespace mschreiberc968_Project
         public MainScreen()
         {
             InitializeComponent();
+            Inventory.MockData.LoadMockData();
             Display();
            
             
@@ -40,7 +41,8 @@ namespace mschreiberc968_Project
         }
         private void Display()
         {
-            dgv_Parts.AutoGenerateColumns = false;
+            dgv_Parts.AutoGenerateColumns = true;
+           
             dgv_Parts.DataSource = Inventory.Parts;
             
         }
@@ -117,7 +119,7 @@ namespace mschreiberc968_Project
 
         private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {   //on click, take the row data and assign it to the currentIdx variable
-          //  PartContainer.CurrentIndex = dgv_Parts.CurrentCell.RowIndex;
+          // Part.CurrentIndex = dgv_Parts.CurrentCell.RowIndex;
             //show data being stored
            // Console.WriteLine(PartContainer.CurrentIndex);
             //CurrentObj = mylist[CurrentIndex];
