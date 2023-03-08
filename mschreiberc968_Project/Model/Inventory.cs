@@ -28,13 +28,6 @@ namespace mschreiberc968_Project.Model
                 Min = min;
                 Max = max;
                 MachineID = machineID;
-
-                // POSSIBLY DELETE THE BELOW CODE
-                ////Create mock parts
-                //Part mockPart1 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
-
-                ////Add the mock parts to the bindingList using the AddPart function
-                //Parts.Add(mockPart1);
             }
 
              public static void LoadMockData()
