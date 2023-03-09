@@ -28,15 +28,37 @@ namespace mschreiberc968_Project.Model
                 Min = min;
                 Max = max;
                 MachineID = machineID;
+                
             }
 
-             public static void LoadMockData()
+            public MockData(int partID, string name, double price, int inStock, int min, int max, string companyName)
             {
+                PartID = partID;
+                Name = name;
+                Price = price;
+                InStock = inStock;
+                Min = min;
+                Max = max;
+                CompanyName = companyName;
+            }
+
+            public static void LoadMockData()
+            {
+                //create mock inhouse parts
                 Part mockPart1 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
-                Part mockPart2 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+                Part mockPart2 = new MockData(2, "electronics", 150.87, 12, 1, 3, 11924);
+                //create outsourced parts
+                Part mockPart3 = new MockData(3, "tuner peg", 3.99, 25, 1, 9, "Ergotronics");
+                Part mockPart4 = new MockData(4, "electronics", 150.87, 12, 1, 3, "Method Products");
+
+                //Add mock parts to list
                 Parts.Add(mockPart1);
                 Parts.Add(mockPart2);
+                Parts.Add(mockPart3);
+                Parts.Add(mockPart4);
             }
+
+
 
             public static void AddPart(Part part)
             {

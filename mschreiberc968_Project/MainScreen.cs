@@ -19,8 +19,7 @@ namespace mschreiberc968_Project
             InitializeComponent();
             Inventory.MockData.LoadMockData();
             Display();
-           
-            
+
             //The below statements are rules for the Parts Data Grid View
             dgv_Parts.ReadOnly = true;
             dgv_Parts.MultiSelect = false;
@@ -35,20 +34,19 @@ namespace mschreiberc968_Project
 
             // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty};
 
-            
-        
-
         }
         private void Display()
         {
+            //PARTS DGV
             dgv_Parts.AutoGenerateColumns = true;
-           
+            dgv_Parts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv_Parts.DataSource = Inventory.Parts;
+
+            //PRODUCTS DGV
             
         }
 
     
-
         public object mainScreenView()
         {
             MainScreen mainScreen = new MainScreen();

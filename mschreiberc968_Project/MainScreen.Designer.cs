@@ -61,7 +61,7 @@ namespace mschreiberc968_Project
             // modifyParts
             // 
             this.modifyParts.Location = new System.Drawing.Point(454, 412);
-            this.modifyParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modifyParts.Margin = new System.Windows.Forms.Padding(4);
             this.modifyParts.Name = "modifyParts";
             this.modifyParts.Size = new System.Drawing.Size(106, 45);
             this.modifyParts.TabIndex = 1;
@@ -72,7 +72,7 @@ namespace mschreiberc968_Project
             // addParts
             // 
             this.addParts.Location = new System.Drawing.Point(325, 412);
-            this.addParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addParts.Margin = new System.Windows.Forms.Padding(4);
             this.addParts.Name = "addParts";
             this.addParts.Size = new System.Drawing.Size(111, 45);
             this.addParts.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace mschreiberc968_Project
             // deleteParts
             // 
             this.deleteParts.Location = new System.Drawing.Point(586, 412);
-            this.deleteParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteParts.Margin = new System.Windows.Forms.Padding(4);
             this.deleteParts.Name = "deleteParts";
             this.deleteParts.Size = new System.Drawing.Size(106, 45);
             this.deleteParts.TabIndex = 2;
@@ -94,7 +94,7 @@ namespace mschreiberc968_Project
             // addProducts
             // 
             this.addProducts.Location = new System.Drawing.Point(999, 412);
-            this.addProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addProducts.Margin = new System.Windows.Forms.Padding(4);
             this.addProducts.Name = "addProducts";
             this.addProducts.Size = new System.Drawing.Size(106, 45);
             this.addProducts.TabIndex = 4;
@@ -105,7 +105,7 @@ namespace mschreiberc968_Project
             // modifyProducts
             // 
             this.modifyProducts.Location = new System.Drawing.Point(1148, 412);
-            this.modifyProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modifyProducts.Margin = new System.Windows.Forms.Padding(4);
             this.modifyProducts.Name = "modifyProducts";
             this.modifyProducts.Size = new System.Drawing.Size(106, 45);
             this.modifyProducts.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace mschreiberc968_Project
             // exitApplication
             // 
             this.exitApplication.Location = new System.Drawing.Point(1315, 489);
-            this.exitApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exitApplication.Margin = new System.Windows.Forms.Padding(4);
             this.exitApplication.Name = "exitApplication";
             this.exitApplication.Size = new System.Drawing.Size(106, 45);
             this.exitApplication.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace mschreiberc968_Project
             // deleteProducts
             // 
             this.deleteProducts.Location = new System.Drawing.Point(1308, 412);
-            this.deleteProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteProducts.Margin = new System.Windows.Forms.Padding(4);
             this.deleteProducts.Name = "deleteProducts";
             this.deleteProducts.Size = new System.Drawing.Size(106, 45);
             this.deleteProducts.TabIndex = 6;
