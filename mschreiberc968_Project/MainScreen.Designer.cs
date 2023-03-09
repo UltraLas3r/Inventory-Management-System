@@ -314,10 +314,7 @@ namespace mschreiberc968_Project
 
         }
 
-        private void deleteParts_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         #endregion
 

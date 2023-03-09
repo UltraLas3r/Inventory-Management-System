@@ -13,7 +13,6 @@ namespace mschreiberc968_Project
 {
     public partial class MainScreen : Form
     {
-
         public MainScreen()
         {
             InitializeComponent();
@@ -143,19 +142,12 @@ namespace mschreiberc968_Project
 
         }
 
-        //private void deleteParts_Click(object sender, EventArgs e)
-        //{
-
-        //    if (PartContainer.CurrentIndex >= 0)
-        //    {
-        //        PartContainer.MyList.RemoveAt(PartContainer.CurrentIndex);
-        //        display();
-        //        PartContainer.CurrentIndex = -1;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please Select a row to delete");
-        //    }
-        //}
+       private void deleteParts_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgv_Parts.SelectedRows)
+            {
+                dgv_Parts.Rows.RemoveAt(row.Index);
+            }
+        }
     }
 }
