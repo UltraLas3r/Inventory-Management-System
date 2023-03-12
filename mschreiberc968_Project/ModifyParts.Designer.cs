@@ -31,8 +31,8 @@ namespace mschreiberc968_Project
         {
             this.btn_saveModifyPart = new System.Windows.Forms.Button();
             this.btn_closeModifyPart = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.RadioInHouse = new System.Windows.Forms.RadioButton();
+            this.RadioOutsource = new System.Windows.Forms.RadioButton();
             this.lbl_modifyPartHeader = new System.Windows.Forms.Label();
             this.lbl_forIDTextBox = new System.Windows.Forms.Label();
             this.lvl_forNameTextBox = new System.Windows.Forms.Label();
@@ -72,31 +72,31 @@ namespace mschreiberc968_Project
             this.btn_closeModifyPart.UseVisualStyleBackColor = true;
             this.btn_closeModifyPart.Click += new System.EventHandler(this.btn_closeModifyPart_Click);
             // 
-            // radioButton1
+            // RadioInHouse
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButton1.Location = new System.Drawing.Point(186, 51);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(135, 33);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "In-House";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.RadioInHouse.AutoSize = true;
+            this.RadioInHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.RadioInHouse.Location = new System.Drawing.Point(186, 51);
+            this.RadioInHouse.Name = "RadioInHouse";
+            this.RadioInHouse.Size = new System.Drawing.Size(135, 33);
+            this.RadioInHouse.TabIndex = 2;
+            this.RadioInHouse.TabStop = true;
+            this.RadioInHouse.Text = "In-House";
+            this.RadioInHouse.UseVisualStyleBackColor = true;
+            this.RadioInHouse.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // RadioOutsource
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButton2.Location = new System.Drawing.Point(395, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(163, 33);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Outsourced";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.RadioOutsource.AutoSize = true;
+            this.RadioOutsource.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.RadioOutsource.Location = new System.Drawing.Point(395, 51);
+            this.RadioOutsource.Name = "RadioOutsource";
+            this.RadioOutsource.Size = new System.Drawing.Size(163, 33);
+            this.RadioOutsource.TabIndex = 3;
+            this.RadioOutsource.TabStop = true;
+            this.RadioOutsource.Text = "Outsourced";
+            this.RadioOutsource.UseVisualStyleBackColor = true;
+            this.RadioOutsource.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // lbl_modifyPartHeader
             // 
@@ -184,6 +184,7 @@ namespace mschreiberc968_Project
             this.modifyPartID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.modifyPartID.Location = new System.Drawing.Point(186, 116);
             this.modifyPartID.Name = "modifyPartID";
+            this.modifyPartID.ReadOnly = true;
             this.modifyPartID.Size = new System.Drawing.Size(394, 35);
             this.modifyPartID.TabIndex = 12;
             // 
@@ -261,8 +262,8 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.lvl_forNameTextBox);
             this.Controls.Add(this.lbl_forIDTextBox);
             this.Controls.Add(this.lbl_modifyPartHeader);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.RadioOutsource);
+            this.Controls.Add(this.RadioInHouse);
             this.Controls.Add(this.btn_closeModifyPart);
             this.Controls.Add(this.btn_saveModifyPart);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -277,8 +278,8 @@ namespace mschreiberc968_Project
 
         private System.Windows.Forms.Button btn_saveModifyPart;
         private System.Windows.Forms.Button btn_closeModifyPart;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton RadioInHouse;
+        private System.Windows.Forms.RadioButton RadioOutsource;
         private System.Windows.Forms.Label lbl_modifyPartHeader;
         private System.Windows.Forms.Label lbl_forIDTextBox;
         private System.Windows.Forms.Label lvl_forNameTextBox;

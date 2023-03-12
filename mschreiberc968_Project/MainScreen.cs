@@ -13,10 +13,12 @@ namespace mschreiberc968_Project
 {
     public partial class MainScreen : Form
     {
+        private int TempPartID;
+        private int TempProdID;
+
         public MainScreen()
         {
             InitializeComponent();
-            Inventory.MockData.LoadMockData();
             Display();
 
             //The below statements are rules for the Parts Data Grid View
@@ -30,33 +32,27 @@ namespace mschreiberc968_Project
             dgv_Products.MultiSelect = false;
             dgv_Products.AllowUserToAddRows = false;
             dgv_Products.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            // BindingSource = new BindingSource { DataSource = ProductsDGV.ProductsProperty};
-
         }
         private void Display()
         {
             //PARTS DGV
             dgv_Parts.AutoGenerateColumns = true;
             dgv_Parts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dgv_Parts.DataSource = Inventory.Parts;
+            dgv_Parts.DataSource = Inventory.AllParts;
 
             //PRODUCTS DGV
-            
+            dgv_Products.AutoGenerateColumns = true;
+            dgv_Products.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Products.DataSource = Inventory.Products;   
         }
 
-    
         public object mainScreenView()
         {
             MainScreen mainScreen = new MainScreen();
             return (mainScreen.Visible = true);
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+     
         private void productsSearchBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -68,9 +64,7 @@ namespace mschreiberc968_Project
         { //this opens the addParts window
             AddPart addPart = new AddPart();
             addPart.Show();
-            this.Visible = false;
-
-         
+            this.Visible = false; 
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -93,10 +87,26 @@ namespace mschreiberc968_Project
         }
 
         private void dgv_Parts_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-      
-
+        { 
+            if (e.RowIndex >= 0)
+            {
+                TempPartID = (int)dgv_Parts.Rows[e.RowIndex].Cells[0].Value;
+            }
+    
         }
+
+        private void dgv_Products_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            {
+                if (e.RowIndex >= 0)
+                {
+                    TempProdID = (int)dgv_Products.Rows[e.RowIndex].Cells[0].Value;
+                }
+            }
+        }
+
+
+
 
         private void modifyParts_Click(object sender, EventArgs e)
         {   //warning message if user hasnt selected an object to modify
@@ -108,17 +118,20 @@ namespace mschreiberc968_Project
 
             else 
             {
-                modifyPart modifyParts = new modifyPart();
+                var tempSelectedPart = (Part)dgv_Parts.CurrentRow.DataBoundItem;
+
+                modifyPart modifyParts = new modifyPart(tempSelectedPart, TempPartID);
                 modifyParts.Show();
+                
                 this.Visible = false;
             }
         }
 
         private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {   //on click, take the row data and assign it to the currentIdx variable
-          // Part.CurrentIndex = dgv_Parts.CurrentCell.RowIndex;
+            
             //show data being stored
-           // Console.WriteLine(PartContainer.CurrentIndex);
+           
             //CurrentObj = mylist[CurrentIndex];
 
         }

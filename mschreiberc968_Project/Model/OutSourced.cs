@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace mschreiberc968_Project.Model
 {
-    class OutSourced
+    class OutSourced : Part
     {
-        public string CompanyName { get; set; }
+        public new string CompanyName { get; set; }
 
+
+        //public OutSourced(int partId, string name, double price, int inStock, int min, int max, string companyName)
+        //{
+        //    PartID = partId;
+        //    Name = name;
+        //    Price = price;
+        //    InStock = inStock;
+        //    Min = min;
+        //    Max = max;
+        //    CompanyName = companyName;
+        //}
     }
 }

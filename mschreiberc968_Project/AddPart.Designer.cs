@@ -70,7 +70,7 @@ namespace mschreiberc968_Project
             this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.button1_Click);
+            this.btn_save.Click += new System.EventHandler(this.btn_Save);
             // 
             // lbl_forRadioChoice
             // 
@@ -81,7 +81,7 @@ namespace mschreiberc968_Project
             this.lbl_forRadioChoice.Size = new System.Drawing.Size(186, 29);
             this.lbl_forRadioChoice.TabIndex = 19;
             this.lbl_forRadioChoice.Text = "Company Name";
-            this.lbl_forRadioChoice.Click += new System.EventHandler(this.label8_Click);
+           
             // 
             // label7
             // 
@@ -92,7 +92,7 @@ namespace mschreiberc968_Project
             this.label7.Size = new System.Drawing.Size(52, 29);
             this.label7.TabIndex = 18;
             this.label7.Text = "Min";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+           
             // 
             // label6
             // 
@@ -103,7 +103,7 @@ namespace mschreiberc968_Project
             this.label6.Size = new System.Drawing.Size(57, 29);
             this.label6.TabIndex = 17;
             this.label6.Text = "Max";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+           
             // 
             // label5
             // 
@@ -114,7 +114,7 @@ namespace mschreiberc968_Project
             this.label5.Size = new System.Drawing.Size(137, 29);
             this.label5.TabIndex = 16;
             this.label5.Text = "Price / Cost";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // label4
             // 
@@ -125,7 +125,7 @@ namespace mschreiberc968_Project
             this.label4.Size = new System.Drawing.Size(109, 29);
             this.label4.TabIndex = 15;
             this.label4.Text = "Inventory";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+     
             // 
             // label3
             // 
@@ -136,7 +136,7 @@ namespace mschreiberc968_Project
             this.label3.Size = new System.Drawing.Size(78, 29);
             this.label3.TabIndex = 14;
             this.label3.Text = "Name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // label2
             // 
@@ -147,7 +147,7 @@ namespace mschreiberc968_Project
             this.label2.Size = new System.Drawing.Size(36, 29);
             this.label2.TabIndex = 13;
             this.label2.Text = "ID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label1
             // 
@@ -158,7 +158,7 @@ namespace mschreiberc968_Project
             this.label1.Size = new System.Drawing.Size(105, 29);
             this.label1.TabIndex = 12;
             this.label1.Text = "Add Part";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // addPartCompanyName
             // 

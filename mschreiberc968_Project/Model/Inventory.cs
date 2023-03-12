@@ -10,16 +10,14 @@ namespace mschreiberc968_Project.Model
 {
     class Inventory
     {
-        //parts bindinglist 
-        public static BindingList<Part> Parts = new BindingList<Part>();
+        public static BindingList<Part> AllParts = new BindingList<Part>();
 
         public static BindingList<Product> Products = new BindingList<Product>();
 
-        //the following is used to create mock data 
-        public class MockData : Part
+        //the following is used to create in house and outsource data
+        public class InHouseData : Part
         {
-           
-            public MockData(int partID, string name, double price, int inStock, int min, int max, int machineID)
+            public InHouseData(int partID, string name, double price, int inStock, int min, int max, int machineID)
             {
                 PartID = partID;
                 Name = name;
@@ -27,11 +25,12 @@ namespace mschreiberc968_Project.Model
                 InStock = inStock;
                 Min = min;
                 Max = max;
-                MachineID = machineID;
-                
             }
+        }
+        public class OutSourceData : Part
+        {
 
-            public MockData(int partID, string name, double price, int inStock, int min, int max, string companyName)
+            public OutSourceData(int partID, string name, double price, int inStock, int min, int max, string companyName)
             {
                 PartID = partID;
                 Name = name;
@@ -39,51 +38,84 @@ namespace mschreiberc968_Project.Model
                 InStock = inStock;
                 Min = min;
                 Max = max;
-                CompanyName = companyName;
             }
 
-            public static void LoadMockData()
-            {
-                //create mock inhouse parts
-                Part mockPart1 = new MockData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
-                Part mockPart2 = new MockData(2, "electronics", 150.87, 12, 1, 3, 11924);
-                //create outsourced parts
-                Part mockPart3 = new MockData(3, "tuner peg", 3.99, 25, 1, 9, "Ergotronics");
-                Part mockPart4 = new MockData(4, "electronics", 150.87, 12, 1, 3, "Method Products");
-
-                //Add mock parts to list
-                Parts.Add(mockPart1);
-                Parts.Add(mockPart2);
-                Parts.Add(mockPart3);
-                Parts.Add(mockPart4);
-            }
-
-
+        }
 
             public static void AddPart(Part part)
             {
-                Parts.Add(part);
+                AllParts.Add(part);
             }
 
+            //The following code handles products
+
+            public static void AddProduct(Product product)
+            {
+
+            }
+
+            //public static Product LookupProduct (int productID)
+            //{
+            //    foreach (Product p in AllParts)
+            //    {
+            //        if (p.lookupAssociatedPart(productID) == productID)
+            //        {
+            //            return p;
+            //        }
+            //    }
+
+            //    return null;
+            //}
+
+            //public bool RemoveProduct(int partID)
+            //{
+            //    Part deletePart = lookupPart(partID);
+            //    if (deletePart == null)
+            //    {
+            //        return false;
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
+
+            //public LookupProduct(int)
+            //{
+
+            //}
+
+            public void UpdateProduct()
+            {
+
+            }
+
+            //mock data 
+        public static void LoadMockData()
+            {
+                //create mock inhouse parts
+                Part mockPart1 = new InHouseData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+                Part mockPart2 = new InHouseData(2, "electronics", 150.87, 12, 1, 3, 11924);
+                //create outsourced parts
+                Part mockPart3 = new OutSourceData(3, "tuner peg", 3.99, 25, 1, 9, "Ergotronics");
+                Part mockPart4 = new OutSourceData(4, "electronics", 150.87, 12, 1, 3, "Method Products");
+
+                //Add mock parts to list
+                AllParts.Add(mockPart1);
+                AllParts.Add(mockPart2);
+                AllParts.Add(mockPart3);
+                AllParts.Add(mockPart4);
+
+                //mock products
+               // Product mockProduct1 = new InHouseData(33, "Electric Guitar", 400.00, 5, 1, 3, 99991);
+
+                //Add mock product to list
+                // Products.Add(mockProduct1);
+
+
+
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static void AddPart(Part part)
-        {
-            Parts.Add(part);
-        }
-
     }
+ }
 
-}
+    

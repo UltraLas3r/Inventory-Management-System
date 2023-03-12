@@ -165,7 +165,7 @@ namespace mschreiberc968_Project
             this.dgv_Products.RowTemplate.Height = 28;
             this.dgv_Products.Size = new System.Drawing.Size(674, 254);
             this.dgv_Products.TabIndex = 9;
-            this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Products_CellContentClick);
             this.dgv_Products.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myProductsBindingComplete);
             // 
             // Column1

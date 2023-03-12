@@ -52,58 +52,23 @@ namespace mschreiberc968_Project
                 textBox.BackColor = Color.White;
             }
         }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-
-            this.Hide();
+                        this.Hide();
             mainScreenView();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Save(object sender, EventArgs e)
         {
             this.Hide();
             mainScreenView();
+
+            //bind new information to the AllParts bindinglist from Inventory.cs
+
+
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
