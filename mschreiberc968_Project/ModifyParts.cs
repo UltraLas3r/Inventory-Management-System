@@ -38,8 +38,6 @@ namespace mschreiberc968_Project
 
                 InHouse inHouse = part as InHouse;
                 modifyPartCompanyName.Text = inHouse.machineID.ToString();
-
-
             }
             else
             {
@@ -49,8 +47,6 @@ namespace mschreiberc968_Project
                 //OutSourced outSourced = part as OutSourced;
                 //modifyPartCompanyName.Text = outSourced.CompanyName;
             }
-
-
         }
 
         public object mainScreenView()
@@ -89,6 +85,14 @@ namespace mschreiberc968_Project
         private void button1_Click(object sender, EventArgs e)
         {
             //On Click take the textbox objects from this form and send them to the DGV into the appropriate cell spaces
+            //string newCompanyName = new InHouse(companyName);
+
+
+
+            ////add new data to the bindinglist
+            //Inventory.AllParts(CompanyName).Add(newCompanyName);
+
+
 
             this.Hide();
             mainScreenView();

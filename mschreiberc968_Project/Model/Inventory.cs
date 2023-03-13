@@ -42,50 +42,77 @@ namespace mschreiberc968_Project.Model
 
         }
 
-            public static void AddPart(Part part)
+        public static void AddPart(Part part)
+        {
+            AllParts.Add(part);
+        }
+
+        //The following code handles products
+
+        public static void AddProduct(Product product)
+        {
+
+        }
+
+        //public static Product LookupProduct (int productID)
+        //{
+        //    foreach (Product p in AllParts)
+        //    {
+        //        if (p.lookupAssociatedPart(productID) == productID)
+        //        {
+        //            return p;
+        //        }
+        //    }
+
+        //    return null;
+        //}
+
+        //public bool RemoveProduct(int partID)
+        //{
+        //    Part deletePart = lookupPart(partID);
+        //    if (deletePart == null)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
+
+        //public LookupProduct(int)
+        //{
+
+        //}
+
+        public static Part lookupPart(int partID)
+        {
+            foreach (Part p in AllParts)
             {
-                AllParts.Add(part);
+                if (p.PartID == partID)
+                {
+                    return p;
+                }
             }
+            return null;
+        }
 
-            //The following code handles products
+        public static bool DeletePart(int partID)
+        {
+            Part deletedPart = lookupPart(partID);
 
-            public static void AddProduct(Product product)
+                if (deletedPart == null)
             {
-
+                return false;
             }
+                else
+            {
+                AllParts.Remove(deletedPart);
+                return true;
+            }
+        }
 
-            //public static Product LookupProduct (int productID)
-            //{
-            //    foreach (Product p in AllParts)
-            //    {
-            //        if (p.lookupAssociatedPart(productID) == productID)
-            //        {
-            //            return p;
-            //        }
-            //    }
-
-            //    return null;
-            //}
-
-            //public bool RemoveProduct(int partID)
-            //{
-            //    Part deletePart = lookupPart(partID);
-            //    if (deletePart == null)
-            //    {
-            //        return false;
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
-
-            //public LookupProduct(int)
-            //{
-
-            //}
-
-            public void UpdateProduct()
+        public void UpdateProduct()
             {
 
             }
