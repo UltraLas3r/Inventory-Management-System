@@ -37,15 +37,15 @@ namespace mschreiberc968_Project
                 lbl_ForRadioChange.Text = "Machine ID";
 
                 InHouse inHouse = part as InHouse;
-                modifyPartCompanyName.Text = inHouse.machineID.ToString();
+                modifyPartCompanyName.Text = inHouse.MachineID.ToString();
             }
             else
             {
                 RadioOutsource.Checked = true;
                 lbl_ForRadioChange.Text = "Company Name";
 
-                //OutSourced outSourced = part as OutSourced;
-                //modifyPartCompanyName.Text = outSourced.CompanyName;
+                OutSourced outSourced = part as OutSourced;
+                modifyPartCompanyName.Text = outSourced.CompanyName;
             }
         }
 
@@ -57,6 +57,7 @@ namespace mschreiberc968_Project
 
         private void btn_modifyPart(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -82,8 +83,16 @@ namespace mschreiberc968_Project
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Save(object sender, EventArgs e)
         {
+
+            //check for min/max compliance
+            if (int.Parse(modifyPartMin.Text) > int.Parse(modifyPartMax.Text))
+            {
+                MessageBox.Show("Minimum must be less than maximum");
+                return;
+            }
+
             //On Click take the textbox objects from this form and send them to the DGV into the appropriate cell spaces
             //string newCompanyName = new InHouse(companyName);
 

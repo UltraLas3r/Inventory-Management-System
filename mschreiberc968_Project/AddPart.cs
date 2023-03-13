@@ -62,13 +62,19 @@ namespace mschreiberc968_Project
 
         private void btn_Save(object sender, EventArgs e)
         {
-            this.Hide();
-            mainScreenView();
+            //check for min/max compliance
+            if (int.Parse(addPartMin.Text) > int.Parse(addPartMax.Text))
+            {
+                MessageBox.Show("Minimum must be less than maximum");
+                return;
+            }
+
 
             //bind new information to the AllParts bindinglist from Inventory.cs
 
 
-
+            this.Hide();
+            mainScreenView();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)

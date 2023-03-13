@@ -145,7 +145,16 @@ namespace mschreiberc968_Project
 
         private void modifyProducts_Click(object sender, EventArgs e)
         {
-            ModifyProducts modifyProduct = new ModifyProducts();
+            //if (!dgv_Parts.CurrentRow.Selected)
+            //{
+            //    MessageBox.Show("Nothing selected. Please select an item to modify.");
+            //    return;
+            //}
+
+
+           
+
+           // ModifyProducts modifyProduct = new ModifyProducts();
             modifyProduct.Visible = true;
             this.Hide();
         }

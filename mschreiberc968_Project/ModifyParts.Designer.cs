@@ -52,19 +52,19 @@ namespace mschreiberc968_Project
             // 
             // btn_ModPartSave
             // 
-            this.btn_ModPartSave.Location = new System.Drawing.Point(284, 398);
-            this.btn_ModPartSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ModPartSave.Location = new System.Drawing.Point(277, 398);
+            this.btn_ModPartSave.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ModPartSave.Name = "btn_ModPartSave";
             this.btn_ModPartSave.Size = new System.Drawing.Size(100, 28);
             this.btn_ModPartSave.TabIndex = 0;
             this.btn_ModPartSave.Text = "Save";
             this.btn_ModPartSave.UseVisualStyleBackColor = true;
-            this.btn_ModPartSave.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ModPartSave.Click += new System.EventHandler(this.btn_Save);
             // 
             // btn_closeModifyPart
             // 
             this.btn_closeModifyPart.Location = new System.Drawing.Point(416, 398);
-            this.btn_closeModifyPart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_closeModifyPart.Margin = new System.Windows.Forms.Padding(4);
             this.btn_closeModifyPart.Name = "btn_closeModifyPart";
             this.btn_closeModifyPart.Size = new System.Drawing.Size(100, 28);
             this.btn_closeModifyPart.TabIndex = 1;
@@ -275,7 +275,7 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.RadioInHouse);
             this.Controls.Add(this.btn_closeModifyPart);
             this.Controls.Add(this.btn_ModPartSave);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "modifyPart";
             this.Text = "Modify Part";
             this.ResumeLayout(false);
