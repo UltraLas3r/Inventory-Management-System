@@ -155,7 +155,7 @@ namespace mschreiberc968_Project
            
 
            // ModifyProducts modifyProduct = new ModifyProducts();
-            modifyProduct.Visible = true;
+            modifyProducts.Visible = true;
             this.Hide();
         }
 

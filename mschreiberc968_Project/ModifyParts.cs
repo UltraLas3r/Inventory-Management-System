@@ -45,7 +45,7 @@ namespace mschreiberc968_Project
                 lbl_ForRadioChange.Text = "Company Name";
 
                 OutSourced outSourced = part as OutSourced;
-                modifyPartCompanyName.Text = outSourced.CompanyName;
+                //modifyPartCompanyName.Text = outSourced.CompanyName;
             }
         }
 
@@ -87,12 +87,21 @@ namespace mschreiberc968_Project
         {
 
             //check for min/max compliance
-            if (int.Parse(modifyPartMin.Text) > int.Parse(modifyPartMax.Text))
+            if (int.Parse(modifyPartMin.Text) >= int.Parse(modifyPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             }
 
+        //    else {
+        //        RadioInHouse.Checked
+
+        //        //do something
+        //        Inventory.InHouseData newIHData = new Inventory.InHouseData;
+        //        RadioInHouse.Checked = true;
+        //}
+
+          
             //On Click take the textbox objects from this form and send them to the DGV into the appropriate cell spaces
             //string newCompanyName = new InHouse(companyName);
 

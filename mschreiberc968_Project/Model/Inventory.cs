@@ -17,9 +17,12 @@ namespace mschreiberc968_Project.Model
         //the following is used to create in house and outsource data
         public class InHouseData : Part
         {
+            private static int IHCount = 142;
+            
+
             public InHouseData(int partID, string name, double price, int inStock, int min, int max, int machineID)
             {
-                PartID = partID;
+                PartID = IHCount++;
                 Name = name;
                 Price = price;
                 InStock = inStock;
@@ -30,9 +33,10 @@ namespace mschreiberc968_Project.Model
         }
         public class OutSourceData : Part
         {
+            private static int OSCount = 27;
             public OutSourceData(int partID, string name, double price, int inStock, int min, int max, string companyName)
             {
-                PartID = partID;
+                PartID = OSCount++;
                 Name = name;
                 Price = price;
                 InStock = inStock;
@@ -81,6 +85,8 @@ namespace mschreiberc968_Project.Model
 
         //}
 
+
+        //the following is to remove parts, i dont know if it is correct
         public static Part lookupPart(int partID)
         {
             foreach (Part p in AllParts)
