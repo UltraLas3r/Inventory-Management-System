@@ -18,7 +18,7 @@ namespace mschreiberc968_Project.Model
         public class InHouseData : Part
         {
             private static int IHCount = 0001;
-            public InHouseData(string name, double price, int inStock, int min, int max, int machineID)
+            public InHouseData(int PartID, string name, double price, int inStock, int min, int max, int machineID)
             {
                 PartID = IHCount++;
                 Name = name;
@@ -32,7 +32,7 @@ namespace mschreiberc968_Project.Model
         public class OutSourceData : Part
         {
             private static int OSCount = 1000;
-            public OutSourceData(string name, double price, int inStock, int min, int max, string companyName)
+            public OutSourceData(int PartID, string name, double price, int inStock, int min, int max, string companyName)
             {
                 PartID = OSCount++;
                 Name = name;

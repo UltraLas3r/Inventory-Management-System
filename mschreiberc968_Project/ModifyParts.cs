@@ -35,11 +35,12 @@ namespace mschreiberc968_Project
 
             if (part is InHouse)
             {
+                
+                InHouse IH = part as InHouse;
+                modifyPartCompanyName.Text = InHouse.MachineID.ToString();
+
                 RadioInHouse.Checked = true;
                 lbl_ForRadioChange.Text = "Machine ID";
-
-                InHouse inHouse = part as InHouse;
-                modifyPartCompanyName.Text = inHouse.MachineID.ToString();
             }
             else
             {
@@ -87,27 +88,15 @@ namespace mschreiberc968_Project
 
         private void btn_Save(object sender, EventArgs e)
         {
-
             //check for min/max compliance
             if (int.Parse(modifyPartMin.Text) >= int.Parse(modifyPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             }
+           
 
-            //    else {
-            //        RadioInHouse.Checked
-
-            //        //do something
-            //        Inventory.InHouseData newIHData = new Inventory.InHouseData;
-            //        RadioInHouse.Checked = true;
-            //}
-
-
-            //On Click take the textbox objects from this form and send them to the DGV into the appropriate cell spaces
-            //string newCompanyName = new InHouse(companyName);
-
-            Part newPart = new Inventory.InHouseData
+            InHouse newPart = new InHouse()
             {
                 PartID = int.Parse(modifyPartID.Text),
                 Name = modifyPartName.Text,
@@ -116,8 +105,9 @@ namespace mschreiberc968_Project
                 Min = int.Parse(modifyPartMin.Text),
                 Max = int.Parse(modifyPartMax.Text),
                 MachineID = int.Parse(modifyPartCompanyName.Text)
-            }
+            };
 
+            Inventory.AllParts.Add(newPart);
             
 
             ////add new data to the bindinglist
