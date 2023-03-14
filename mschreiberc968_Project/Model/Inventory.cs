@@ -27,6 +27,7 @@ namespace mschreiberc968_Project.Model
                 Min = min;
                 Max = max;
                 
+                
             }
         }
         public class OutSourceData : Part

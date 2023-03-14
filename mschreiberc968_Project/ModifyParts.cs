@@ -93,20 +93,40 @@ namespace mschreiberc968_Project
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             }
-              
-            InHouse newPart = new InHouse()
-            {
-                PartID = int.Parse(modifyPartID.Text),
-                Name = modifyPartName.Text,
-                Price = int.Parse(modifyPartPriceCost.Text),
-                InStock = int.Parse(modifyPartInventory.Text),
-                Min = int.Parse(modifyPartMin.Text),
-                Max = int.Parse(modifyPartMax.Text),
-                MachineID = int.Parse(modifyPartCompanyName.Text)
-            };
 
-            Inventory.AllParts.Add(newPart);
+            if (RadioInHouse.Checked)
+            {
+
+                Part newPartIH = new InHouse()
+                {
+                    PartID = Int32.Parse(modifyPartID.Text),
+                    Name = modifyPartName.Text,
+                    Price = Int32.Parse(modifyPartPriceCost.Text),
+                    InStock = Int32.Parse(modifyPartInventory.Text),
+                    Min = Int32.Parse(modifyPartMin.Text),
+                    Max = Int32.Parse(modifyPartMax.Text),
+                    MachineID = Int32.Parse(modifyPartCompanyName.Text),
+
+                   
+            };
+                Inventory.AllParts.Add(newPartIH);
+
+            }
+
+            else if (RadioOutsource.Checked) {
+                Part newPartOS = new OutSourced()
+                {
+                    PartID = Int32.Parse(modifyPartID.Text),
+                    Name = modifyPartName.Text,
+                    Price = Int32.Parse(modifyPartPriceCost.Text),
+                    InStock = Int32.Parse(modifyPartInventory.Text),
+                    Min = Int32.Parse(modifyPartMin.Text),
+                    Max = Int32.Parse(modifyPartMax.Text),
+                    CompanyName = modifyPartCompanyName.Text
+                };
+                Inventory.AllParts.Add(newPartOS);
             
+            }
 
             ////add new data to the bindinglist
             //Inventory.AllParts(CompanyName).Add(newCompanyName);
