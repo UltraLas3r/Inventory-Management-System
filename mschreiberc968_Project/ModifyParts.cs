@@ -35,12 +35,11 @@ namespace mschreiberc968_Project
 
             if (part is InHouse)
             {
-                
-                InHouse IH = part as InHouse;
-                modifyPartCompanyName.Text = InHouse.MachineID.ToString();
-
                 RadioInHouse.Checked = true;
                 lbl_ForRadioChange.Text = "Machine ID";
+
+                InHouse inHouse = part as InHouse;
+                modifyPartCompanyName.Text = inHouse.MachineID.ToString();
             }
             else
             {
@@ -94,8 +93,7 @@ namespace mschreiberc968_Project
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             }
-           
-
+              
             InHouse newPart = new InHouse()
             {
                 PartID = int.Parse(modifyPartID.Text),

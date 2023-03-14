@@ -9,8 +9,6 @@ namespace mschreiberc968_Project.Model
 {
     class InHouse : Part
     {
-      
-         public int MachineID { get; set; }
-          
+         public int MachineID { get; set; }   
     }
 }

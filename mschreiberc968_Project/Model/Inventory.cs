@@ -26,7 +26,7 @@ namespace mschreiberc968_Project.Model
                 InStock = inStock;
                 Min = min;
                 Max = max;
-                MachineID = machineID;
+                
             }
         }
         public class OutSourceData : Part
@@ -40,7 +40,7 @@ namespace mschreiberc968_Project.Model
                 InStock = inStock;
                 Min = min;
                 Max = max;
-                CompanyName = companyName;
+                
             }
 
         }
