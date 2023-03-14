@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace mschreiberc968_Project
 {
@@ -93,19 +95,30 @@ namespace mschreiberc968_Project
                 return;
             }
 
-        //    else {
-        //        RadioInHouse.Checked
+            //    else {
+            //        RadioInHouse.Checked
 
-        //        //do something
-        //        Inventory.InHouseData newIHData = new Inventory.InHouseData;
-        //        RadioInHouse.Checked = true;
-        //}
+            //        //do something
+            //        Inventory.InHouseData newIHData = new Inventory.InHouseData;
+            //        RadioInHouse.Checked = true;
+            //}
 
-          
+
             //On Click take the textbox objects from this form and send them to the DGV into the appropriate cell spaces
             //string newCompanyName = new InHouse(companyName);
 
+            Part newPart = new Inventory.InHouseData
+            {
+                PartID = int.Parse(modifyPartID.Text),
+                Name = modifyPartName.Text,
+                Price = int.Parse(modifyPartPriceCost.Text),
+                InStock = int.Parse(modifyPartInventory.Text),
+                Min = int.Parse(modifyPartMin.Text),
+                Max = int.Parse(modifyPartMax.Text),
+                MachineID = int.Parse(modifyPartCompanyName.Text)
+            }
 
+            
 
             ////add new data to the bindinglist
             //Inventory.AllParts(CompanyName).Add(newCompanyName);

@@ -17,10 +17,8 @@ namespace mschreiberc968_Project.Model
         //the following is used to create in house and outsource data
         public class InHouseData : Part
         {
-            private static int IHCount = 142;
-            
-
-            public InHouseData(int partID, string name, double price, int inStock, int min, int max, int machineID)
+            private static int IHCount = 0001;
+            public InHouseData(string name, double price, int inStock, int min, int max, int machineID)
             {
                 PartID = IHCount++;
                 Name = name;
@@ -33,8 +31,8 @@ namespace mschreiberc968_Project.Model
         }
         public class OutSourceData : Part
         {
-            private static int OSCount = 27;
-            public OutSourceData(int partID, string name, double price, int inStock, int min, int max, string companyName)
+            private static int OSCount = 1000;
+            public OutSourceData(string name, double price, int inStock, int min, int max, string companyName)
             {
                 PartID = OSCount++;
                 Name = name;
