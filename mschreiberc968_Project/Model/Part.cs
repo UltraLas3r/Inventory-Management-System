@@ -17,6 +17,7 @@ namespace mschreiberc968_Project.Model
         public int Min { get; set; }
         public int Max { get; set; }
     
+           //I might need to add back the machineID and compnay name variables to this class
     }
 
     
