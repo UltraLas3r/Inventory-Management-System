@@ -15,6 +15,7 @@ namespace mschreiberc968_Project
 {
     public partial class modifyPart : Form
     {
+      
         private int modPartID;
         public modifyPart()
         {
@@ -26,7 +27,7 @@ namespace mschreiberc968_Project
             InitializeComponent();
 
             modPartID = PartID;
-            modifyPartID.Text = PartID.ToString();
+            modifyPartID.Text = part.PartID.ToString();
             modifyPartName.Text = part.Name;
             modifyPartInventory.Text = part.InStock.ToString();
             modifyPartPriceCost.Text = part.Price.ToString();
@@ -46,8 +47,8 @@ namespace mschreiberc968_Project
                 RadioOutsource.Checked = true;
                 lbl_ForRadioChange.Text = "Company Name";
 
-                OutSourced outSourced = part as OutSourced;
-                //modifyPartCompanyName.Text = outSourced.CompanyName;
+                OutSource outSourced = part as OutSource;
+                modifyPartCompanyName.Text = outSourced.CompanyName;
             }
         }
 
@@ -96,7 +97,6 @@ namespace mschreiberc968_Project
 
             if (RadioInHouse.Checked)
             {
-
                 Part newPartIH = new InHouse()
                 {
                     PartID = Int32.Parse(modifyPartID.Text),
@@ -106,27 +106,25 @@ namespace mschreiberc968_Project
                     Min = Int32.Parse(modifyPartMin.Text),
                     Max = Int32.Parse(modifyPartMax.Text),
                     MachineID = Int32.Parse(modifyPartCompanyName.Text),
-
-                   
             };
                 Inventory.AllParts.Add(newPartIH);
 
             }
 
-            else if (RadioOutsource.Checked) {
-                Part newPartOS = new OutSourced()
-                {
-                    PartID = Int32.Parse(modifyPartID.Text),
-                    Name = modifyPartName.Text,
-                    Price = Int32.Parse(modifyPartPriceCost.Text),
-                    InStock = Int32.Parse(modifyPartInventory.Text),
-                    Min = Int32.Parse(modifyPartMin.Text),
-                    Max = Int32.Parse(modifyPartMax.Text),
-                    CompanyName = modifyPartCompanyName.Text
-                };
-                Inventory.AllParts.Add(newPartOS);
+            //else if (RadioOutsource.Checked) {
+            //    Part newPartOS = new OutSource()
+            //    {
+            //        PartID = Int32.Parse(modifyPartID.Text),
+            //        Name = modifyPartName.Text,
+            //        Price = Int32.Parse(modifyPartPriceCost.Text),
+            //        InStock = Int32.Parse(modifyPartInventory.Text),
+            //        Min = Int32.Parse(modifyPartMin.Text),
+            //        Max = Int32.Parse(modifyPartMax.Text),
+            //        //CompanyName = modifyPartCompanyName.Text
+            //    };
+            //    Inventory.AllParts.Add(newPartOS);
             
-            }
+            //}
 
             ////add new data to the bindinglist
             //Inventory.AllParts(CompanyName).Add(newCompanyName);

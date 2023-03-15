@@ -20,6 +20,7 @@ namespace mschreiberc968_Project
         {
             InitializeComponent();
             Display();
+           
 
             //The below statements are rules for the Parts Data Grid View
             dgv_Parts.ReadOnly = true;

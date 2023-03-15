@@ -131,7 +131,7 @@ namespace mschreiberc968_Project
             // dgv_Parts
             // 
             this.dgv_Parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Parts.Location = new System.Drawing.Point(31, 137);
+            this.dgv_Parts.Location = new System.Drawing.Point(32, 137);
             this.dgv_Parts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Parts.Name = "dgv_Parts";
             this.dgv_Parts.RowHeadersWidth = 62;

@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using static mschreiberc968_Project.Model.Inventory;
 
 namespace mschreiberc968_Project.Model
 {
-    class InHouse : Part
+    class OutSource : Part
     {
         
-
-        public InHouse(int partID, string name, double price, int inStock, int min, int max, int machineID)
+        public OutSource(int partID, string name, double price, int inStock, int min, int max, string companyName)
         {
             PartID = partID;
             Name = name;
@@ -20,11 +17,11 @@ namespace mschreiberc968_Project.Model
             InStock = inStock;
             Min = min;
             Max = max;
-            MachineID = machineID;
+            CompanyName = companyName;
         }
 
-        public InHouse()
-        {
-        }
     }
+    
+
+
 }

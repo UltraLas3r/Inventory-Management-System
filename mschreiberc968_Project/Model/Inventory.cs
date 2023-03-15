@@ -14,40 +14,7 @@ namespace mschreiberc968_Project.Model
 
         public static BindingList<Product> Products = new BindingList<Product>();
 
-        //the following is used to create in house and outsource data
-        public class InHouseData : Part
-        {
-            private static int IHCount = 0001;
-            public InHouseData(int PartID, string name, double price, int inStock, int min, int max, int machineID)
-            {
-                PartID = IHCount++;
-                Name = name;
-                Price = price;
-                InStock = inStock;
-                Min = min;
-                Max = max;
-                
-                
-            }
-        }
-        public class OutSourceData : Part
-        {
-            private static int OSCount = 1000;
-            public OutSourceData(int PartID, string name, double price, int inStock, int min, int max, string companyName)
-            {
-                PartID = OSCount++;
-                Name = name;
-                Price = price;
-                InStock = inStock;
-                Min = min;
-                Max = max;
-                
-            }
-
-        }
-
         //The following code handles products
-
         public static void AddProduct(Product product)
         {
             Products.Add(product);
@@ -83,7 +50,6 @@ namespace mschreiberc968_Project.Model
         //{
 
         //}
-
 
         //the following is to remove parts, i dont know if it is correct
         public static Part lookupPart(int partID)
@@ -123,16 +89,15 @@ namespace mschreiberc968_Project.Model
             AllParts.Add(part);
         }
 
-
     //mock data 
     public static void LoadMockData()
         {
             //create mock inhouse parts
-            Part mockPart1 = new InHouseData(1, "tuner peg", 3.99, 25, 1, 9, 11923);
-            Part mockPart2 = new InHouseData(2, "electronics", 150.87, 12, 1, 3, 11924);
+            Part mockPart1 = new InHouse(1, "tuner peg", 3.99, 25, 1, 9, 11923);
+            Part mockPart2 = new InHouse(2, "electronics", 150.87, 12, 1, 3, 11924);
             //create outsourced parts
-            Part mockPart3 = new OutSourceData(3, "tuner peg", 3.99, 25, 1, 9, "Ergotronics");
-            Part mockPart4 = new OutSourceData(4, "electronics", 150.87, 12, 1, 3, "Method Products");
+            Part mockPart3 = new OutSource(3, "tuner peg", 3.99, 25, 1, 9, "Ergotronics");
+            Part mockPart4 = new OutSource(4, "electronics", 150.87, 12, 1, 3, "Method Products");
 
             //Add mock parts to list
             AllParts.Add(mockPart1);
