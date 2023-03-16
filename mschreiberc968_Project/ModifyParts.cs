@@ -69,20 +69,21 @@ namespace mschreiberc968_Project
 
             this.Hide();
         }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonCheck(object sender, EventArgs e)
         {
-            lbl_ForRadioChange.Text = "Machine ID #:";
+            if (RadioInHouse.Checked)
+            {
+                lbl_ForRadioChange.Text = "Machine ID #:";
+            }
+            else 
+            {
+                lbl_ForRadioChange.Text = "Company Name:";
+            }
+           
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            lbl_ForRadioChange.Text = "Company Name:";
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
+       
+      
 
         private void btn_Save(object sender, EventArgs e)
         {
@@ -91,11 +92,23 @@ namespace mschreiberc968_Project
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
+            };
+
+            if (int.Parse(modifyPartMin.Text) >= int.Parse(modifyPartInventory.Text))
+            { 
+                MessageBox.Show("The minimum value must be less than the inventory value.");
+                return;
+            }
+
+            if (int.Parse(modifyPartMax.Text) <= int.Parse(modifyPartInventory.Text))
+            {
+                MessageBox.Show("The maximum value must be greater than the inventory value.");
+                return;
             }
 
             if (RadioInHouse.Checked)
             {
-                Part newPartIH = new InHouse()
+                Part UpdatePartIH = new InHouse()
                 {
                     PartID = Int32.Parse(modifyPartID.Text),
                     Name = modifyPartName.Text,
@@ -103,27 +116,32 @@ namespace mschreiberc968_Project
                     InStock = Int32.Parse(modifyPartInventory.Text),
                     Min = Int32.Parse(modifyPartMin.Text),
                     Max = Int32.Parse(modifyPartMax.Text),
-                    MachineID = Int32.Parse(modifyPartCompanyName.Text),
+                    MachineID = Int32.Parse(modifyPartCompanyName.Text)
                 };
-                Inventory.UpdatePart(PartID, part);
-
-            else (RadioOutsource.Checked)
-                {
-                    Part newPartOS = new OutSource()
-                    {
-                        PartID = Int32.Parse(modifyPartID.Text),
-                        Name = modifyPartName.Text,
-                        Price = Decimal.Parse(modifyPartPriceCost.Text),
-                        InStock = Int32.Parse(modifyPartInventory.Text),
-                        Min = Int32.Parse(modifyPartMin.Text),
-                        Max = Int32.Parse(modifyPartMax.Text),
-                        CompanyName = modifyPartCompanyName.Text
-                    };
-                    Inventory.AllParts.Add(newPartOS);
-                }
-                this.Hide();
-                mainScreenView();
+                Inventory.UpdatePart(UpdatePartIH.PartID, UpdatePartIH);
             }
+
+            else if (RadioOutsource.Checked)
+                { 
+                Part UpdatePartOS = new OutSource()
+                {
+                    PartID = Int32.Parse(modifyPartID.Text),
+                    Name = modifyPartName.Text,
+                    Price = Decimal.Parse(modifyPartPriceCost.Text),
+                    InStock = Int32.Parse(modifyPartInventory.Text),
+                    Min = Int32.Parse(modifyPartMin.Text),
+                    Max = Int32.Parse(modifyPartMax.Text),
+                    CompanyName = modifyPartCompanyName.Text
+                };
+                Inventory.UpdatePart(UpdatePartOS.PartID, UpdatePartOS);
+            }
+            this.Hide();
+            mainScreenView();
         }
     }
 }
+
+
+       
+    
+

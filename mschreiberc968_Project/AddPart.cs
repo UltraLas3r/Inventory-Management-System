@@ -13,11 +13,25 @@ namespace mschreiberc968_Project
 {
     public partial class AddPart : Form
     {
+        private int plusPartID;
         public AddPart()
         {
             InitializeComponent();
         }
 
+        public AddPart(Part part, int PartID)
+        {
+            InitializeComponent();
+
+            plusPartID = PartID;
+            addPartID.Text = part.PartID.ToString();
+            addPartName.Text = part.Name;
+            addPartInventory.Text = part.InStock.ToString();
+            addPartPriceCost.Text = part.Price.ToString();
+            addPartMin.Text = part.Min.ToString();
+            addPartMax.Text = part.Max.ToString();
+
+        }
         public object mainScreenView()
         {
             MainScreen mainScreen = new MainScreen();
@@ -63,17 +77,51 @@ namespace mschreiberc968_Project
             mainScreenView();
         }
 
-        private void btn_Save(object sender, EventArgs e, Part part, int PartID)
+        private void btn_Save(object sender, EventArgs e)
         {
 
         //check for min/max compliance
-            if (int.Parse(addPartMin.Text) > int.Parse(addPartMax.Text))
+            if (int.Parse(addPartMin.Text) >= int.Parse(addPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
+            };
+
+            if (int.Parse(addPartMin.Text) >= int.Parse(addPartInventory.Text))
+            {
+                MessageBox.Show("The minimum value must be less than the inventory value.");
+                return;
             }
 
-         //bind new information to the AllParts bindinglist from Inventory.cs
+            if (int.Parse(addPartMax.Text) <= int.Parse(addPartInventory.Text))
+            {
+                MessageBox.Show("The maximum value must be greater than the inventory value.");
+                return;
+            }
+
+            //create a new part by taking the text of the textboxes and saving them to a 
+            //new part object and passing that into the bindinglist
+            //if (rb_InHouse.Checked)
+            //{
+            //    Part newPartIH = new InHouse();
+            //    {
+            //        PartID = Int32.Parse(addPartID.Text),
+            //        Name = addPartName.Text,
+            //        InStock = Int32.Parse(addPartInventory.Text),
+            //        Min = Int32.Parse(addPartmin.text),
+            //        Max = Int32.Parse(addPartMax.Text),
+            //        MachineID = Int32.Parse(addPartCompanyName.Text)
+            //    }
+            //    Inventory.AddPart(newPartIH);
+            //};
+
+
+            //else(rb_outsourced.Checked)
+            //{
+            //    //create new outsource item
+            //};
+
+            //bind new information to the AllParts bindinglist from Inventory.cs
             this.Hide();
             mainScreenView();     
         }

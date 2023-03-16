@@ -10,7 +10,7 @@ namespace mschreiberc968_Project.Model
     class Product 
     {
         
-        public int ProductID { get; set; }
+        public int PartID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int InStock { get; set; }
