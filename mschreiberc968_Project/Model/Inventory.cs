@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,10 +80,27 @@ namespace mschreiberc968_Project.Model
             }
         }
 
-        public void UpdateProduct()
+        public static void UpdatePart(int partID, Part part)
+        {
+            for (int i = 0; i < AllParts.Count; i++)
             {
-
+                if (AllParts[i].PartID == partID)
+                {
+                    AllParts[i] = part;
+                }
             }
+        }
+
+        public static void UpdateProduct(int productID, Part part)
+        {
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].ProductID == productID)
+                {
+                    Products[i] = part;
+                }
+            }
+        }
 
         public static void AddPart(Part part)
         {
@@ -93,11 +111,11 @@ namespace mschreiberc968_Project.Model
     public static void LoadMockData()
         {
             //create mock inhouse parts
-            Part mockPart1 = new InHouse(1, "tuner peg", 3.99, 25, 1, 9, 11923);
-            Part mockPart2 = new InHouse(2, "electronics", 150.87, 12, 1, 3, 11924);
+            Part mockPart1 = new InHouse(1, "tuner peg", 3.99m, 25, 1, 9, 11923);
+            Part mockPart2 = new InHouse(2, "electronics", 150.87m, 12, 1, 3, 11924);
             //create outsourced parts
-            Part mockPart3 = new OutSource(3, "tuner peg", 3.99, 25, 1, 9, "Ergotronics");
-            Part mockPart4 = new OutSource(4, "electronics", 150.87, 12, 1, 3, "Method Products");
+            Part mockPart3 = new OutSource(3, "tuner peg", 3.99m, 25, 1, 9, "Ergotronics");
+            Part mockPart4 = new OutSource(4, "electronics", 150.87m, 12, 1, 3, "Method Products");
 
             //Add mock parts to list
             AllParts.Add(mockPart1);

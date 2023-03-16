@@ -12,7 +12,7 @@ namespace mschreiberc968_Project.Model
     {
         
 
-        public InHouse(int partID, string name, double price, int inStock, int min, int max, int machineID)
+        public InHouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID)
         {
             PartID = partID;
             Name = name;

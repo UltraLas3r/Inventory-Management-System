@@ -15,7 +15,6 @@ namespace mschreiberc968_Project
 {
     public partial class modifyPart : Form
     {
-      
         private int modPartID;
         public modifyPart()
         {
@@ -60,7 +59,6 @@ namespace mschreiberc968_Project
 
         private void btn_modifyPart(object sender, EventArgs e)
         {
-            
             this.Close();
         }
 
@@ -101,46 +99,31 @@ namespace mschreiberc968_Project
                 {
                     PartID = Int32.Parse(modifyPartID.Text),
                     Name = modifyPartName.Text,
-                    //Price = Decimal.ToUInt32(modifyPartPriceCost.Text),
+                    Price = Decimal.Parse(modifyPartPriceCost.Text),
                     InStock = Int32.Parse(modifyPartInventory.Text),
                     Min = Int32.Parse(modifyPartMin.Text),
                     Max = Int32.Parse(modifyPartMax.Text),
                     MachineID = Int32.Parse(modifyPartCompanyName.Text),
-            };
-                Inventory.AllParts.Add(newPartIH);
+                };
+                Inventory.UpdatePart(PartID, part);
 
+            else (RadioOutsource.Checked)
+                {
+                    Part newPartOS = new OutSource()
+                    {
+                        PartID = Int32.Parse(modifyPartID.Text),
+                        Name = modifyPartName.Text,
+                        Price = Decimal.Parse(modifyPartPriceCost.Text),
+                        InStock = Int32.Parse(modifyPartInventory.Text),
+                        Min = Int32.Parse(modifyPartMin.Text),
+                        Max = Int32.Parse(modifyPartMax.Text),
+                        CompanyName = modifyPartCompanyName.Text
+                    };
+                    Inventory.AllParts.Add(newPartOS);
+                }
+                this.Hide();
+                mainScreenView();
             }
-
-            //else if (RadioOutsource.Checked) {
-            //    Part newPartOS = new OutSource()
-            //    {
-            //        PartID = Int32.Parse(modifyPartID.Text),
-            //        Name = modifyPartName.Text,
-            //        Price = Int32.Parse(modifyPartPriceCost.Text),
-            //        InStock = Int32.Parse(modifyPartInventory.Text),
-            //        Min = Int32.Parse(modifyPartMin.Text),
-            //        Max = Int32.Parse(modifyPartMax.Text),
-            //        //CompanyName = modifyPartCompanyName.Text
-            //    };
-            //    Inventory.AllParts.Add(newPartOS);
-            
-            //}
-
-            ////add new data to the bindinglist
-            //Inventory.AllParts(CompanyName).Add(newCompanyName);
-
-
-
-            this.Hide();
-            mainScreenView();
         }
-
-        //public void PopulateTextBoxes()
-        //{ //this method handles  taking the data from the dgv and putting it in the appropriate textbox
-        //    modifyPartName.Text = Parts.ToString();
-        //}
-
-
-
     }
 }

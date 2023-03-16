@@ -1,4 +1,5 @@
 ﻿using System;
+using mschreiberc968_Project.Model;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace mschreiberc968_Project
             MainScreen mainScreen = new MainScreen();
             return (mainScreen.Visible = true);
         }
+
         public void CheckTextBoxForString(TextBox textBox)
         {
             //This can be called to check the textbox for string values and will change the color depending on what exists.
@@ -37,6 +39,7 @@ namespace mschreiberc968_Project
                 textBox.BackColor = Color.White;
             }
         }
+
         public void CheckTextBoxForInt(TextBox textBox)
         {
             //This can be called to check the textbox for INT values and will change the color depending on what exists.
@@ -52,63 +55,66 @@ namespace mschreiberc968_Project
                 textBox.BackColor = Color.White;
             }
         }
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-                        this.Hide();
+            this.Hide();
             mainScreenView();
         }
 
-        private void btn_Save(object sender, EventArgs e)
+        private void btn_Save(object sender, EventArgs e, Part part, int PartID)
         {
-            //check for min/max compliance
+
+        //check for min/max compliance
             if (int.Parse(addPartMin.Text) > int.Parse(addPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             }
 
-
-            //bind new information to the AllParts bindinglist from Inventory.cs
-
-
+         //bind new information to the AllParts bindinglist from Inventory.cs
             this.Hide();
-            mainScreenView();
+            mainScreenView();     
         }
+    
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            lbl_forRadioChoice.Text = "Company Name:";
-        }
 
-        private void rb_InHouse_CheckedChanged(object sender, EventArgs e)
-        {
-            lbl_forRadioChoice.Text = "Machine Id:";
-        }
+    private void radioButton2_CheckedChanged(object sender, EventArgs e)
+    {
+        lbl_forRadioChoice.Text = "Company Name:";
+    }
 
-        private void addPartID_TextChanged(object sender, EventArgs e)
-        {
-            CheckTextBoxForString(addPartID);
-        }
+    private void rb_InHouse_CheckedChanged(object sender, EventArgs e)
+    {
+        lbl_forRadioChoice.Text = "Machine Id:";
+    }
 
-        private void addPartName_TextChanged(object sender, EventArgs e)
+    private void addPartID_TextChanged(object sender, EventArgs e)
+    {
+        CheckTextBoxForString(addPartID);
+    }
+
+    private void addPartName_TextChanged(object sender, EventArgs e)
+    {
+        if (addPartName.Text.Length > 1)
         {
-            if (addPartName.Text.Length > 1)
-            {
             CheckTextBoxForString(addPartName);
-           
-            }
-            else { addPartName.BackColor = Color.LightCoral; }
+
         }
+        else { addPartName.BackColor = Color.LightCoral; }
+    }
 
 
-        private void addPartInventory_TextChanged(object sender, EventArgs e)
-        {
-            CheckTextBoxForInt(addPartInventory);
-        }
+    private void addPartInventory_TextChanged(object sender, EventArgs e)
+    {
+        CheckTextBoxForInt(addPartInventory);
     }
     }
+}
+   
+    
+
 
 
 
