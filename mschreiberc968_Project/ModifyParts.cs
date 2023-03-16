@@ -101,7 +101,7 @@ namespace mschreiberc968_Project
                 {
                     PartID = Int32.Parse(modifyPartID.Text),
                     Name = modifyPartName.Text,
-                    Price = Int32.Parse(modifyPartPriceCost.Text),
+                    //Price = Decimal.ToUInt32(modifyPartPriceCost.Text),
                     InStock = Int32.Parse(modifyPartInventory.Text),
                     Min = Int32.Parse(modifyPartMin.Text),
                     Max = Int32.Parse(modifyPartMax.Text),
