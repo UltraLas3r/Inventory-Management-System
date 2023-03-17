@@ -15,44 +15,10 @@ namespace mschreiberc968_Project.Model
 
         public static BindingList<Product> Products = new BindingList<Product>();
 
-        //The following code handles products
-        public static void AddProduct(Product product)
-        {
-            Products.Add(product);
-        }
+       
 
-        //public static Product LookupProduct (int productID)
-        //{
-        //    foreach (Product p in AllParts)
-        //    {
-        //        if (p.lookupAssociatedPart(productID) == productID)
-        //        {
-        //            return p;
-        //        }
-        //    }
 
-        //    return null;
-        //}
-
-        //public bool RemoveProduct(int partID)
-        //{
-        //    Part deletePart = lookupPart(partID);
-        //    if (deletePart == null)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
-
-        //public LookupProduct(int)
-        //{
-
-        //}
-
-        //the following is to remove parts, i dont know if it is correct
+  
         public static Part lookupPart(int partID)
         {
             foreach (Part p in AllParts)
@@ -91,31 +57,58 @@ namespace mschreiberc968_Project.Model
             }
         }
 
-        //public static void UpdateProduct(int partID, Part part)
-        //{
-        //    for (int i = 0; i < Products.Count; i++)
-        //    {
-        //        if (Products[i].PartID == partID)
-        //        {
-        //            Products[i] = 
-        //        }
-        //    }
-        //}
-
         public static void AddPart(Part part)
         {
             AllParts.Add(part);
+        }
+
+        //The following code handles products
+        public static void AddProduct(Product product)
+        {
+            Products.Add(product);
+        }
+        public static Product lookupProduct(int partID)
+        {
+            foreach (Product pr in Products)
+            {
+                if (pr.PartID == partID)
+                {
+                    return pr;
+                }
+            }
+            return null;
+        }
+
+        public static bool DeleteProduct(int productID)
+        {
+            Product productToDelete = lookupProduct(productID);
+
+            if (productToDelete == null)
+            {
+                return false;
+            }
+            else
+            {
+                Products.Remove(productToDelete);
+                return true;
+            }
+        }
+
+        public static void updateProduct (int productID, Product product)
+        {
+            DeleteProduct(productID);
+            AddProduct(product);
         }
 
     //mock data 
     public static void LoadMockData()
         {
             //create mock inhouse parts
-            Part mockPart1 = new InHouse(1, "tuner pegIH", 3.99m, 25, 1, 9, 11923);
-            Part mockPart2 = new InHouse(2, "electronicsIH", 150.87m, 12, 1, 3, 11924);
+            Part mockPart1 = new InHouse(1, "tuner pegIH", 3.99m, 6, 1, 9, 11923);
+            Part mockPart2 = new InHouse(2, "electronicsIH", 150.87m, 12, 1, 15, 11924);
             //create outsourced parts
             Part mockPart3 = new OutSource(3, "somethingOS", 8.99m, 25, 1, 9, "Ergotronics");
-            Part mockPart4 = new OutSource(4, "rubberOS", 222.87m, 12, 1, 3, "Method Products");
+            Part mockPart4 = new OutSource(4, "rubberOS", 222.87m, 5, 1, 7, "Method Products");
 
             //Add mock parts to list
             AllParts.Add(mockPart1);
@@ -127,14 +120,13 @@ namespace mschreiberc968_Project.Model
             //Product mockProduct1 = new Product(33, "Electric Guitar", 400.00, 5, 1, 3);
 
             //Add mock product to list
-           // Products.Add(mockProduct1);
-
             // Products.Add(mockProduct1);
 
-
+            // Products.Add(mockProduct1);
+        }
 
     }
-    }
+
  }
 
     

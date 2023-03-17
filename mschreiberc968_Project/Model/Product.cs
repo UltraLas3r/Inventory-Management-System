@@ -9,7 +9,6 @@ namespace mschreiberc968_Project.Model
 {
     class Product 
     {
-        
         public int PartID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -18,7 +17,6 @@ namespace mschreiberc968_Project.Model
         public int Max { get; set; }
 
         BindingList<Part> AssociatedParts = new BindingList<Part>();
-
 
         public void AddAssociatedParts(Part part)
         {

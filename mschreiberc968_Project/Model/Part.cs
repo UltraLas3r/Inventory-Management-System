@@ -20,10 +20,6 @@ namespace mschreiberc968_Project.Model
         public int MachineID { get; set; }
         public string CompanyName { get; set; }
 
-
-      
-    
-           //I might need to add back the machineID and compnay name variables to this class
     }
 
     

@@ -88,21 +88,47 @@ namespace mschreiberc968_Project
         private void btn_Save(object sender, EventArgs e)
         {
             //check for min/max compliance
+            int currentInventory = Int32.Parse(modifyPartInventory.Text);
             if (int.Parse(modifyPartMin.Text) >= int.Parse(modifyPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             };
 
-            if (int.Parse(modifyPartMin.Text) >= int.Parse(modifyPartInventory.Text))
+            if (int.Parse(modifyPartMin.Text) >= currentInventory)
             { 
-                MessageBox.Show("The minimum value must be less than the inventory value.");
+                MessageBox.Show("The Minimum value cannot be greater than the Inventory value");
                 return;
             }
 
-            if (int.Parse(modifyPartMax.Text) <= int.Parse(modifyPartInventory.Text))
+            if (int.Parse(modifyPartMax.Text) <= currentInventory)
             {
-                MessageBox.Show("The maximum value must be greater than the inventory value.");
+                MessageBox.Show("The Maximum value must be greater than the inventory value.");
+                return;
+            }
+            //check to make sure machine ID has a number in it
+            int _MachineID;
+            try
+            {
+                _MachineID = Int32.Parse(modifyPartCompanyName.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please only type numbers in MachineID field, " + modifyPartCompanyName.Text + " is not a number", "Field Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //check to see if the Company Name field has a string in it
+            string _companyName;
+            try
+            {
+                _companyName = modifyPartCompanyName.Text.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Please only type a valid name, " + modifyPartCompanyName.Text + " contains invalid characters", "Field Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -122,7 +148,7 @@ namespace mschreiberc968_Project
             }
 
             else if (RadioOutsource.Checked)
-                { 
+            {
                 Part UpdatePartOS = new OutSource()
                 {
                     PartID = Int32.Parse(modifyPartID.Text),

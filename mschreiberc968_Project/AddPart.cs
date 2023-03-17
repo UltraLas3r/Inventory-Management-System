@@ -81,23 +81,25 @@ namespace mschreiberc968_Project
         {
 
         //check for min/max compliance
+            int currentInventory = Int32.Parse(addPartInventory.Text);
             if (int.Parse(addPartMin.Text) >= int.Parse(addPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
             };
 
-            if (int.Parse(addPartMin.Text) >= int.Parse(addPartInventory.Text))
+            if (int.Parse(addPartMin.Text) >= currentInventory)
             {
-                MessageBox.Show("The minimum value must be less than the inventory value.");
+                MessageBox.Show("The Minimum value cannot be greater than the Inventory value");
                 return;
             }
 
-            if (int.Parse(addPartMax.Text) <= int.Parse(addPartInventory.Text))
+            if (int.Parse(addPartMax.Text) >= currentInventory)
             {
-                MessageBox.Show("The maximum value must be greater than the inventory value.");
+                MessageBox.Show("The Maximum value must be greater than the Inventory value");
                 return;
             }
+
 
             //create a new part by taking the text of the textboxes and saving them to a 
             //new part object and passing that into the bindinglist
