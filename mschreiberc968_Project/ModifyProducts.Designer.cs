@@ -129,7 +129,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductMin.Size = new System.Drawing.Size(44, 25);
             this.lbl_ModProductMin.TabIndex = 24;
             this.lbl_ModProductMin.Text = "Min";
-            this.lbl_ModProductMin.Click += new System.EventHandler(this.label7_Click);
+            
             // 
             // lbl_ModProductMax
             // 
@@ -140,7 +140,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductMax.Size = new System.Drawing.Size(50, 25);
             this.lbl_ModProductMax.TabIndex = 23;
             this.lbl_ModProductMax.Text = "Max";
-            this.lbl_ModProductMax.Click += new System.EventHandler(this.label6_Click);
+         
             // 
             // lbl_ModProductPrice
             // 
@@ -151,7 +151,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductPrice.Size = new System.Drawing.Size(113, 25);
             this.lbl_ModProductPrice.TabIndex = 22;
             this.lbl_ModProductPrice.Text = "Price / Cost";
-            this.lbl_ModProductPrice.Click += new System.EventHandler(this.label5_Click);
+           
             // 
             // lbl_ModProductInventory
             // 
@@ -162,7 +162,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductInventory.Size = new System.Drawing.Size(92, 25);
             this.lbl_ModProductInventory.TabIndex = 21;
             this.lbl_ModProductInventory.Text = "Inventory";
-            this.lbl_ModProductInventory.Click += new System.EventHandler(this.label4_Click);
+        
             // 
             // lbl_ModProductName
             // 
@@ -173,7 +173,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductName.Size = new System.Drawing.Size(64, 25);
             this.lbl_ModProductName.TabIndex = 20;
             this.lbl_ModProductName.Text = "Name";
-            this.lbl_ModProductName.Click += new System.EventHandler(this.label3_Click);
+      
             // 
             // lbl_ModProductID
             // 
@@ -184,7 +184,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductID.Size = new System.Drawing.Size(31, 25);
             this.lbl_ModProductID.TabIndex = 19;
             this.lbl_ModProductID.Text = "ID";
-            this.lbl_ModProductID.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // lbl_ModProductMain
             // 
@@ -195,7 +195,7 @@ namespace mschreiberc968_Project
             this.lbl_ModProductMain.Size = new System.Drawing.Size(142, 25);
             this.lbl_ModProductMain.TabIndex = 18;
             this.lbl_ModProductMain.Text = "Modify Product";
-            this.lbl_ModProductMain.Click += new System.EventHandler(this.label1_Click);
+    
             // 
             // label8
             // 
@@ -215,7 +215,7 @@ namespace mschreiberc968_Project
             this.dgv_AssociatedModParts.Size = new System.Drawing.Size(206, 16);
             this.dgv_AssociatedModParts.TabIndex = 32;
             this.dgv_AssociatedModParts.Text = "Parts Associated with this Product";
-            this.dgv_AssociatedModParts.Click += new System.EventHandler(this.label9_Click);
+          
             // 
             // dgv_AllModParts
             // 

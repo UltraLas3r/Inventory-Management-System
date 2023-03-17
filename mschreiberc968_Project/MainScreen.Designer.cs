@@ -246,7 +246,7 @@ namespace mschreiberc968_Project
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainScreen";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainScreen_Load);
+         
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Parts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Products)).EndInit();
             this.ResumeLayout(false);

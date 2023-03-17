@@ -21,7 +21,6 @@ namespace mschreiberc968_Project
             InitializeComponent();
             Display();
            
-
             //The below statements are rules for the Parts Data Grid View
             dgv_Parts.ReadOnly = true;
             dgv_Parts.MultiSelect = false;
@@ -58,8 +57,6 @@ namespace mschreiberc968_Project
         {
 
         }
-
-
 
         private void addParts_Click(object sender, EventArgs e)
         { //this opens the addParts window
@@ -146,23 +143,15 @@ namespace mschreiberc968_Project
 
         private void modifyProducts_Click(object sender, EventArgs e)
         {
-            //if (!dgv_Parts.CurrentRow.Selected)
-            //{
-            //    MessageBox.Show("Nothing selected. Please select an item to modify.");
-            //    return;
-            //}
-
-
-           
+            if (!dgv_Parts.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected. Please select an item to modify.");
+                return;
+            }
 
            // ModifyProducts modifyProduct = new ModifyProducts();
             modifyProducts.Visible = true;
             this.Hide();
-        }
-
-        private void MainScreen_Load(object sender, EventArgs e)
-        {
-
         }
 
        private void deleteParts_Click(object sender, EventArgs e)

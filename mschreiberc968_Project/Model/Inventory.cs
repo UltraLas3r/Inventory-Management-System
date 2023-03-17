@@ -63,11 +63,11 @@ namespace mschreiberc968_Project.Model
         {
             Products.Add(product);
         }
-        public static Product lookupProduct(int partID)
+        public static Product lookupProduct(int productID)
         {
             foreach (Product pr in Products)
             {
-                if (pr.PartID == partID)
+                if (pr.ProductID == productID)
                 {
                     return pr;
                 }
@@ -113,12 +113,14 @@ namespace mschreiberc968_Project.Model
             AllParts.Add(mockPart4);
 
             //mock products
-            Product mockProduct1 = new Product(33, "Electric Guitar", 400.00, 5, 1, 3);
+            Product mockProduct1 = new Product(33, "Electric Guitar", 400.00m, 5, 1, 9);
+            Product mockProduct2 = new Product(34, "Acoustic", 800.00m, 5, 1, 13);
+            Product mockProduct3 = new Product(35, "Bass", 2300.00m, 4, 1, 7);
 
             //Add mock product to list
-            // Products.Add(mockProduct1);
-
-            // Products.Add(mockProduct1);
+            Products.Add(mockProduct1);
+            Products.Add(mockProduct2);
+            Products.Add(mockProduct3);
         }
 
     }

@@ -22,6 +22,13 @@ namespace mschreiberc968_Project
         public AddPart(Part part, int PartID)
         {
             InitializeComponent();
+            CheckTextBoxForInt(addPartInventory);
+            CheckTextBoxForInt(addPartPriceCost);
+            CheckTextBoxForInt(addPartMin);
+            CheckTextBoxForInt(addPartMax);
+
+            CheckTextBoxForString(addPartName);
+            CheckTextBoxForString(addPartCompanyName);
 
             plusPartID = PartID;
             addPartID.Text = part.PartID.ToString();

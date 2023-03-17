@@ -8,10 +8,8 @@ namespace mschreiberc968_Project.Model
 {
     class OutSource : Part
     {
-        public OutSource()
-        {
-        }
-
+        public string CompanyName { get; set; }
+    
         public OutSource(int partID, string name, decimal price, int inStock, int min, int max, string companyName)
         {
             PartID = partID;
@@ -23,8 +21,11 @@ namespace mschreiberc968_Project.Model
             CompanyName = companyName;
         }
 
+        public OutSource()
+        {
+        }
     }
-    
+
 
 
 }

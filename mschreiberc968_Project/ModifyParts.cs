@@ -24,6 +24,13 @@ namespace mschreiberc968_Project
         public modifyPart(Part part, int PartID)
         {
             InitializeComponent();
+            ValidateTextBox(modifyPartInventory);
+            ValidateTextBox(modifyPartPriceCost);
+            ValidateTextBox(modifyPartMin);
+            ValidateTextBox(modifyPartMax);
+
+            ValidateTextBox(modifyPartName);
+            ValidateTextBox(modifyPartCompanyName);
 
             modPartID = PartID;
             modifyPartID.Text = part.PartID.ToString();
@@ -48,6 +55,21 @@ namespace mschreiberc968_Project
 
                 OutSource outSourced = part as OutSource;
                 modifyPartCompanyName.Text = outSourced.CompanyName;
+            }
+        }
+        public void ValidateTextBox(TextBox textBox)
+        {
+            //This can be called to check the textbox for string values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
             }
         }
 
@@ -103,7 +125,7 @@ namespace mschreiberc968_Project
 
             if (int.Parse(modifyPartMax.Text) <= currentInventory)
             {
-                MessageBox.Show("The Maximum value must be greater than the inventory value.");
+                MessageBox.Show("The Inventory value " + modifyPartInventory.Text + " must be less than the Max value" + modifyPartMax.Text);
                 return;
             }        
 
@@ -118,6 +140,8 @@ namespace mschreiberc968_Project
                 {
                     MessageBox.Show("Please only type numbers in MachineID field, " + modifyPartCompanyName.Text + " is not a number", "Field Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    modifyPartCompanyName.Focus();
+                    modifyPartCompanyName.Clear();
                     return;
                 }
 
@@ -136,18 +160,7 @@ namespace mschreiberc968_Project
 
             else if (RadioOutsource.Checked)
             {
-                string _companyName;
-                try
-                {
-                    _companyName = modifyPartCompanyName.Text;
-                }
-                catch
-                {
-                    MessageBox.Show("Please only type a valid name, " + modifyPartCompanyName.Text + " contains invalid characters", "Field Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+           
                 Part UpdatePartOS = new OutSource()
                 {
                     PartID = Int32.Parse(modifyPartID.Text),
