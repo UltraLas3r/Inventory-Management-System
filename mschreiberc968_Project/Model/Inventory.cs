@@ -15,10 +15,6 @@ namespace mschreiberc968_Project.Model
 
         public static BindingList<Product> Products = new BindingList<Product>();
 
-       
-
-
-  
         public static Part lookupPart(int partID)
         {
             foreach (Part p in AllParts)
@@ -107,8 +103,8 @@ namespace mschreiberc968_Project.Model
             Part mockPart1 = new InHouse(1, "tuner pegIH", 3.99m, 6, 1, 9, 11923);
             Part mockPart2 = new InHouse(2, "electronicsIH", 150.87m, 12, 1, 15, 11924);
             //create outsourced parts
-            Part mockPart3 = new OutSource(3, "somethingOS", 8.99m, 25, 1, 9, "Ergotronics");
-            Part mockPart4 = new OutSource(4, "rubberOS", 222.87m, 5, 1, 7, "Method Products");
+            Part mockPart3 = new OutSource(3, "somethingOS", 8.99m, 8, 1, 9, "Ergotronics");
+            Part mockPart4 = new OutSource(4, "rubberOS", 222.87m, 3, 1, 7, "Method Products");
 
             //Add mock parts to list
             AllParts.Add(mockPart1);
@@ -117,7 +113,7 @@ namespace mschreiberc968_Project.Model
             AllParts.Add(mockPart4);
 
             //mock products
-            //Product mockProduct1 = new Product(33, "Electric Guitar", 400.00, 5, 1, 3);
+            Product mockProduct1 = new Product(33, "Electric Guitar", 400.00, 5, 1, 3);
 
             //Add mock product to list
             // Products.Add(mockProduct1);
