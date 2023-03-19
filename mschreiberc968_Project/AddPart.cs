@@ -78,17 +78,19 @@ namespace mschreiberc968_Project
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void CancelButtonClick(object sender, EventArgs e)
         {
             this.Hide();
             mainScreenView();
         }
 
-        private void btn_Save(object sender, EventArgs e)
-        {
-
-        //check for min/max compliance
+        private void SaveButonClick(object sender, EventArgs e)
+        {   //check for min/max compliance
             int currentInventory = Int32.Parse(addPartInventory.Text);
+            //get textbox values to and add variables
+                       
+
+
             if (int.Parse(addPartMin.Text) >= int.Parse(addPartMax.Text))
             {
                 MessageBox.Show("Minimum must be less than maximum");
@@ -107,33 +109,38 @@ namespace mschreiberc968_Project
                 return;
             }
 
-
             //create a new part by taking the text of the textboxes and saving them to a 
             //new part object and passing that into the bindinglist
             //if (rb_InHouse.Checked)
-            //{
-            //    Part newPartIH = new InHouse();
-            //    {
-            //        PartID = Int32.Parse(addPartID.Text),
-            //        Name = addPartName.Text,
-            //        InStock = Int32.Parse(addPartInventory.Text),
-            //        Min = Int32.Parse(addPartmin.text),
-            //        Max = Int32.Parse(addPartMax.Text),
-            //        MachineID = Int32.Parse(addPartCompanyName.Text)
-            //    }
-            //    Inventory.AddPart(newPartIH);
-            //};
 
+            if (rb_InHouse.Checked)
+            {
+                Part newPartIH = new InHouse();
 
-            //else(rb_outsourced.Checked)
-            //{
-            //    //create new outsource item
-            //};
+                Inventory.AddPart(newPartIH);
+            }
 
-            //bind new information to the AllParts bindinglist from Inventory.cs
+            else if (rb_outsourced.Checked)
+            {
+
+            }
+            
+    
+            
             this.Hide();
             mainScreenView();     
         }
+
+        //private void GetTextData(Part part, int PartID)
+        //{
+        //                int NewPartID = PartID++;
+        //                string Name = addPartName.Text
+        //                int InStock = Int32.Parse(addPartInventory.Text)
+        //                int Min = Int32.Parse(addPartMin.Text)
+        //                int Max = Int32.Parse(addPartMax.Text)
+        //                int MachineID = Int32.Parse(addPartCompanyName.Text)
+     
+        //}
     
 
 

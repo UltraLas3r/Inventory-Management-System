@@ -20,7 +20,7 @@ namespace mschreiberc968_Project
         {
             InitializeComponent();
             Display();
-           
+
             //The below statements are rules for the Parts Data Grid View
             dgv_Parts.ReadOnly = true;
             dgv_Parts.MultiSelect = false;
@@ -43,7 +43,7 @@ namespace mschreiberc968_Project
             //PRODUCTS DGV
             dgv_Products.AutoGenerateColumns = true;
             dgv_Products.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_Products.DataSource = Inventory.Products;   
+            dgv_Products.DataSource = Inventory.Products;
         }
 
         public object mainScreenView()
@@ -52,7 +52,7 @@ namespace mschreiberc968_Project
             return (mainScreen.Visible = true);
         }
 
-     
+
         private void productsSearchBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -62,7 +62,7 @@ namespace mschreiberc968_Project
         { //this opens the addParts window
             AddPart addPart = new AddPart();
             addPart.Show();
-            this.Visible = false; 
+            this.Visible = false;
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -85,12 +85,12 @@ namespace mschreiberc968_Project
         }
 
         private void dgv_Parts_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             if (e.RowIndex >= 0)
             {
                 TempPartID = (int)dgv_Parts.Rows[e.RowIndex].Cells[0].Value;
             }
-    
+
         }
 
         private void dgv_Products_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -114,24 +114,15 @@ namespace mschreiberc968_Project
                 return;
             }
 
-            else 
+            else
             {
                 var tempSelectedPart = (Part)dgv_Parts.CurrentRow.DataBoundItem;
 
                 modifyPart modifyParts = new modifyPart(tempSelectedPart, TempPartID);
                 modifyParts.Show();
-                
+
                 this.Visible = false;
             }
-        }
-
-        private void dgv_Parts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {   //on click, take the row data and assign it to the currentIdx variable
-            
-            //show data being stored
-           
-            //CurrentObj = mylist[CurrentIndex];
-
         }
 
         private void addProducts_Click(object sender, EventArgs e)
@@ -149,17 +140,25 @@ namespace mschreiberc968_Project
                 return;
             }
 
-           // ModifyProducts modifyProduct = new ModifyProducts();
             modifyProducts.Visible = true;
             this.Hide();
         }
 
-       private void deleteParts_Click(object sender, EventArgs e)
+        private void DeleteParts_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgv_Parts.SelectedRows)
             {
                 dgv_Parts.Rows.RemoveAt(row.Index);
             }
+        }
+
+        private void DeleteProducts(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgv_Products.SelectedRows)
+            {
+                dgv_Products.Rows.RemoveAt(row.Index);
+            }
+
         }
     }
 }

@@ -19,19 +19,12 @@ namespace mschreiberc968_Project
         public modifyPart()
         {
             InitializeComponent();
+            
         }
-
+        
         public modifyPart(Part part, int PartID)
         {
             InitializeComponent();
-            ValidateTextBox(modifyPartInventory);
-            ValidateTextBox(modifyPartPriceCost);
-            ValidateTextBox(modifyPartMin);
-            ValidateTextBox(modifyPartMax);
-
-            ValidateTextBox(modifyPartName);
-            ValidateTextBox(modifyPartCompanyName);
-
             modPartID = PartID;
             modifyPartID.Text = part.PartID.ToString();
             modifyPartName.Text = part.Name;
@@ -56,22 +49,65 @@ namespace mschreiberc968_Project
                 OutSource outSourced = part as OutSource;
                 modifyPartCompanyName.Text = outSourced.CompanyName;
             }
-        }
-        public void ValidateTextBox(TextBox textBox)
-        {
-            //This can be called to check the textbox for string values and will change the color depending on what exists.
-            int number;
-            bool isNumber = int.TryParse(textBox.Text, out number);
 
-            if (isNumber)
+            //this isnt working for some reason
+            if (
+              modifyPartName.BackColor == Color.White &&
+              modifyPartInventory.BackColor == Color.White &&
+              modifyPartPriceCost.BackColor == Color.White &&
+              modifyPartMin.BackColor == Color.White &&
+              modifyPartMax.BackColor == Color.White &&
+              modifyPartCompanyName.BackColor == Color.White
+              )
             {
-                textBox.BackColor = Color.LightCoral;
+                btn_ModPartSave.Enabled = true;
             }
             else
             {
-                textBox.BackColor = Color.White;
+                btn_ModPartSave.Enabled = false;
             }
         }
+        
+
+        private void modifyPartName_TextChanged(object sender, EventArgs e)
+        {   if (string.IsNullOrEmpty(modifyPartName.Text) || int.TryParse(modifyPartName.Text, out int number))
+            {
+                modifyPartName.BackColor = Color.LightCoral;
+            }
+
+            else
+            {
+                modifyPartName.BackColor = Color.White;
+            }
+
+           
+        }
+
+        private void modifyPartCompanyName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(modifyPartCompanyName.Text) && int.TryParse(modifyPartCompanyName.Text, out int number))
+            {
+                modifyPartCompanyName.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                modifyPartCompanyName.BackColor = Color.White;
+            }
+
+            if (
+               modifyPartName.BackColor == Color.White &&
+               modifyPartInventory.BackColor == Color.White &&
+               modifyPartPriceCost.BackColor == Color.White &&
+               modifyPartMin.BackColor == Color.White &&
+               modifyPartMax.BackColor == Color.White &&
+               modifyPartCompanyName.BackColor == Color.White
+                )
+            {
+                btn_ModPartSave.Enabled = true;
+            }
+
+        }
+      
 
         public object mainScreenView()
         {
@@ -104,8 +140,6 @@ namespace mschreiberc968_Project
            
         }
 
-       
-      
 
         private void btn_Save(object sender, EventArgs e)
         {
@@ -176,6 +210,8 @@ namespace mschreiberc968_Project
             this.Hide();
             mainScreenView();
         }
+
+        
     }
 }
 
