@@ -125,7 +125,7 @@ namespace mschreiberc968_Project
 
             if (int.Parse(modifyPartMax.Text) <= currentInventory)
             {
-                MessageBox.Show("The Inventory value " + modifyPartInventory.Text + " must be less than the Max value" + modifyPartMax.Text);
+                MessageBox.Show("The Inventory value of " + modifyPartInventory.Text + ", must be less than the Max value of " + modifyPartMax.Text);
                 return;
             }        
 
