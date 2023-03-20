@@ -15,6 +15,65 @@ namespace mschreiberc968_Project.Model
 
         public static BindingList<Product> Products = new BindingList<Product>();
 
+        //PRODUCTS
+        public static void AddProduct(Product product)
+        {
+            Products.Add(product);
+        }
+
+        public static bool RemoveProduct(int productID)
+        {
+            Product productToDelete = LookupProduct(productID);
+
+            if (productToDelete == null)
+            {
+                return false;
+            }
+            else
+            {
+                Products.Remove(productToDelete);
+                return true;
+            }
+        }
+        public static Product LookupProduct(int productID)
+        {
+            foreach (Product pr in Products)
+            {
+                if (pr.ProductID == productID)
+                {
+                    return pr;
+                }
+            }
+            return null;
+        }
+
+        public static void UpdateProduct(int productID, Product product)
+        {
+            RemoveProduct(productID);
+            AddProduct(product);
+        }
+
+        //PARTS
+        public static void AddPart(Part part)
+        {
+            AllParts.Add(part);
+        }
+
+        public static bool DeletePart(int partID)
+        {
+            Part deletedPart = lookupPart(partID);
+
+            if (deletedPart == null)
+            {
+                return false;
+            }
+            else
+            {
+                AllParts.Remove(deletedPart);
+                return true;
+            }
+        }
+
         public static Part lookupPart(int partID)
         {
             foreach (Part p in AllParts)
@@ -27,21 +86,7 @@ namespace mschreiberc968_Project.Model
             return null;
         }
 
-        public static bool DeletePart(int partID)
-        {
-            Part deletedPart = lookupPart(partID);
-
-                if (deletedPart == null)
-            {
-                return false;
-            }
-                else
-            {
-                AllParts.Remove(deletedPart);
-                return true;
-            }
-        }
-
+        
         public static void UpdatePart(int partID, Part part)
         {
             for (int i = 0; i < AllParts.Count; i++)
@@ -51,49 +96,6 @@ namespace mschreiberc968_Project.Model
                     AllParts[i] = part;
                 }
             }
-        }
-
-        public static void AddPart(Part part)
-        {
-            AllParts.Add(part);
-        }
-
-        //The following code handles products
-        public static void AddProduct(Product product)
-        {
-            Products.Add(product);
-        }
-        public static Product lookupProduct(int productID)
-        {
-            foreach (Product pr in Products)
-            {
-                if (pr.ProductID == productID)
-                {
-                    return pr;
-                }
-            }
-            return null;
-        }
-
-        public static bool DeleteProduct(int productID)
-        {
-            Product productToDelete = lookupProduct(productID);
-
-            if (productToDelete == null)
-            {
-                return false;
-            }
-            else
-            {
-                Products.Remove(productToDelete);
-                return true;
-            }
-        }
-
-        public static void updateProduct (int productID, Product product)
-        {
-            DeleteProduct(productID);
-            AddProduct(product);
         }
 
     //mock data 
