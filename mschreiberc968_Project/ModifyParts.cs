@@ -117,7 +117,7 @@ namespace mschreiberc968_Project
 
         if (int.Parse(modifyPartMax.Text) <= currentInventory)
         {
-            MessageBox.Show("The Inventory value " + ModifyPartInventory.Text + " must be less than the Max value" + modifyPartMax.Text);
+            MessageBox.Show("The Inventory value " + ModifyPartInventory.Text + " must be less than the Max value of" + modifyPartMax.Text);
             return;
         }
 
@@ -147,6 +147,7 @@ namespace mschreiberc968_Project
                 Max = Int32.Parse(modifyPartMax.Text),
                 MachineID = Int32.Parse(modifyPartCompanyName.Text)
             };
+
             Inventory.UpdatePart(UpdatePartIH.PartID, UpdatePartIH);
         }
 
@@ -234,59 +235,62 @@ namespace mschreiberc968_Project
 
         private void modifyPartPriceCost_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartPriceCost.Text) || Double.TryParse(modifyPartPriceCost.Text, out double n))
+            if (string.IsNullOrEmpty(modifyPartPriceCost.Text) || !Double.TryParse(modifyPartPriceCost.Text, out double n))
             {
                 btn_ModPartSave.Enabled = false;
-                modifyPartPriceCost.BackColor = Color.White;
+                modifyPartPriceCost.BackColor = Color.LightCoral;
             }
             else
             {
                 btn_ModPartSave.Enabled = true;
-                modifyPartPriceCost.BackColor = Color.LightCoral;
+                modifyPartPriceCost.BackColor = Color.White;
             }
         }
 
         private void modifyPartMin_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartMin.Text) || int.TryParse(modifyPartMin.Text, out int n))
+            if (string.IsNullOrEmpty(modifyPartMin.Text) || !int.TryParse(modifyPartMin.Text, out int n))
             {
                 btn_ModPartSave.Enabled = false;
-                modifyPartMin.BackColor = Color.White;
+                modifyPartMin.BackColor = Color.LightCoral;
+               
 
             }
             else
             {
                 btn_ModPartSave.Enabled = true;
-                modifyPartMin.BackColor = Color.LightCoral;
+                modifyPartMin.BackColor = Color.White;
             }
         }
 
         private void modifyPartMax_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartMax.Text) || int.TryParse(modifyPartMax.Text, out int n))
+            if (string.IsNullOrEmpty(modifyPartMax.Text) || !int.TryParse(modifyPartMax.Text, out int n))
             {
                 btn_ModPartSave.Enabled = false;
-                modifyPartMax.BackColor = Color.White;
+                modifyPartMax.BackColor = Color.LightCoral;
+                
 
             }
             else
             {
                 btn_ModPartSave.Enabled = true;
-                modifyPartMax.BackColor = Color.LightCoral;
+                modifyPartMax.BackColor = Color.White;
             }
         }
 
         private void modifyPart_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartCompanyName.Text) || int.TryParse(ModifyPartInventory.Text, out int n))
+            if (string.IsNullOrEmpty(modifyPartCompanyName.Text) || !int.TryParse(ModifyPartInventory.Text, out int n))
             {
                 btn_ModPartSave.Enabled = false;
-                ModifyPartInventory.BackColor = Color.White;
+                ModifyPartInventory.BackColor = Color.LightCoral;
+                
             }
             else
             {
                 btn_ModPartSave.Enabled = true;
-                ModifyPartInventory.BackColor = Color.LightCoral;
+                ModifyPartInventory.BackColor = Color.White;
             }     
         }
     }
