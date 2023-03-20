@@ -99,46 +99,6 @@ namespace mschreiberc968_Project
            
         }
 
-        private void ModifyPartName_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(modifyPartName.Text) || int.TryParse(modifyPartName.Text, out int n))
-            {
-                modifyPartName.BackColor = Color.LightCoral;
-            }
-
-            else
-            {
-                modifyPartName.BackColor = Color.White;
-            }
-        }
-
-        private void ModifyPartInventory_TextChanged(object sender, EventArgs e)
-        {
-            
-            if (string.IsNullOrWhiteSpace(ModifyPartInventory.Text) || !(int.TryParse(ModifyPartInventory.Text, out int n)))
-            {
-                btn_ModPartSave.Enabled = false;
-                ModifyPartInventory.BackColor = Color.White;
-            }
-            else
-            {
-                ModifyPartInventory.BackColor = Color.LightCoral;
-            }
-        }
-
-        private void ModifyPartCompanyName_TextChanged(object sender, EventArgs e)
-        {  //need to make if statement check for radiobutton checks 
-            if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || int.TryParse(modifyPartCompanyName.Text, out int n))
-            {
-                modifyPartCompanyName.BackColor = Color.LightCoral;
-            }
-
-            else
-            {
-                modifyPartCompanyName.BackColor = Color.White;
-            }
-        }
-
         private void btn_Save(object sender, EventArgs e)
     {
         //check for min/max compliance
@@ -207,85 +167,127 @@ namespace mschreiberc968_Project
         }
         this.Hide();
         mainScreenView();
+
     }
+        private void ModifyPartName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(modifyPartName.Text) || int.TryParse(modifyPartName.Text, out int n))
+            {
+                btn_ModPartSave.Enabled = false;
+                modifyPartName.BackColor = Color.LightCoral;
+            }
+
+            else
+            {
+                btn_ModPartSave.Enabled = true;
+                modifyPartName.BackColor = Color.White;
+            }
+        }
+
+        private void ModifyPartInventory_TextChanged(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(ModifyPartInventory.Text) || !(int.TryParse(ModifyPartInventory.Text, out int n)))
+            {
+                btn_ModPartSave.Enabled = false;
+                ModifyPartInventory.BackColor = Color.LightCoral;
+
+            }
+            else
+            {
+                btn_ModPartSave.Enabled = true;
+                ModifyPartInventory.BackColor = Color.White;
+            }
+        }
+
+        private void ModifyPartCompanyName_TextChanged(object sender, EventArgs e)
+        {  //need to make if statement check for radiobutton checks 
+            //if (RadioInHouse.Enabled)
+            //{
+            //    if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+            //    {
+            //        btn_ModPartSave.Enabled = false;
+            //        modifyPartCompanyName.BackColor = Color.LightCoral;
+            //    }
+
+            //    else
+            //    {
+            //        btn_ModPartSave.Enabled = true;
+            //        modifyPartCompanyName.BackColor = Color.White;
+            //    }
+            //}
+            //else 
+            //{
+            //    if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) && int.TryParse(modifyPartCompanyName.Text, out int n))
+            //    {
+            //        btn_ModPartSave.Enabled = false;
+            //        modifyPartCompanyName.BackColor = Color.LightCoral;
+            //    }
+
+            //    else
+            //    {
+            //        btn_ModPartSave.Enabled = true;
+            //        modifyPartCompanyName.BackColor = Color.White;
+            //    }
+            //};
+        }
 
         private void modifyPartPriceCost_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartPriceCost.Text) && int.TryParse(modifyPartPriceCost.Text, out int number))
+            if (string.IsNullOrEmpty(modifyPartPriceCost.Text) || Double.TryParse(modifyPartPriceCost.Text, out double n))
             {
+                btn_ModPartSave.Enabled = false;
                 modifyPartPriceCost.BackColor = Color.White;
             }
             else
             {
+                btn_ModPartSave.Enabled = true;
                 modifyPartPriceCost.BackColor = Color.LightCoral;
             }
-
-      
         }
 
         private void modifyPartMin_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartMin.Text) && int.TryParse(modifyPartMin.Text, out int number))
+            if (string.IsNullOrEmpty(modifyPartMin.Text) || int.TryParse(modifyPartMin.Text, out int n))
             {
+                btn_ModPartSave.Enabled = false;
                 modifyPartMin.BackColor = Color.White;
 
             }
             else
             {
+                btn_ModPartSave.Enabled = true;
                 modifyPartMin.BackColor = Color.LightCoral;
             }
         }
 
         private void modifyPartMax_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartMax.Text) && int.TryParse(modifyPartMax.Text, out int number))
+            if (string.IsNullOrEmpty(modifyPartMax.Text) || int.TryParse(modifyPartMax.Text, out int n))
             {
+                btn_ModPartSave.Enabled = false;
                 modifyPartMax.BackColor = Color.White;
 
             }
             else
             {
+                btn_ModPartSave.Enabled = true;
                 modifyPartMax.BackColor = Color.LightCoral;
             }
-
         }
 
         private void modifyPart_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(modifyPartCompanyName.Text) && int.TryParse(ModifyPartInventory.Text, out int number))
+            if (string.IsNullOrEmpty(modifyPartCompanyName.Text) || int.TryParse(ModifyPartInventory.Text, out int n))
             {
+                btn_ModPartSave.Enabled = false;
                 ModifyPartInventory.BackColor = Color.White;
-
             }
             else
             {
-                ModifyPartInventory.BackColor = Color.LightCoral;
-            }
-
-            if (
-                modifyPartName.BackColor == Color.White &&
-                ModifyPartInventory.BackColor == Color.White &&
-                modifyPartPriceCost.BackColor == Color.White &&
-                modifyPartMin.BackColor == Color.White &&
-                modifyPartMax.BackColor == Color.White &&
-                modifyPartCompanyName.BackColor == Color.White
-                )
-            {
                 btn_ModPartSave.Enabled = true;
-            }
-
-          //  if (
-          //modifyPartName.BackColor == Color.White &&
-          //ModifyPartInventory.BackColor == Color.White &&
-          //modifyPartPriceCost.BackColor == Color.White &&
-          //modifyPartMin.BackColor == Color.White &&
-          //modifyPartMax.BackColor == Color.White &&
-          //modifyPartCompanyName.BackColor == Color.White
-          //)
-          //  {
-          //      btn_ModPartSave.Enabled = true;
-          //  }
-
+                ModifyPartInventory.BackColor = Color.LightCoral;
+            }     
         }
     }
 }
