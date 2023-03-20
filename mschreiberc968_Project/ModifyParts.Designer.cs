@@ -43,7 +43,7 @@ namespace mschreiberc968_Project
             this.lbl_ForRadioChange = new System.Windows.Forms.Label();
             this.modifyPartID = new System.Windows.Forms.TextBox();
             this.modifyPartName = new System.Windows.Forms.TextBox();
-            this.modifyPartInventory = new System.Windows.Forms.TextBox();
+            this.ModifyPartInventory = new System.Windows.Forms.TextBox();
             this.modifyPartPriceCost = new System.Windows.Forms.TextBox();
             this.modifyPartMin = new System.Windows.Forms.TextBox();
             this.modifyPartMax = new System.Windows.Forms.TextBox();
@@ -199,17 +199,18 @@ namespace mschreiberc968_Project
             this.modifyPartName.Name = "modifyPartName";
             this.modifyPartName.Size = new System.Drawing.Size(394, 35);
             this.modifyPartName.TabIndex = 13;
-            this.modifyPartName.TextChanged += new System.EventHandler(this.modifyPartName_TextChanged);
+            this.modifyPartName.TextChanged += new System.EventHandler(this.ModifyPartName_TextChanged);
             // 
-            // modifyPartInventory
+            // ModifyPartInventory
             // 
-            this.modifyPartInventory.BackColor = System.Drawing.Color.White;
-            this.modifyPartInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.modifyPartInventory.Location = new System.Drawing.Point(186, 228);
-            this.modifyPartInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.modifyPartInventory.Name = "modifyPartInventory";
-            this.modifyPartInventory.Size = new System.Drawing.Size(394, 35);
-            this.modifyPartInventory.TabIndex = 14;
+            this.ModifyPartInventory.BackColor = System.Drawing.Color.White;
+            this.ModifyPartInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ModifyPartInventory.Location = new System.Drawing.Point(186, 228);
+            this.ModifyPartInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ModifyPartInventory.Name = "ModifyPartInventory";
+            this.ModifyPartInventory.Size = new System.Drawing.Size(394, 35);
+            this.ModifyPartInventory.TabIndex = 14;
+            this.ModifyPartInventory.TextChanged += new System.EventHandler(this.ModifyPartInventory_TextChanged);
             // 
             // modifyPartPriceCost
             // 
@@ -220,6 +221,7 @@ namespace mschreiberc968_Project
             this.modifyPartPriceCost.Name = "modifyPartPriceCost";
             this.modifyPartPriceCost.Size = new System.Drawing.Size(394, 35);
             this.modifyPartPriceCost.TabIndex = 15;
+            this.modifyPartPriceCost.TextChanged += new System.EventHandler(this.modifyPartPriceCost_TextChanged);
             // 
             // modifyPartMin
             // 
@@ -230,6 +232,7 @@ namespace mschreiberc968_Project
             this.modifyPartMin.Name = "modifyPartMin";
             this.modifyPartMin.Size = new System.Drawing.Size(122, 35);
             this.modifyPartMin.TabIndex = 16;
+            this.modifyPartMin.TextChanged += new System.EventHandler(this.modifyPartMin_TextChanged);
             // 
             // modifyPartMax
             // 
@@ -240,6 +243,7 @@ namespace mschreiberc968_Project
             this.modifyPartMax.Name = "modifyPartMax";
             this.modifyPartMax.Size = new System.Drawing.Size(122, 35);
             this.modifyPartMax.TabIndex = 17;
+            this.modifyPartMax.TextChanged += new System.EventHandler(this.modifyPartMax_TextChanged);
             // 
             // modifyPartCompanyName
             // 
@@ -250,7 +254,7 @@ namespace mschreiberc968_Project
             this.modifyPartCompanyName.Name = "modifyPartCompanyName";
             this.modifyPartCompanyName.Size = new System.Drawing.Size(330, 35);
             this.modifyPartCompanyName.TabIndex = 18;
-            this.modifyPartCompanyName.TextChanged += new System.EventHandler(this.modifyPartCompanyName_TextChanged);
+            this.modifyPartCompanyName.TextChanged += new System.EventHandler(this.ModifyPartCompanyName_TextChanged);
             // 
             // modifyPart
             // 
@@ -261,7 +265,7 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.modifyPartMax);
             this.Controls.Add(this.modifyPartMin);
             this.Controls.Add(this.modifyPartPriceCost);
-            this.Controls.Add(this.modifyPartInventory);
+            this.Controls.Add(this.ModifyPartInventory);
             this.Controls.Add(this.modifyPartName);
             this.Controls.Add(this.modifyPartID);
             this.Controls.Add(this.lbl_ForRadioChange);
@@ -279,6 +283,7 @@ namespace mschreiberc968_Project
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "modifyPart";
             this.Text = "Modify Part";
+            this.Load += new System.EventHandler(this.modifyPart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +305,7 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.Label lbl_ForRadioChange;
         private System.Windows.Forms.TextBox modifyPartID;
         private System.Windows.Forms.TextBox modifyPartName;
-        private System.Windows.Forms.TextBox modifyPartInventory;
+        private System.Windows.Forms.TextBox ModifyPartInventory;
         private System.Windows.Forms.TextBox modifyPartPriceCost;
         private System.Windows.Forms.TextBox modifyPartMin;
         private System.Windows.Forms.TextBox modifyPartMax;
