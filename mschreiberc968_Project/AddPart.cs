@@ -13,32 +13,14 @@ namespace mschreiberc968_Project
 {
     public partial class AddPart : Form
     {
-        private int plusPartID;
+          
         public AddPart()
         {
             InitializeComponent();
+            addPartName.Focus();
         }
 
-        public AddPart(Part part, int PartID)
-        {
-            InitializeComponent();
-            CheckTextBoxForInt(addPartInventory);
-            CheckTextBoxForInt(addPartPriceCost);
-            CheckTextBoxForInt(addPartMin);
-            CheckTextBoxForInt(addPartMax);
-
-            CheckTextBoxForString(addPartName);
-            CheckTextBoxForString(addPartCompanyName);
-
-            plusPartID = PartID;
-            addPartID.Text = part.PartID.ToString();
-            addPartName.Text = part.Name;
-            addPartInventory.Text = part.InStock.ToString();
-            addPartPriceCost.Text = part.Price.ToString();
-            addPartMin.Text = part.Min.ToString();
-            addPartMax.Text = part.Max.ToString();
-
-        }
+       
         public object mainScreenView()
         {
             MainScreen mainScreen = new MainScreen();
@@ -78,80 +60,20 @@ namespace mschreiberc968_Project
         }
 
 
-        private void CancelButtonClick(object sender, EventArgs e)
-        {
-            this.Hide();
-            mainScreenView();
-        }
-
-        private void SaveButonClick(object sender, EventArgs e)
-        {   //check for min/max compliance
-            int currentInventory = Int32.Parse(addPartInventory.Text);
-            //get textbox values to and add variables
-                       
-
-
-            if (int.Parse(addPartMin.Text) >= int.Parse(addPartMax.Text))
-            {
-                MessageBox.Show("Minimum must be less than maximum");
-                return;
-            };
-
-            if (int.Parse(addPartMin.Text) >= currentInventory)
-            {
-                MessageBox.Show("The Minimum value cannot be greater than the Inventory value");
-                return;
-            }
-
-            if (int.Parse(addPartMax.Text) >= currentInventory)
-            {
-                MessageBox.Show("The Maximum value must be greater than the Inventory value");
-                return;
-            }
-
-            //create a new part by taking the text of the textboxes and saving them to a 
-            //new part object and passing that into the bindinglist
-            //if (rb_InHouse.Checked)
-
-            if (rb_InHouse.Checked)
-            {
-                Part newPartIH = new InHouse();
-
-                Inventory.AddPart(newPartIH);
-            }
-
-            else if (rb_outsourced.Checked)
-            {
-
-            }
-            
-    
-            
-            this.Hide();
-            mainScreenView();     
-        }
-
-        //private void GetTextData(Part part, int PartID)
-        //{
-        //                int NewPartID = PartID++;
-        //                string Name = addPartName.Text
-        //                int InStock = Int32.Parse(addPartInventory.Text)
-        //                int Min = Int32.Parse(addPartMin.Text)
-        //                int Max = Int32.Parse(addPartMax.Text)
-        //                int MachineID = Int32.Parse(addPartCompanyName.Text)
-     
-        //}
-    
-
+    private void CancelButtonClick(object sender, EventArgs e)
+    {
+        this.Hide();
+        mainScreenView();
+    }
 
     private void radioButton2_CheckedChanged(object sender, EventArgs e)
     {
-        lbl_forRadioChoice.Text = "Company Name:";
+        lbl_forRadioChoice.Text = "Company Name";
     }
 
     private void rb_InHouse_CheckedChanged(object sender, EventArgs e)
     {
-        lbl_forRadioChoice.Text = "Machine Id:";
+        lbl_forRadioChoice.Text = "Machine ID";
     }
 
     private void addPartID_TextChanged(object sender, EventArgs e)
@@ -174,6 +96,56 @@ namespace mschreiberc968_Project
     {
         CheckTextBoxForInt(addPartInventory);
     }
+
+    private void btn_save_Click(object sender, EventArgs e)
+    {
+            int currentInventory = Int32.Parse(addPartInventory.Text);
+
+            //check for min/max compliance
+            if (int.Parse(addPartMin.Text) >= int.Parse(addPartMax.Text))
+            {
+                MessageBox.Show("Minimum must be less than maximum");
+                return;
+            };
+
+            if (int.Parse(addPartMin.Text) >= currentInventory)
+            {
+                MessageBox.Show("The Minimum value cannot be greater than the Inventory value of " + currentInventory);
+                return;
+            }
+
+            if (int.Parse(addPartMax.Text) <= currentInventory)
+            {
+                MessageBox.Show("The Maximum value must be greater than the Inventory value of " + currentInventory);
+                return;
+            }
+
+            //create a new part by taking the text of the textboxes and saving them to a 
+            //new part object and passing that into the bindinglist
+
+            if (rb_InHouse.Checked)
+            {
+                //take the textbox values and assign them to a new part
+                Part newPartIH = new InHouse();
+
+                newPartIH.Name = addPartName.Text;
+                newPartIH.InStock = int.Parse(addPartInventory.Text);
+                newPartIH.Price = decimal.Parse(addPartPriceCost.Text);
+                newPartIH.Min = int.Parse(addPartMin.Text);
+                newPartIH.Max = int.Parse(addPartMax.Text);
+                Inventory.AddPart(newPartIH);
+            }
+
+            else if (rb_outsourced.Checked)
+            {
+                Part newPartOS = new OutSource();
+
+                Inventory.AddPart(newPartOS);
+            }
+
+            this.Hide();
+            mainScreenView();
+        }
     }
 }
    
