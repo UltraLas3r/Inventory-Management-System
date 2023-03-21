@@ -133,7 +133,7 @@ namespace mschreiberc968_Project
                 newPartIH.Price = decimal.Parse(addPartPriceCost.Text);
                 newPartIH.Min = int.Parse(addPartMin.Text);
                 newPartIH.Max = int.Parse(addPartMax.Text);
-                Inventory.AddPart(newPartIH);
+                Inventory.AllParts.Add(newPartIH);
             }
 
             else if (rb_outsourced.Checked)

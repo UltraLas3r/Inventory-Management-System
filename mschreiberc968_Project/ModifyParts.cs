@@ -220,6 +220,7 @@ namespace mschreiberc968_Project
 
         private void modifyPartMin_TextChanged(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(modifyPartMin.Text) || !int.TryParse(modifyPartMin.Text, out int n))
             {
                 btn_ModPartSave.Enabled = false;
@@ -230,6 +231,7 @@ namespace mschreiberc968_Project
                 btn_ModPartSave.Enabled = true;
                 modifyPartMin.BackColor = Color.White;
             }
+            
         }
 
         private void modifyPartMax_TextChanged(object sender, EventArgs e)
