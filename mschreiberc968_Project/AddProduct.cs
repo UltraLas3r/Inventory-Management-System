@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mschreiberc968_Project.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,14 @@ namespace mschreiberc968_Project
         public AddProduct()
         {
             InitializeComponent();
+            Display();
+        }
+
+        private void Display()
+        {
+            dgv_AllAddParts.AutoGenerateColumns = true;
+            dgv_AllAddParts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv_AllAddParts.DataSource = Inventory.AllParts;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -90,7 +90,6 @@ namespace mschreiberc968_Project
             {
                 TempPartID = (int)dgv_Parts.Rows[e.RowIndex].Cells[0].Value;
             }
-
         }
 
         private void dgv_Products_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -160,5 +159,7 @@ namespace mschreiberc968_Project
             }
 
         }
+
+       
     }
 }
