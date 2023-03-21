@@ -17,7 +17,7 @@ namespace mschreiberc968_Project
         public AddPart()
         {
             InitializeComponent();
-            addPartName.Focus();
+            
         }
 
        
