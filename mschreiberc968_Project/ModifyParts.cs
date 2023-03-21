@@ -87,6 +87,7 @@ namespace mschreiberc968_Project
 
             this.Hide();
         }
+
         private void RadioButtonCheck(object sender, EventArgs e)
         {
             if (RadioInHouse.Checked)
@@ -171,7 +172,6 @@ namespace mschreiberc968_Project
         }
         this.Hide();
         mainScreenView();
-
     }
         private void ModifyPartName_TextChanged(object sender, EventArgs e)
         {
@@ -204,42 +204,6 @@ namespace mschreiberc968_Project
             }
         }
 
-        private void ModifyPartCompanyName_TextChanged(object sender, EventArgs e)
-        {  //need to make if statement check for radiobutton checks 
-            if (RadioInHouse.Enabled)
-            {
-                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
-                {
-                    btn_ModPartSave.Enabled = false;
-                    modifyPartCompanyName.BackColor = Color.LightCoral;
-                }
-
-                else
-                {
-                    btn_ModPartSave.Enabled = true;
-                    modifyPartCompanyName.BackColor = Color.White;
-                }
-
-            }
-
-            if (RadioOutsource.Enabled)
-            {
-                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
-                {
-                    btn_ModPartSave.Enabled = false;
-                    modifyPartCompanyName.BackColor = Color.White;
-
-                }
-
-                else
-                {
-                    btn_ModPartSave.Enabled = true;
-                    modifyPartCompanyName.BackColor = Color.LightCoral;
-                }
-                
-                }
-        }
-
         private void modifyPartPriceCost_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(modifyPartPriceCost.Text) || !Double.TryParse(modifyPartPriceCost.Text, out double n))
@@ -260,8 +224,6 @@ namespace mschreiberc968_Project
             {
                 btn_ModPartSave.Enabled = false;
                 modifyPartMin.BackColor = Color.LightCoral;
-               
-
             }
             else
             {
@@ -276,8 +238,6 @@ namespace mschreiberc968_Project
             {
                 btn_ModPartSave.Enabled = false;
                 modifyPartMax.BackColor = Color.LightCoral;
-                
-
             }
             else
             {
@@ -286,7 +246,39 @@ namespace mschreiberc968_Project
             }
         }
 
-    
+        private void ModifyPartCompanyName_TextChanged(object sender, EventArgs e)
+        {
+            if (RadioInHouse.Enabled)
+            {
+                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+                {
+                    btn_ModPartSave.Enabled = false;
+                    modifyPartCompanyName.BackColor = Color.LightCoral;
+                }
+
+                else
+                {
+                    btn_ModPartSave.Enabled = true;
+                    modifyPartCompanyName.BackColor = Color.White;
+                }
+            }
+
+            if (RadioOutsource.Enabled)
+            {
+                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+                {
+                    btn_ModPartSave.Enabled = false;
+                    modifyPartCompanyName.BackColor = Color.White;
+
+                }
+
+                else
+                {
+                    btn_ModPartSave.Enabled = true;
+                    modifyPartCompanyName.BackColor = Color.LightCoral;
+                }
+            }
+        }
     }
 }
 
