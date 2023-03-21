@@ -19,7 +19,8 @@ namespace mschreiberc968_Project
         private int modPartID;
         public modifyPart()
         {
-            InitializeComponent();   
+            InitializeComponent();
+            modifyPartName.Focus();
         }
         
         public modifyPart(Part part, int PartID)
@@ -86,11 +87,13 @@ namespace mschreiberc968_Project
 
             this.Hide();
         }
-        private void radioButtonCheck(object sender, EventArgs e)
+        private void RadioButtonCheck(object sender, EventArgs e)
         {
             if (RadioInHouse.Checked)
             {
                 lbl_ForRadioChange.Text = "Machine ID #:";
+                //I NEED TO RUN THE TEXTBOX VALIDATION FOR MODIFYPARTCOMPANYNAME EVERYTIME
+                //I CHANGE THE RADIOBUTTON SELECTION
             }
             else 
             {
@@ -203,34 +206,38 @@ namespace mschreiberc968_Project
 
         private void ModifyPartCompanyName_TextChanged(object sender, EventArgs e)
         {  //need to make if statement check for radiobutton checks 
-            //if (RadioInHouse.Enabled)
-            //{
-            //    if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
-            //    {
-            //        btn_ModPartSave.Enabled = false;
-            //        modifyPartCompanyName.BackColor = Color.LightCoral;
-            //    }
+            if (RadioInHouse.Enabled)
+            {
+                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+                {
+                    btn_ModPartSave.Enabled = false;
+                    modifyPartCompanyName.BackColor = Color.LightCoral;
+                }
 
-            //    else
-            //    {
-            //        btn_ModPartSave.Enabled = true;
-            //        modifyPartCompanyName.BackColor = Color.White;
-            //    }
-            //}
-            //else 
-            //{
-            //    if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) && int.TryParse(modifyPartCompanyName.Text, out int n))
-            //    {
-            //        btn_ModPartSave.Enabled = false;
-            //        modifyPartCompanyName.BackColor = Color.LightCoral;
-            //    }
+                else
+                {
+                    btn_ModPartSave.Enabled = true;
+                    modifyPartCompanyName.BackColor = Color.White;
+                }
 
-            //    else
-            //    {
-            //        btn_ModPartSave.Enabled = true;
-            //        modifyPartCompanyName.BackColor = Color.White;
-            //    }
-            //};
+            }
+
+            if (RadioOutsource.Enabled)
+            {
+                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+                {
+                    btn_ModPartSave.Enabled = false;
+                    modifyPartCompanyName.BackColor = Color.White;
+
+                }
+
+                else
+                {
+                    btn_ModPartSave.Enabled = true;
+                    modifyPartCompanyName.BackColor = Color.LightCoral;
+                }
+                
+                }
         }
 
         private void modifyPartPriceCost_TextChanged(object sender, EventArgs e)
@@ -279,20 +286,7 @@ namespace mschreiberc968_Project
             }
         }
 
-        private void modifyPart_Load(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(modifyPartCompanyName.Text) || !int.TryParse(ModifyPartInventory.Text, out int n))
-            {
-                btn_ModPartSave.Enabled = false;
-                ModifyPartInventory.BackColor = Color.LightCoral;
-                
-            }
-            else
-            {
-                btn_ModPartSave.Enabled = true;
-                ModifyPartInventory.BackColor = Color.White;
-            }     
-        }
+    
     }
 }
 

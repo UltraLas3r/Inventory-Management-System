@@ -84,7 +84,7 @@ namespace mschreiberc968_Project
             this.RadioInHouse.TabStop = true;
             this.RadioInHouse.Text = "In-House";
             this.RadioInHouse.UseVisualStyleBackColor = true;
-            this.RadioInHouse.CheckedChanged += new System.EventHandler(this.radioButtonCheck);
+            this.RadioInHouse.CheckedChanged += new System.EventHandler(this.RadioButtonCheck);
             // 
             // RadioOutsource
             // 
@@ -98,7 +98,7 @@ namespace mschreiberc968_Project
             this.RadioOutsource.TabStop = true;
             this.RadioOutsource.Text = "Outsourced";
             this.RadioOutsource.UseVisualStyleBackColor = true;
-            this.RadioOutsource.CheckedChanged += new System.EventHandler(this.radioButtonCheck);
+            this.RadioOutsource.CheckedChanged += new System.EventHandler(this.RadioButtonCheck);
             // 
             // lbl_modifyPartHeader
             // 
@@ -283,7 +283,7 @@ namespace mschreiberc968_Project
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "modifyPart";
             this.Text = "Modify Part";
-            this.Load += new System.EventHandler(this.modifyPart_Load);
+            //this.Load += new System.EventHandler(this.modifyPart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
