@@ -147,6 +147,14 @@ namespace mschreiberc968_Project
             {
                 OutSource newPartOS = new OutSource();
 
+                newPartOS.PartID = num;
+                newPartOS.Name = addPartName.Text;
+                newPartOS.InStock = int.Parse(addPartInventory.Text);
+                newPartOS.Price = decimal.Parse(addPartPriceCost.Text);
+                newPartOS.Min = int.Parse(addPartMin.Text);
+                newPartOS.Max = int.Parse(addPartMax.Text);
+                newPartOS.CompanyName = addPartCompanyName.Text;
+
                 Inventory.AddPart(newPartOS);
             }
 
