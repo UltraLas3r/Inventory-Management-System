@@ -123,22 +123,29 @@ namespace mschreiberc968_Project
             //create a new part by taking the text of the textboxes and saving them to a 
             //new part object and passing that into the bindinglist
 
+            Random rnd = new Random();
+            int num = rnd.Next(1000);
+
+
             if (rb_InHouse.Checked)
             {
                 //take the textbox values and assign them to a new part
-                Part newPartIH = new InHouse();
+                InHouse newPartIH = new InHouse();
 
+                newPartIH.PartID = num;
                 newPartIH.Name = addPartName.Text;
                 newPartIH.InStock = int.Parse(addPartInventory.Text);
                 newPartIH.Price = decimal.Parse(addPartPriceCost.Text);
                 newPartIH.Min = int.Parse(addPartMin.Text);
                 newPartIH.Max = int.Parse(addPartMax.Text);
+                newPartIH.MachineID = int.Parse(addPartCompanyName.Text);
+
                 Inventory.AllParts.Add(newPartIH);
             }
 
             else if (rb_outsourced.Checked)
             {
-                Part newPartOS = new OutSource();
+                OutSource newPartOS = new OutSource();
 
                 Inventory.AddPart(newPartOS);
             }

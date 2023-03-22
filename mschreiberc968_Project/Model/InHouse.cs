@@ -13,6 +13,8 @@ namespace mschreiberc968_Project.Model
 
         public int MachineID { get; set; }
 
+        
+
         public InHouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID)
         {
             PartID = partID;
