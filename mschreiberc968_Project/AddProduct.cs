@@ -42,10 +42,78 @@ namespace mschreiberc968_Project
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
         {
-            //save all changes and apply them to the appropriate DGV spaces
+            //validate integer amount compliance
+            int currentInventory = int.Parse(txt_AddProductInventory.Text);
+            int minStock = int.Parse(txt_AddProductMin.Text);
+            int maxStock = int.Parse(txt_AddProductMax.Text);
+
+            if (int.Parse(txt_AddProductMin.Text) >= int.Parse(txt_AddProductMax.Text))
+            {
+                MessageBox.Show("Minimum must be less than maximum");
+                return;
+            }
+
+            if (minStock >= currentInventory)
+            {
+                MessageBox.Show("The Minimum value cannot be greater than the Inventory value of " + currentInventory);
+                return;
+            }
+
+            if (maxStock <= currentInventory)
+            {
+                MessageBox.Show("The Maximum value must be greater than the Inventory value of " + currentInventory);
+                return;
+            }
+
+            Random rnd = new Random();
+            int num = rnd.Next(1000);
+            Product newProd = new Product();
+
+            //Create the new product
+            if (minStock <= maxStock && currentInventory >= minStock)
+            {   
+                newProd.ProductID = num;
+                newProd.Name = txt_AddProductName.Text;
+                newProd.Price = decimal.Parse(txt_AddProductPriceCost.Text);
+                newProd.InStock = int.Parse(txt_AddProductInventory.Text);
+                newProd.Min = int.Parse(txt_AddProductMin.Text);
+                newProd.Max = int.Parse(txt_AddProductMax.Text);
+                Inventory.Products.Add(newProd);
+
+            }
+
+            // Adds currently selectd parts to product associated parts
+            foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    newProd.AddAssociatedPart(Inventory.lookupPart(
+                                        Int32.Parse(row.Cells[0].Value.ToString())
+                                        ));
+                }
+            }
 
             this.Hide();
             mainS.Visible = true;
+        }
+
+        private void btn_AddParts_Click(object sender, EventArgs e)
+        {
+           
+  
+            //get the selected row
+            DataGridViewRow selectedRow = dgv_AllAddParts.SelectedRows[0];
+
+            //clone the row
+            DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
+            //create a new row in associated parts dgv
+            for (int i = 0; i < selectedRow.Cells.Count; i++)
+            {
+                newRow.Cells[i].Value = selectedRow.Cells[i].Value;
+            }
+
+            //copy the values from allparts DGV to associated parts dgv
+            dgv_AssociatedAddParts.Rows.Add(newRow);
         }
     }
 }

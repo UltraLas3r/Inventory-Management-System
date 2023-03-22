@@ -54,8 +54,8 @@ namespace mschreiberc968_Project
             // 
             // modifyParts
             // 
-            this.modifyParts.Location = new System.Drawing.Point(454, 412);
-            this.modifyParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modifyParts.Location = new System.Drawing.Point(345, 412);
+            this.modifyParts.Margin = new System.Windows.Forms.Padding(4);
             this.modifyParts.Name = "modifyParts";
             this.modifyParts.Size = new System.Drawing.Size(106, 45);
             this.modifyParts.TabIndex = 1;
@@ -65,8 +65,8 @@ namespace mschreiberc968_Project
             // 
             // addParts
             // 
-            this.addParts.Location = new System.Drawing.Point(325, 412);
-            this.addParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addParts.Location = new System.Drawing.Point(208, 412);
+            this.addParts.Margin = new System.Windows.Forms.Padding(4);
             this.addParts.Name = "addParts";
             this.addParts.Size = new System.Drawing.Size(111, 45);
             this.addParts.TabIndex = 3;
@@ -76,8 +76,8 @@ namespace mschreiberc968_Project
             // 
             // deleteParts
             // 
-            this.deleteParts.Location = new System.Drawing.Point(586, 412);
-            this.deleteParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteParts.Location = new System.Drawing.Point(490, 412);
+            this.deleteParts.Margin = new System.Windows.Forms.Padding(4);
             this.deleteParts.Name = "deleteParts";
             this.deleteParts.Size = new System.Drawing.Size(106, 45);
             this.deleteParts.TabIndex = 2;
@@ -87,8 +87,8 @@ namespace mschreiberc968_Project
             // 
             // addProducts
             // 
-            this.addProducts.Location = new System.Drawing.Point(999, 412);
-            this.addProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addProducts.Location = new System.Drawing.Point(884, 412);
+            this.addProducts.Margin = new System.Windows.Forms.Padding(4);
             this.addProducts.Name = "addProducts";
             this.addProducts.Size = new System.Drawing.Size(106, 45);
             this.addProducts.TabIndex = 4;
@@ -98,8 +98,8 @@ namespace mschreiberc968_Project
             // 
             // modifyProducts
             // 
-            this.modifyProducts.Location = new System.Drawing.Point(1148, 412);
-            this.modifyProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modifyProducts.Location = new System.Drawing.Point(1015, 412);
+            this.modifyProducts.Margin = new System.Windows.Forms.Padding(4);
             this.modifyProducts.Name = "modifyProducts";
             this.modifyProducts.Size = new System.Drawing.Size(106, 45);
             this.modifyProducts.TabIndex = 5;
@@ -109,8 +109,8 @@ namespace mschreiberc968_Project
             // 
             // exitApplication
             // 
-            this.exitApplication.Location = new System.Drawing.Point(1315, 489);
-            this.exitApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exitApplication.Location = new System.Drawing.Point(1161, 487);
+            this.exitApplication.Margin = new System.Windows.Forms.Padding(4);
             this.exitApplication.Name = "exitApplication";
             this.exitApplication.Size = new System.Drawing.Size(106, 45);
             this.exitApplication.TabIndex = 7;
@@ -120,8 +120,8 @@ namespace mschreiberc968_Project
             // 
             // deleteProducts
             // 
-            this.deleteProducts.Location = new System.Drawing.Point(1308, 412);
-            this.deleteProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteProducts.Location = new System.Drawing.Point(1161, 412);
+            this.deleteProducts.Margin = new System.Windows.Forms.Padding(4);
             this.deleteProducts.Name = "deleteProducts";
             this.deleteProducts.Size = new System.Drawing.Size(106, 45);
             this.deleteProducts.TabIndex = 6;
@@ -137,7 +137,7 @@ namespace mschreiberc968_Project
             this.dgv_Parts.Name = "dgv_Parts";
             this.dgv_Parts.RowHeadersWidth = 62;
             this.dgv_Parts.RowTemplate.Height = 28;
-            this.dgv_Parts.Size = new System.Drawing.Size(674, 254);
+            this.dgv_Parts.Size = new System.Drawing.Size(564, 254);
             this.dgv_Parts.TabIndex = 8;
             this.dgv_Parts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Parts_CellClick);
             this.dgv_Parts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
@@ -145,12 +145,12 @@ namespace mschreiberc968_Project
             // dgv_Products
             // 
             this.dgv_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Products.Location = new System.Drawing.Point(740, 137);
+            this.dgv_Products.Location = new System.Drawing.Point(661, 137);
             this.dgv_Products.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Products.Name = "dgv_Products";
             this.dgv_Products.RowHeadersWidth = 62;
             this.dgv_Products.RowTemplate.Height = 28;
-            this.dgv_Products.Size = new System.Drawing.Size(674, 254);
+            this.dgv_Products.Size = new System.Drawing.Size(606, 254);
             this.dgv_Products.TabIndex = 9;
             this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Products_CellContentClick);
             this.dgv_Products.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myProductsBindingComplete);
@@ -167,7 +167,7 @@ namespace mschreiberc968_Project
             // 
             // partsSearchButton
             // 
-            this.partsSearchButton.Location = new System.Drawing.Point(1015, 88);
+            this.partsSearchButton.Location = new System.Drawing.Point(868, 88);
             this.partsSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.partsSearchButton.Name = "partsSearchButton";
             this.partsSearchButton.Size = new System.Drawing.Size(105, 31);
@@ -177,7 +177,7 @@ namespace mschreiberc968_Project
             // 
             // productsSearchButton
             // 
-            this.productsSearchButton.Location = new System.Drawing.Point(269, 88);
+            this.productsSearchButton.Location = new System.Drawing.Point(195, 93);
             this.productsSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsSearchButton.Name = "productsSearchButton";
             this.productsSearchButton.Size = new System.Drawing.Size(107, 31);
@@ -187,7 +187,7 @@ namespace mschreiberc968_Project
             // 
             // partsSearchBox
             // 
-            this.partsSearchBox.Location = new System.Drawing.Point(404, 94);
+            this.partsSearchBox.Location = new System.Drawing.Point(308, 97);
             this.partsSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.partsSearchBox.Name = "partsSearchBox";
             this.partsSearchBox.Size = new System.Drawing.Size(288, 22);
@@ -195,7 +195,7 @@ namespace mschreiberc968_Project
             // 
             // productsSearchBox
             // 
-            this.productsSearchBox.Location = new System.Drawing.Point(1125, 94);
+            this.productsSearchBox.Location = new System.Drawing.Point(979, 94);
             this.productsSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsSearchBox.Name = "productsSearchBox";
             this.productsSearchBox.Size = new System.Drawing.Size(288, 22);
@@ -206,7 +206,7 @@ namespace mschreiberc968_Project
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(27, 94);
+            this.label2.Location = new System.Drawing.Point(27, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 25);
             this.label2.TabIndex = 15;
@@ -216,7 +216,7 @@ namespace mschreiberc968_Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(746, 94);
+            this.label3.Location = new System.Drawing.Point(656, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 16;
@@ -226,7 +226,7 @@ namespace mschreiberc968_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 545);
+            this.ClientSize = new System.Drawing.Size(1287, 554);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.productsSearchBox);

@@ -86,7 +86,6 @@ namespace mschreiberc968_Project
         if (addPartName.Text.Length > 1)
         {
             CheckTextBoxForString(addPartName);
-
         }
         else { addPartName.BackColor = Color.LightCoral; }
     }

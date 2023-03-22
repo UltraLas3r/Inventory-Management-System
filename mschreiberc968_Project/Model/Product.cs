@@ -27,6 +27,10 @@ namespace mschreiberc968_Project.Model
             Max = max;
         }
 
+        public Product()
+        {
+        }
+
         BindingList<Part> AssociatedParts = new BindingList<Part>();
 
         public void AddAssociatedPart(Part part)
@@ -46,6 +50,11 @@ namespace mschreiberc968_Project.Model
                 AssociatedParts.Remove(partToRemove);
                 return true;
             }
+        }
+
+        public void AddAssociatedProduct(Part part)
+        {
+            AssociatedParts.Add(part);
         }
 
 
