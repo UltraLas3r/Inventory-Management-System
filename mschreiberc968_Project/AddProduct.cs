@@ -118,5 +118,118 @@ namespace mschreiberc968_Project
                 dgv_AssociatedAddParts.Rows.RemoveAt(row.Index);
             }
         }
+
+        private void txt_AddProductName_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_AddProductName.Text.Length > 0)
+            {
+                CheckTextBoxForString(txt_AddProductName);
+            }
+
+            else {txt_AddProductName.BackColor = Color.LightCoral; }
+
+            if (txt_AddProductName.BackColor == Color.LightCoral)
+            {
+                btn_AddProductSave.Enabled = false;
+            }
+            else { btn_AddProductSave.Enabled = true; }
+        }
+
+        private void txt_AddProductInventory_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_AddProductInventory.Text.Length > 0)
+            CheckTextBoxForInt(txt_AddProductInventory);
+
+            else
+            {
+                txt_AddProductInventory.BackColor = Color.LightCoral;
+            }
+
+            if (txt_AddProductInventory.BackColor == Color.LightCoral)
+            {
+                btn_AddProductSave.Enabled = false;
+            }
+            else btn_AddProductSave.Enabled = true;
+        }
+
+        private void txt_AddProductPriceCost_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_AddProductPriceCost.Text) || !Double.TryParse(txt_AddProductPriceCost.Text, out double n))
+            {
+                btn_AddProductSave.Enabled = false;
+                txt_AddProductPriceCost.BackColor = Color.LightCoral;
+            }
+           
+            else
+            {
+                btn_AddProductSave.Enabled = true;
+                txt_AddProductPriceCost.BackColor = Color.White;
+
+            }
+          
+        }
+
+        private void txt_AddProductMin_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_AddProductMin.Text.Length > 0)
+            {
+                CheckTextBoxForInt(txt_AddProductMin);
+            }
+            else { txt_AddProductMin.BackColor = Color.LightCoral; }
+
+            if (txt_AddProductMax.BackColor == Color.LightCoral)
+            {
+                btn_AddProductSave.Enabled = false;
+            }
+            else { btn_AddProductSave.Enabled = true; }
+        }
+
+        private void txt_AddProductMax_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_AddProductMax.Text.Length > 0)
+            {
+                CheckTextBoxForInt(txt_AddProductMax);
+            }
+            else { txt_AddProductMax.BackColor = Color.LightCoral; }
+
+            if (txt_AddProductMax.BackColor == Color.LightCoral)
+            {
+                btn_AddProductSave.Enabled = false;
+            }
+            else { btn_AddProductSave.Enabled = true; }
+        }
+
+
+        public void CheckTextBoxForString(TextBox textBox)
+        {
+            //This can be called to check the textbox for string values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+            }
+        }
+
+        public void CheckTextBoxForInt(TextBox textBox)
+        {
+            //This can be called to check the textbox for INT values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (!isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+            }
+        }
     }
 }

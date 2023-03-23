@@ -51,30 +51,82 @@ namespace mschreiberc968_Project
             MainScreen mainScreen = new MainScreen();
             return (mainScreen.Visible = true);
         }
-        private void modifyProductsID_TextChanged(object sender, EventArgs e)
+        
+        private void modifyProductName_TextChanged(object sender, EventArgs e)
         {
+            if (txt_ModifyProductName.Text.Length > 0)
+            {
+                CheckTextBoxForString(txt_ModifyProductName);
+            }
+
+            else { txt_ModifyProductName.BackColor = Color.LightCoral; }
+
+            if (txt_ModifyProductName.BackColor == Color.LightCoral)
+            {
+                btn_ModProductSave.Enabled = false;
+            }
+
+            else { btn_ModProductSave.Enabled = true; }
 
         }
-        private void modifyPartName_TextChanged(object sender, EventArgs e)
+        private void modifyProductInventory_TextChanged(object sender, EventArgs e)
         {
+            if (txt_ModifyProductInventory.Text.Length > 0)
+            {
+                CheckTextBoxForInt(txt_ModifyProductInventory);
+            }
 
+            else { txt_ModifyProductInventory.BackColor = Color.LightCoral; }
 
+            if (txt_ModifyProductInventory.BackColor == Color.LightCoral)
+            {
+                btn_ModProductSave.Enabled = false;
+            }
+
+            else btn_ModProductSave.Enabled = true;
         }
-        private void modifyPartInventory_TextChanged(object sender, EventArgs e)
+        private void modifyProductPriceCost_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_ModifyProductPriceCost.Text) || !Double.TryParse(txt_ModifyProductPriceCost.Text, out double n))
+            {
+                btn_ModProductSave.Enabled = false;
+            }
 
+            else 
+            { 
+                btn_ModProductSave.Enabled = true; 
+            }
         }
-        private void modifyPartPriceCost_TextChanged(object sender, EventArgs e)
+        private void modifyProductMin_TextChanged(object sender, EventArgs e)
         {
+            if (txt_ModifyProductMin.Text.Length > 0)
+            {
+                CheckTextBoxForString(txt_ModifyProductInventory);
+            }
 
+            else { txt_ModifyProductMin.BackColor = Color.LightCoral; }
+
+            if (txt_ModifyProductMin.BackColor == Color.LightCoral)
+            {
+                btn_ModProductSave.Enabled = false;
+            }
+            else btn_ModProductSave.Enabled = true;
         }
-        private void modifyPartMin_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void modifyPartMax_TextChanged(object sender, EventArgs e)
+        private void modifyProductMax_TextChanged(object sender, EventArgs e)
         {
+            if (txt_ModifyProductMax.Text.Length > 0)
+            {
+                CheckTextBoxForString(txt_ModifyProductInventory);
+            }
+
+            else { txt_ModifyProductMax.BackColor = Color.LightCoral; }
+
+            if (txt_ModifyProductMax.BackColor == Color.LightCoral)
+            {
+                btn_ModProductSave.Enabled = false;
+            }
+            else btn_ModProductSave.Enabled = true;
 
         }
 
@@ -86,6 +138,7 @@ namespace mschreiberc968_Project
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
         }
 
         private void DeleteAssociatedPart(object sender, EventArgs e)
@@ -96,12 +149,42 @@ namespace mschreiberc968_Project
             }
         }
 
-       
-
-        private void button3_Click(object sender, EventArgs e)
-        {
+        private void ModifyProductSaveButton(object sender, EventArgs e)
+        { 
             this.Hide();
             mainScreenView();
+        }
+
+        public void CheckTextBoxForString(TextBox textBox)
+        {
+            //This can be called to check the textbox for string values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+            }
+        }
+
+        public void CheckTextBoxForInt(TextBox textBox)
+        {
+            //This can be called to check the textbox for INT values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (!isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+            }
         }
     }
 }

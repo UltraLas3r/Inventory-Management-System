@@ -65,7 +65,7 @@ namespace mschreiberc968_Project
             this.txt_ModifyProductMax.Name = "txt_ModifyProductMax";
             this.txt_ModifyProductMax.Size = new System.Drawing.Size(109, 30);
             this.txt_ModifyProductMax.TabIndex = 30;
-            this.txt_ModifyProductMax.TextChanged += new System.EventHandler(this.modifyPartMax_TextChanged);
+            this.txt_ModifyProductMax.TextChanged += new System.EventHandler(this.modifyProductMax_TextChanged);
             // 
             // txt_ModifyProductMin
             // 
@@ -76,7 +76,7 @@ namespace mschreiberc968_Project
             this.txt_ModifyProductMin.Name = "txt_ModifyProductMin";
             this.txt_ModifyProductMin.Size = new System.Drawing.Size(109, 30);
             this.txt_ModifyProductMin.TabIndex = 29;
-            this.txt_ModifyProductMin.TextChanged += new System.EventHandler(this.modifyPartMin_TextChanged);
+            this.txt_ModifyProductMin.TextChanged += new System.EventHandler(this.modifyProductMin_TextChanged);
             // 
             // txt_ModifyProductPriceCost
             // 
@@ -87,7 +87,7 @@ namespace mschreiberc968_Project
             this.txt_ModifyProductPriceCost.Name = "txt_ModifyProductPriceCost";
             this.txt_ModifyProductPriceCost.Size = new System.Drawing.Size(351, 30);
             this.txt_ModifyProductPriceCost.TabIndex = 28;
-            this.txt_ModifyProductPriceCost.TextChanged += new System.EventHandler(this.modifyPartPriceCost_TextChanged);
+            this.txt_ModifyProductPriceCost.TextChanged += new System.EventHandler(this.modifyProductPriceCost_TextChanged);
             // 
             // txt_ModifyProductInventory
             // 
@@ -98,7 +98,7 @@ namespace mschreiberc968_Project
             this.txt_ModifyProductInventory.Name = "txt_ModifyProductInventory";
             this.txt_ModifyProductInventory.Size = new System.Drawing.Size(351, 30);
             this.txt_ModifyProductInventory.TabIndex = 27;
-            this.txt_ModifyProductInventory.TextChanged += new System.EventHandler(this.modifyPartInventory_TextChanged);
+            this.txt_ModifyProductInventory.TextChanged += new System.EventHandler(this.modifyProductInventory_TextChanged);
             // 
             // txt_ModifyProductName
             // 
@@ -109,7 +109,7 @@ namespace mschreiberc968_Project
             this.txt_ModifyProductName.Name = "txt_ModifyProductName";
             this.txt_ModifyProductName.Size = new System.Drawing.Size(351, 30);
             this.txt_ModifyProductName.TabIndex = 26;
-            this.txt_ModifyProductName.TextChanged += new System.EventHandler(this.modifyPartName_TextChanged);
+            this.txt_ModifyProductName.TextChanged += new System.EventHandler(this.modifyProductName_TextChanged);
             // 
             // txt_modifyProductID
             // 
@@ -120,7 +120,7 @@ namespace mschreiberc968_Project
             this.txt_modifyProductID.ReadOnly = true;
             this.txt_modifyProductID.Size = new System.Drawing.Size(351, 30);
             this.txt_modifyProductID.TabIndex = 25;
-            this.txt_modifyProductID.TextChanged += new System.EventHandler(this.modifyProductsID_TextChanged);
+            
             // 
             // lbl_ModProductMin
             // 
@@ -266,7 +266,7 @@ namespace mschreiberc968_Project
             this.btn_ModProductSave.TabIndex = 37;
             this.btn_ModProductSave.Text = "Save";
             this.btn_ModProductSave.UseVisualStyleBackColor = true;
-            this.btn_ModProductSave.Click += new System.EventHandler(this.button3_Click);
+            this.btn_ModProductSave.Click += new System.EventHandler(this.ModifyProductSaveButton);
             // 
             // btn_ModProductCancel
             // 

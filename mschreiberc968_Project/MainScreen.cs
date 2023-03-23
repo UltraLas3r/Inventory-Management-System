@@ -52,12 +52,6 @@ namespace mschreiberc968_Project
             return (mainScreen.Visible = true);
         }
 
-
-        private void productsSearchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void addParts_Click(object sender, EventArgs e)
         { //this opens the addParts window
             AddPart addPart = new AddPart();
@@ -212,5 +206,7 @@ namespace mschreiberc968_Project
                 }
             }
         }
+
+      
     }
 }

@@ -202,7 +202,6 @@ namespace mschreiberc968_Project
             this.productsSearchBox.Name = "productsSearchBox";
             this.productsSearchBox.Size = new System.Drawing.Size(288, 22);
             this.productsSearchBox.TabIndex = 14;
-            this.productsSearchBox.TextChanged += new System.EventHandler(this.productsSearchBox_TextChanged);
             // 
             // label2
             // 

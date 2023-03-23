@@ -233,35 +233,74 @@ namespace mschreiberc968_Project
 
         private void ModifyPartCompanyName_TextChanged(object sender, EventArgs e)
         {
-            if (RadioInHouse.Enabled)
+            if (RadioInHouse.Checked)
             {
-                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+                if (modifyPartCompanyName.Text.Length > 0)
                 {
-                    btn_ModPartSave.Enabled = false;
+                    CheckTextBoxForInt(modifyPartCompanyName);
+                }
+                else
+                {
                     modifyPartCompanyName.BackColor = Color.LightCoral;
                 }
 
-                else
+                if (modifyPartCompanyName.BackColor == Color.LightCoral)
                 {
-                    btn_ModPartSave.Enabled = true;
-                    modifyPartCompanyName.BackColor = Color.White;
+                    btn_ModPartSave.Enabled = false;
                 }
+                else
+                    btn_ModPartSave.Enabled = true;
             }
 
-            if (RadioOutsource.Enabled)
+            if (RadioOutsource.Checked)
             {
-                if (string.IsNullOrWhiteSpace(modifyPartCompanyName.Text) || !int.TryParse(modifyPartCompanyName.Text, out int n))
+                if (modifyPartCompanyName.Text.Length > 0)
                 {
-                    btn_ModPartSave.Enabled = false;
-                    modifyPartCompanyName.BackColor = Color.White;
-
+                    CheckTextBoxForString(modifyPartCompanyName);
                 }
-
                 else
                 {
-                    btn_ModPartSave.Enabled = true;
                     modifyPartCompanyName.BackColor = Color.LightCoral;
                 }
+
+                if (modifyPartCompanyName.BackColor == Color.LightCoral)
+                {
+                    btn_ModPartSave.Enabled = false;
+                }
+                else
+                    btn_ModPartSave.Enabled = true;
+            }
+        }
+
+        public void CheckTextBoxForString(TextBox textBox)
+        {
+            //This can be called to check the textbox for string values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+            }
+        }
+
+        public void CheckTextBoxForInt(TextBox textBox)
+        {
+            //This can be called to check the textbox for INT values and will change the color depending on what exists.
+            int number;
+            bool isNumber = int.TryParse(textBox.Text, out number);
+
+            if (!isNumber)
+            {
+                textBox.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
             }
         }
     }

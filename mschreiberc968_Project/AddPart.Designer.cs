@@ -30,7 +30,7 @@ namespace mschreiberc968_Project
         private void InitializeComponent()
         {
             this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.lbl_forRadioChoice = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace mschreiberc968_Project
             // btn_cancel
             // 
             this.btn_cancel.Location = new System.Drawing.Point(412, 403);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(100, 28);
             this.btn_cancel.TabIndex = 3;
@@ -61,16 +61,16 @@ namespace mschreiberc968_Project
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.CancelButtonClick);
             // 
-            // btn_save
+            // btn_Save
             // 
-            this.btn_save.Location = new System.Drawing.Point(280, 403);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(100, 28);
-            this.btn_save.TabIndex = 2;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.btn_Save.Location = new System.Drawing.Point(280, 403);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(100, 28);
+            this.btn_Save.TabIndex = 2;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // lbl_forRadioChoice
             // 
@@ -162,6 +162,7 @@ namespace mschreiberc968_Project
             this.addPartCompanyName.Name = "addPartCompanyName";
             this.addPartCompanyName.Size = new System.Drawing.Size(320, 30);
             this.addPartCompanyName.TabIndex = 28;
+            this.addPartCompanyName.TextChanged += new System.EventHandler(this.addPartCompanyName_TextChanged);
             // 
             // addPartMax
             // 
@@ -173,6 +174,7 @@ namespace mschreiberc968_Project
             this.addPartMax.Name = "addPartMax";
             this.addPartMax.Size = new System.Drawing.Size(109, 30);
             this.addPartMax.TabIndex = 27;
+            this.addPartMax.TextChanged += new System.EventHandler(this.addPartMax_TextChanged);
             // 
             // addPartMin
             // 
@@ -184,6 +186,7 @@ namespace mschreiberc968_Project
             this.addPartMin.Name = "addPartMin";
             this.addPartMin.Size = new System.Drawing.Size(109, 30);
             this.addPartMin.TabIndex = 26;
+            this.addPartMin.TextChanged += new System.EventHandler(this.addPartMin_TextChanged);
             // 
             // addPartPriceCost
             // 
@@ -194,6 +197,7 @@ namespace mschreiberc968_Project
             this.addPartPriceCost.Name = "addPartPriceCost";
             this.addPartPriceCost.Size = new System.Drawing.Size(351, 30);
             this.addPartPriceCost.TabIndex = 25;
+            this.addPartPriceCost.TextChanged += new System.EventHandler(this.addPartPriceCost_TextChanged);
             // 
             // addPartInventory
             // 
@@ -282,7 +286,7 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_Save);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddPart";
             this.Text = "Add Part";
@@ -294,7 +298,7 @@ namespace mschreiberc968_Project
         #endregion
 
         private System.Windows.Forms.Button btn_cancel;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label lbl_forRadioChoice;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

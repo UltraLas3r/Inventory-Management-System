@@ -208,6 +208,7 @@ namespace mschreiberc968_Project
             this.txt_AddProductMax.Name = "txt_AddProductMax";
             this.txt_AddProductMax.Size = new System.Drawing.Size(109, 30);
             this.txt_AddProductMax.TabIndex = 51;
+            this.txt_AddProductMax.TextChanged += new System.EventHandler(this.txt_AddProductMax_TextChanged);
             // 
             // txt_AddProductMin
             // 
@@ -218,6 +219,7 @@ namespace mschreiberc968_Project
             this.txt_AddProductMin.Name = "txt_AddProductMin";
             this.txt_AddProductMin.Size = new System.Drawing.Size(109, 30);
             this.txt_AddProductMin.TabIndex = 50;
+            this.txt_AddProductMin.TextChanged += new System.EventHandler(this.txt_AddProductMin_TextChanged);
             // 
             // txt_AddProductPriceCost
             // 
@@ -228,6 +230,7 @@ namespace mschreiberc968_Project
             this.txt_AddProductPriceCost.Name = "txt_AddProductPriceCost";
             this.txt_AddProductPriceCost.Size = new System.Drawing.Size(351, 30);
             this.txt_AddProductPriceCost.TabIndex = 49;
+            this.txt_AddProductPriceCost.TextChanged += new System.EventHandler(this.txt_AddProductPriceCost_TextChanged);
             // 
             // txt_AddProductInventory
             // 
@@ -238,6 +241,7 @@ namespace mschreiberc968_Project
             this.txt_AddProductInventory.Name = "txt_AddProductInventory";
             this.txt_AddProductInventory.Size = new System.Drawing.Size(351, 30);
             this.txt_AddProductInventory.TabIndex = 48;
+            this.txt_AddProductInventory.TextChanged += new System.EventHandler(this.txt_AddProductInventory_TextChanged);
             // 
             // txt_AddProductName
             // 
@@ -248,6 +252,7 @@ namespace mschreiberc968_Project
             this.txt_AddProductName.Name = "txt_AddProductName";
             this.txt_AddProductName.Size = new System.Drawing.Size(351, 30);
             this.txt_AddProductName.TabIndex = 47;
+            this.txt_AddProductName.TextChanged += new System.EventHandler(this.txt_AddProductName_TextChanged);
             // 
             // txt_AddProductID
             // 
