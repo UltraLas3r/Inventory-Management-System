@@ -14,6 +14,7 @@ namespace mschreiberc968_Project
     public partial class AddProduct : Form
     {
         MainScreen mainS = new MainScreen();
+        
         public AddProduct()
         {
             InitializeComponent();
@@ -26,28 +27,26 @@ namespace mschreiberc968_Project
             dgv_AllAddParts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv_AllAddParts.DataSource = Inventory.AllParts;
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_AddProductCancel_Click(object sender, EventArgs e)
         {
-
-
             this.Hide();
             mainS.Visible = true;
         }
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_AddProductInventory.Text))
+            {
+                MessageBox.Show("Must have a product to add a part to.");
+
+                return;
+            }
             //validate integer amount compliance
-            int currentInventory = int.Parse(txt_AddProductInventory.Text);
+            int currentInventory = Int32.Parse(txt_AddProductInventory.Text);
             int minStock = int.Parse(txt_AddProductMin.Text);
             int maxStock = int.Parse(txt_AddProductMax.Text);
 
-            if (int.Parse(txt_AddProductMin.Text) >= int.Parse(txt_AddProductMax.Text))
+            if (minStock >= maxStock)
             {
                 MessageBox.Show("Minimum must be less than maximum");
                 return;
@@ -73,13 +72,12 @@ namespace mschreiberc968_Project
             if (minStock <= maxStock && currentInventory >= minStock)
             {   
                 newProd.ProductID = num;
-                newProd.Name = txt_AddProductName.Text;
-                newProd.Price = decimal.Parse(txt_AddProductPriceCost.Text);
-                newProd.InStock = int.Parse(txt_AddProductInventory.Text);
-                newProd.Min = int.Parse(txt_AddProductMin.Text);
-                newProd.Max = int.Parse(txt_AddProductMax.Text);
+                newProd.ProdName = txt_AddProductName.Text;
+                newProd.ProdPrice = decimal.Parse(txt_AddProductPriceCost.Text);
+                newProd.ProdInStock = int.Parse(txt_AddProductInventory.Text);
+                newProd.ProdMin = int.Parse(txt_AddProductMin.Text);
+                newProd.ProdMax = int.Parse(txt_AddProductMax.Text);
                 Inventory.Products.Add(newProd);
-
             }
 
             // Adds currently selectd parts to product associated parts
@@ -87,9 +85,7 @@ namespace mschreiberc968_Project
             {
                 if (row.Cells[0].Value != null)
                 {
-                    newProd.AddAssociatedPart(Inventory.lookupPart(
-                                        Int32.Parse(row.Cells[0].Value.ToString())
-                                        ));
+                    newProd.AddAssociatedPart(Inventory.LookupPart(Int32.Parse(row.Cells[0].Value.ToString())));
                 }
             }
 
@@ -99,8 +95,6 @@ namespace mschreiberc968_Project
 
         private void btn_AddParts_Click(object sender, EventArgs e)
         {
-           
-  
             //get the selected row
             DataGridViewRow selectedRow = dgv_AllAddParts.SelectedRows[0];
 
@@ -115,5 +109,6 @@ namespace mschreiberc968_Project
             //copy the values from allparts DGV to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
         }
+  
     }
 }

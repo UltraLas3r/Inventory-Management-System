@@ -50,23 +50,6 @@ namespace mschreiberc968_Project
                 OutSource outSourced = part as OutSource;
                 modifyPartCompanyName.Text = outSourced.CompanyName;
             }
-
-            //this isnt working for some reason
-            if (
-              modifyPartName.BackColor == Color.White &&
-              ModifyPartInventory.BackColor == Color.White &&
-              modifyPartPriceCost.BackColor == Color.White &&
-              modifyPartMin.BackColor == Color.White &&
-              modifyPartMax.BackColor == Color.White &&
-              modifyPartCompanyName.BackColor == Color.White
-              )
-            {
-                btn_ModPartSave.Enabled = true;
-            }
-            else
-            {
-                btn_ModPartSave.Enabled = false;
-            }
         }
 
         public object mainScreenView()

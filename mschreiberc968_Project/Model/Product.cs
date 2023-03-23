@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace mschreiberc968_Project.Model
 {
-    class Product 
+    public class Product 
     {
         public int ProductID { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int InStock { get; set; }
-        public int Min { get; set; }
-        public int Max { get; set; }
+        public string ProdName { get; set; }
+        public decimal ProdPrice { get; set; }
+        public int ProdInStock { get; set; }
+        public int ProdMin { get; set; }
+        public int ProdMax { get; set; }
         
         public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
             ProductID = productID;
-            Name = name;
-            Price = price;
-            InStock = inStock;
-            Min = min;
-            Max = max;
+            ProdName = name;
+            ProdPrice = price;
+            ProdInStock = inStock;
+            ProdMin = min;
+            ProdMax = max;
         }
 
         public Product()
@@ -56,10 +56,6 @@ namespace mschreiberc968_Project.Model
         {
             AssociatedParts.Add(part);
         }
-
-
-
-
     }
    }
 

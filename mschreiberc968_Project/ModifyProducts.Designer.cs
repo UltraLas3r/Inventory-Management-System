@@ -29,11 +29,11 @@ namespace mschreiberc968_Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_modifyPartMax = new System.Windows.Forms.TextBox();
-            this.txt_modifyPartMin = new System.Windows.Forms.TextBox();
-            this.txt_modifyPartPriceCost = new System.Windows.Forms.TextBox();
-            this.txt_modifyPartInventory = new System.Windows.Forms.TextBox();
-            this.txt_modifyPartName = new System.Windows.Forms.TextBox();
+            this.txt_ModifyProductMax = new System.Windows.Forms.TextBox();
+            this.txt_ModifyProductMin = new System.Windows.Forms.TextBox();
+            this.txt_ModifyProductPriceCost = new System.Windows.Forms.TextBox();
+            this.txt_ModifyProductInventory = new System.Windows.Forms.TextBox();
+            this.txt_ModifyProductName = new System.Windows.Forms.TextBox();
             this.txt_modifyProductID = new System.Windows.Forms.TextBox();
             this.lbl_ModProductMin = new System.Windows.Forms.Label();
             this.lbl_ModProductMax = new System.Windows.Forms.Label();
@@ -54,65 +54,65 @@ namespace mschreiberc968_Project
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_modifyPartMax
+            // txt_ModifyProductMax
             // 
-            this.txt_modifyPartMax.BackColor = System.Drawing.Color.LightCoral;
-            this.txt_modifyPartMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyPartMax.Location = new System.Drawing.Point(395, 266);
-            this.txt_modifyPartMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_modifyPartMax.Name = "txt_modifyPartMax";
-            this.txt_modifyPartMax.Size = new System.Drawing.Size(109, 30);
-            this.txt_modifyPartMax.TabIndex = 30;
-            this.txt_modifyPartMax.TextChanged += new System.EventHandler(this.modifyPartMax_TextChanged);
+            this.txt_ModifyProductMax.BackColor = System.Drawing.Color.White;
+            this.txt_ModifyProductMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_ModifyProductMax.Location = new System.Drawing.Point(395, 266);
+            this.txt_ModifyProductMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ModifyProductMax.Name = "txt_ModifyProductMax";
+            this.txt_ModifyProductMax.Size = new System.Drawing.Size(109, 30);
+            this.txt_ModifyProductMax.TabIndex = 30;
+            this.txt_ModifyProductMax.TextChanged += new System.EventHandler(this.modifyPartMax_TextChanged);
             // 
-            // txt_modifyPartMin
+            // txt_ModifyProductMin
             // 
-            this.txt_modifyPartMin.BackColor = System.Drawing.Color.LightCoral;
-            this.txt_modifyPartMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyPartMin.Location = new System.Drawing.Point(153, 267);
-            this.txt_modifyPartMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_modifyPartMin.Name = "txt_modifyPartMin";
-            this.txt_modifyPartMin.Size = new System.Drawing.Size(109, 30);
-            this.txt_modifyPartMin.TabIndex = 29;
-            this.txt_modifyPartMin.TextChanged += new System.EventHandler(this.modifyPartMin_TextChanged);
+            this.txt_ModifyProductMin.BackColor = System.Drawing.Color.White;
+            this.txt_ModifyProductMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_ModifyProductMin.Location = new System.Drawing.Point(153, 267);
+            this.txt_ModifyProductMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ModifyProductMin.Name = "txt_ModifyProductMin";
+            this.txt_ModifyProductMin.Size = new System.Drawing.Size(109, 30);
+            this.txt_ModifyProductMin.TabIndex = 29;
+            this.txt_ModifyProductMin.TextChanged += new System.EventHandler(this.modifyPartMin_TextChanged);
             // 
-            // txt_modifyPartPriceCost
+            // txt_ModifyProductPriceCost
             // 
-            this.txt_modifyPartPriceCost.BackColor = System.Drawing.Color.LightCoral;
-            this.txt_modifyPartPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyPartPriceCost.Location = new System.Drawing.Point(153, 218);
-            this.txt_modifyPartPriceCost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_modifyPartPriceCost.Name = "txt_modifyPartPriceCost";
-            this.txt_modifyPartPriceCost.Size = new System.Drawing.Size(351, 30);
-            this.txt_modifyPartPriceCost.TabIndex = 28;
-            this.txt_modifyPartPriceCost.TextChanged += new System.EventHandler(this.modifyPartPriceCost_TextChanged);
+            this.txt_ModifyProductPriceCost.BackColor = System.Drawing.Color.White;
+            this.txt_ModifyProductPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_ModifyProductPriceCost.Location = new System.Drawing.Point(153, 218);
+            this.txt_ModifyProductPriceCost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ModifyProductPriceCost.Name = "txt_ModifyProductPriceCost";
+            this.txt_ModifyProductPriceCost.Size = new System.Drawing.Size(351, 30);
+            this.txt_ModifyProductPriceCost.TabIndex = 28;
+            this.txt_ModifyProductPriceCost.TextChanged += new System.EventHandler(this.modifyPartPriceCost_TextChanged);
             // 
-            // txt_modifyPartInventory
+            // txt_ModifyProductInventory
             // 
-            this.txt_modifyPartInventory.BackColor = System.Drawing.Color.LightCoral;
-            this.txt_modifyPartInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyPartInventory.Location = new System.Drawing.Point(153, 170);
-            this.txt_modifyPartInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_modifyPartInventory.Name = "txt_modifyPartInventory";
-            this.txt_modifyPartInventory.Size = new System.Drawing.Size(351, 30);
-            this.txt_modifyPartInventory.TabIndex = 27;
-            this.txt_modifyPartInventory.TextChanged += new System.EventHandler(this.modifyPartInventory_TextChanged);
+            this.txt_ModifyProductInventory.BackColor = System.Drawing.Color.White;
+            this.txt_ModifyProductInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_ModifyProductInventory.Location = new System.Drawing.Point(153, 170);
+            this.txt_ModifyProductInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ModifyProductInventory.Name = "txt_ModifyProductInventory";
+            this.txt_ModifyProductInventory.Size = new System.Drawing.Size(351, 30);
+            this.txt_ModifyProductInventory.TabIndex = 27;
+            this.txt_ModifyProductInventory.TextChanged += new System.EventHandler(this.modifyPartInventory_TextChanged);
             // 
-            // txt_modifyPartName
+            // txt_ModifyProductName
             // 
-            this.txt_modifyPartName.BackColor = System.Drawing.Color.LightCoral;
-            this.txt_modifyPartName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyPartName.Location = new System.Drawing.Point(153, 126);
-            this.txt_modifyPartName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_modifyPartName.Name = "txt_modifyPartName";
-            this.txt_modifyPartName.Size = new System.Drawing.Size(351, 30);
-            this.txt_modifyPartName.TabIndex = 26;
-            this.txt_modifyPartName.TextChanged += new System.EventHandler(this.modifyPartName_TextChanged);
+            this.txt_ModifyProductName.BackColor = System.Drawing.Color.White;
+            this.txt_ModifyProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_ModifyProductName.Location = new System.Drawing.Point(153, 126);
+            this.txt_ModifyProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ModifyProductName.Name = "txt_ModifyProductName";
+            this.txt_ModifyProductName.Size = new System.Drawing.Size(351, 30);
+            this.txt_ModifyProductName.TabIndex = 26;
+            this.txt_ModifyProductName.TextChanged += new System.EventHandler(this.modifyPartName_TextChanged);
             // 
             // txt_modifyProductID
             // 
             this.txt_modifyProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_modifyProductID.Location = new System.Drawing.Point(153, 89);
+            this.txt_modifyProductID.Location = new System.Drawing.Point(153, 83);
             this.txt_modifyProductID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_modifyProductID.Name = "txt_modifyProductID";
             this.txt_modifyProductID.ReadOnly = true;
@@ -129,7 +129,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductMin.Size = new System.Drawing.Size(44, 25);
             this.lbl_ModProductMin.TabIndex = 24;
             this.lbl_ModProductMin.Text = "Min";
-            
             // 
             // lbl_ModProductMax
             // 
@@ -140,7 +139,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductMax.Size = new System.Drawing.Size(50, 25);
             this.lbl_ModProductMax.TabIndex = 23;
             this.lbl_ModProductMax.Text = "Max";
-         
             // 
             // lbl_ModProductPrice
             // 
@@ -151,7 +149,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductPrice.Size = new System.Drawing.Size(113, 25);
             this.lbl_ModProductPrice.TabIndex = 22;
             this.lbl_ModProductPrice.Text = "Price / Cost";
-           
             // 
             // lbl_ModProductInventory
             // 
@@ -162,7 +159,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductInventory.Size = new System.Drawing.Size(92, 25);
             this.lbl_ModProductInventory.TabIndex = 21;
             this.lbl_ModProductInventory.Text = "Inventory";
-        
             // 
             // lbl_ModProductName
             // 
@@ -173,7 +169,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductName.Size = new System.Drawing.Size(64, 25);
             this.lbl_ModProductName.TabIndex = 20;
             this.lbl_ModProductName.Text = "Name";
-      
             // 
             // lbl_ModProductID
             // 
@@ -184,7 +179,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductID.Size = new System.Drawing.Size(31, 25);
             this.lbl_ModProductID.TabIndex = 19;
             this.lbl_ModProductID.Text = "ID";
-
             // 
             // lbl_ModProductMain
             // 
@@ -195,7 +189,6 @@ namespace mschreiberc968_Project
             this.lbl_ModProductMain.Size = new System.Drawing.Size(142, 25);
             this.lbl_ModProductMain.TabIndex = 18;
             this.lbl_ModProductMain.Text = "Modify Product";
-    
             // 
             // label8
             // 
@@ -205,7 +198,6 @@ namespace mschreiberc968_Project
             this.label8.Size = new System.Drawing.Size(56, 16);
             this.label8.TabIndex = 31;
             this.label8.Text = "All Parts";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // dgv_AssociatedModParts
             // 
@@ -215,7 +207,6 @@ namespace mschreiberc968_Project
             this.dgv_AssociatedModParts.Size = new System.Drawing.Size(206, 16);
             this.dgv_AssociatedModParts.TabIndex = 32;
             this.dgv_AssociatedModParts.Text = "Parts Associated with this Product";
-          
             // 
             // dgv_AllModParts
             // 
@@ -300,11 +291,11 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.dgv_AllModParts);
             this.Controls.Add(this.dgv_AssociatedModParts);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txt_modifyPartMax);
-            this.Controls.Add(this.txt_modifyPartMin);
-            this.Controls.Add(this.txt_modifyPartPriceCost);
-            this.Controls.Add(this.txt_modifyPartInventory);
-            this.Controls.Add(this.txt_modifyPartName);
+            this.Controls.Add(this.txt_ModifyProductMax);
+            this.Controls.Add(this.txt_ModifyProductMin);
+            this.Controls.Add(this.txt_ModifyProductPriceCost);
+            this.Controls.Add(this.txt_ModifyProductInventory);
+            this.Controls.Add(this.txt_ModifyProductName);
             this.Controls.Add(this.txt_modifyProductID);
             this.Controls.Add(this.lbl_ModProductMin);
             this.Controls.Add(this.lbl_ModProductMax);
@@ -325,11 +316,11 @@ namespace mschreiberc968_Project
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_modifyPartMax;
-        private System.Windows.Forms.TextBox txt_modifyPartMin;
-        private System.Windows.Forms.TextBox txt_modifyPartPriceCost;
-        private System.Windows.Forms.TextBox txt_modifyPartInventory;
-        private System.Windows.Forms.TextBox txt_modifyPartName;
+        private System.Windows.Forms.TextBox txt_ModifyProductMax;
+        private System.Windows.Forms.TextBox txt_ModifyProductMin;
+        private System.Windows.Forms.TextBox txt_ModifyProductPriceCost;
+        private System.Windows.Forms.TextBox txt_ModifyProductInventory;
+        private System.Windows.Forms.TextBox txt_ModifyProductName;
         private System.Windows.Forms.TextBox txt_modifyProductID;
         private System.Windows.Forms.Label lbl_ModProductMin;
         private System.Windows.Forms.Label lbl_ModProductMax;

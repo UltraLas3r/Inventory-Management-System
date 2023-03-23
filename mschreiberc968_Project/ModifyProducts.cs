@@ -13,18 +13,12 @@ namespace mschreiberc968_Project
 {
     public partial class ModifyProducts : Form
     {
-        private int modPartID;
-        public ModifyProducts(Part part, int PartID)
+        private int modProductID;
+        public ModifyProducts()
         {
             InitializeComponent();
             LoadPartData();
-            //modPartID = PartID;
-            //txt_modifyProductID.Text = PartID.ToString();
-            //txt_modifyPartName.Text = part.Name;
-            //txt_modifyPartInventory.Text = part.InStock.ToString();
-            //txt_modifyPartPriceCost.Text = part.Price.ToString();
-            //txt_modifyPartMin.Text = part.Min.ToString();
-            //txt_modifyPartMax.Text = part.Max.ToString();
+            txt_ModifyProductName.Focus();
         }
 
         private void LoadPartData()
@@ -34,15 +28,23 @@ namespace mschreiberc968_Project
             dgv_AllModParts.DataSource = Inventory.AllParts;
         }
 
+        public ModifyProducts(Product product, int ProductID)
+        {
+            InitializeComponent();
+            modProductID = ProductID;
+            txt_modifyProductID.Text = product.ProductID.ToString();
+            txt_ModifyProductName.Text = product.ProdName.ToString();
+            txt_ModifyProductInventory.Text = product.ProdInStock.ToString();
+            txt_ModifyProductPriceCost.Text = product.ProdPrice.ToString();
+            txt_ModifyProductMin.Text = product.ProdMin.ToString();
+            txt_ModifyProductMax.Text = product.ProdMax.ToString();
+        }
+
         public object mainScreenView()
         {
             MainScreen mainScreen = new MainScreen();
             return (mainScreen.Visible = true);
         }
-
-        
-
-        
 
         private void modifyPartMin_TextChanged(object sender, EventArgs e)
         {
@@ -54,10 +56,7 @@ namespace mschreiberc968_Project
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void modifyPartMax_TextChanged(object sender, EventArgs e)
         {
@@ -78,11 +77,6 @@ namespace mschreiberc968_Project
         private void modifyProductsID_TextChanged(object sender, EventArgs e)
         {
            // string newId = modifyProductsID.Text;
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

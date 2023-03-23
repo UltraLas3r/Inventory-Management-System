@@ -61,7 +61,7 @@ namespace mschreiberc968_Project.Model
 
         public static bool DeletePart(int partID)
         {
-            Part deletedPart = lookupPart(partID);
+            Part deletedPart = LookupPart(partID);
 
             if (deletedPart == null)
             {
@@ -74,7 +74,7 @@ namespace mschreiberc968_Project.Model
             }
         }
 
-        public static Part lookupPart(int partID)
+        public static Part LookupPart(int partID)
         {
             foreach (Part p in AllParts)
             {
@@ -102,11 +102,11 @@ namespace mschreiberc968_Project.Model
     public static void LoadMockData()
         {
             //create mock inhouse parts
-            Part mockPart1 = new InHouse(1, "tuner pegIH", 3.99m, 6, 1, 9, 11923);
-            Part mockPart2 = new InHouse(2, "electronicsIH", 150.87m, 12, 1, 15, 11924);
+            Part mockPart1 = new InHouse(1, "Tuning Peg", 3.99m, 6, 1, 9, 11923);
+            Part mockPart2 = new InHouse(2, "Pickups", 150.87m, 12, 1, 15, 11924);
             //create outsourced parts
-            Part mockPart3 = new OutSource(3, "somethingOS", 8.99m, 8, 1, 9, "Ergotronics");
-            Part mockPart4 = new OutSource(4, "rubberOS", 222.87m, 3, 1, 7, "Method Products");
+            Part mockPart3 = new OutSource(3, "Knobs", 8.99m, 8, 1, 9, "Ergotronics");
+            Part mockPart4 = new OutSource(4, "Switch", 222.87m, 3, 1, 7, "Method Products");
 
             //Add mock parts to list
             AllParts.Add(mockPart1);

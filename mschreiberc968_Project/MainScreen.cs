@@ -103,8 +103,6 @@ namespace mschreiberc968_Project
         }
 
 
-
-
         private void modifyParts_Click(object sender, EventArgs e)
         {   //warning message if user hasnt selected an object to modify
             if (!dgv_Parts.CurrentRow.Selected)
@@ -133,14 +131,19 @@ namespace mschreiberc968_Project
 
         private void modifyProducts_Click(object sender, EventArgs e)
         {
-            if (!dgv_Parts.CurrentRow.Selected)
+            if (!dgv_Products.CurrentRow.Selected)
             {
                 MessageBox.Show("Nothing selected. Please select an item to modify.");
                 return;
             }
+            else
+            {
+                var tempSelectedProduct = (Product)dgv_Products.CurrentRow.DataBoundItem;
 
-            modifyProducts.Visible = true;
-            this.Hide();
+                ModifyProducts modifyProducts = new ModifyProducts(tempSelectedProduct, TempProdID);
+                modifyProducts.Show();
+                this.Visible = false;
+            }
         }
 
         private void DeleteParts_Click(object sender, EventArgs e)
