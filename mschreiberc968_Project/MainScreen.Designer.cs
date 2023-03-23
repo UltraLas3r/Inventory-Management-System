@@ -167,23 +167,25 @@ namespace mschreiberc968_Project
             // 
             // partsSearchButton
             // 
-            this.partsSearchButton.Location = new System.Drawing.Point(868, 88);
+            this.partsSearchButton.Location = new System.Drawing.Point(197, 90);
             this.partsSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.partsSearchButton.Name = "partsSearchButton";
             this.partsSearchButton.Size = new System.Drawing.Size(105, 31);
             this.partsSearchButton.TabIndex = 11;
             this.partsSearchButton.Text = "Search";
             this.partsSearchButton.UseVisualStyleBackColor = true;
+            this.partsSearchButton.Click += new System.EventHandler(this.PartsSearchButton_Click);
             // 
             // productsSearchButton
             // 
-            this.productsSearchButton.Location = new System.Drawing.Point(195, 93);
+            this.productsSearchButton.Location = new System.Drawing.Point(866, 90);
             this.productsSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsSearchButton.Name = "productsSearchButton";
             this.productsSearchButton.Size = new System.Drawing.Size(107, 31);
             this.productsSearchButton.TabIndex = 12;
             this.productsSearchButton.Text = "Search";
             this.productsSearchButton.UseVisualStyleBackColor = true;
+            this.productsSearchButton.Click += new System.EventHandler(this.ProductsSearchButton_Click);
             // 
             // partsSearchBox
             // 

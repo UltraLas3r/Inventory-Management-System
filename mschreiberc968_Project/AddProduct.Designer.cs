@@ -56,6 +56,8 @@ namespace mschreiberc968_Project
             this.lbl_AddProductName = new System.Windows.Forms.Label();
             this.lbl_AddProductID = new System.Windows.Forms.Label();
             this.lbl_AddProductMain = new System.Windows.Forms.Label();
+            this.btn_AddProdSearch = new System.Windows.Forms.Button();
+            this.txt_AddProdSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AssociatedAddParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAddParts)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,7 @@ namespace mschreiberc968_Project
             this.btn_DeleteParts.TabIndex = 57;
             this.btn_DeleteParts.Text = "Delete";
             this.btn_DeleteParts.UseVisualStyleBackColor = true;
+            this.btn_DeleteParts.Click += new System.EventHandler(this.btn_DeleteParts_Click);
             // 
             // btn_AddParts
             // 
@@ -177,7 +180,6 @@ namespace mschreiberc968_Project
             this.dgv_AllAddParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_AllAddParts.Size = new System.Drawing.Size(595, 174);
             this.dgv_AllAddParts.TabIndex = 54;
-
             // 
             // lbl_AddProduct_AssociatedParts
             // 
@@ -327,11 +329,29 @@ namespace mschreiberc968_Project
             this.lbl_AddProductMain.TabIndex = 39;
             this.lbl_AddProductMain.Text = "Add Product";
             // 
+            // btn_AddProdSearch
+            // 
+            this.btn_AddProdSearch.Location = new System.Drawing.Point(898, 30);
+            this.btn_AddProdSearch.Name = "btn_AddProdSearch";
+            this.btn_AddProdSearch.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddProdSearch.TabIndex = 60;
+            this.btn_AddProdSearch.Text = "Search";
+            this.btn_AddProdSearch.UseVisualStyleBackColor = true;
+            // 
+            // txt_AddProdSearch
+            // 
+            this.txt_AddProdSearch.Location = new System.Drawing.Point(989, 31);
+            this.txt_AddProdSearch.Name = "txt_AddProdSearch";
+            this.txt_AddProdSearch.Size = new System.Drawing.Size(228, 22);
+            this.txt_AddProdSearch.TabIndex = 61;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1238, 618);
+            this.Controls.Add(this.txt_AddProdSearch);
+            this.Controls.Add(this.btn_AddProdSearch);
             this.Controls.Add(this.btn_AddProductCancel);
             this.Controls.Add(this.btn_AddProductSave);
             this.Controls.Add(this.btn_DeleteParts);
@@ -392,5 +412,7 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button btn_AddProdSearch;
+        private System.Windows.Forms.TextBox txt_AddProdSearch;
     }
 }

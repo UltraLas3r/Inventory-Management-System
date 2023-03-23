@@ -13,19 +13,25 @@ namespace mschreiberc968_Project
 {
     public partial class ModifyProducts : Form
     {
+        MainScreen mainS = new MainScreen();
         private int modProductID;
         public ModifyProducts()
         {
             InitializeComponent();
-            LoadPartData();
-            txt_ModifyProductName.Focus();
+            Display();    
         }
 
-        private void LoadPartData()
+        private void Display()
         {
             dgv_AllModParts.AutoGenerateColumns = true;
             dgv_AllModParts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv_AllModParts.DataSource = Inventory.AllParts;
+        }
+
+        private void Btn_ModProductCancel(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainS.Visible = true;
         }
 
         public ModifyProducts(Product product, int ProductID)
@@ -45,48 +51,36 @@ namespace mschreiberc968_Project
             MainScreen mainScreen = new MainScreen();
             return (mainScreen.Visible = true);
         }
-
-        private void modifyPartMin_TextChanged(object sender, EventArgs e)
+        private void modifyProductsID_TextChanged(object sender, EventArgs e)
         {
 
         }
+        private void modifyPartName_TextChanged(object sender, EventArgs e)
+        {
 
+
+        }
+        private void modifyPartInventory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void modifyPartPriceCost_TextChanged(object sender, EventArgs e)
         {
 
         }
+        private void modifyPartMin_TextChanged(object sender, EventArgs e)
+        {
 
-      
+        }
 
         private void modifyPartMax_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void modifyPartInventory_TextChanged(object sender, EventArgs e)
+        private void AddNewPart(object sender, EventArgs e)
         {
-
-        }
-
-        private void modifyPartName_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void modifyProductsID_TextChanged(object sender, EventArgs e)
-        {
-           // string newId = modifyProductsID.Text;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            ///what is this button supposed to do??
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,16 +88,15 @@ namespace mschreiberc968_Project
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void DeleteAssociatedPart(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewRow row in dgv_AllModParts.SelectedRows)
+            {
+                dgv_AllModParts.Rows.RemoveAt(row.Index);
+            }
         }
 
-        private void Btn_ModProductCancel  (object sender, EventArgs e)
-        {
-            this.Hide();
-            mainScreenView();
-        }
+       
 
         private void button3_Click(object sender, EventArgs e)
         {

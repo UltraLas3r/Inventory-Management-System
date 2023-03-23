@@ -50,6 +50,8 @@ namespace mschreiberc968_Project
             this.btn_DeleteModParts = new System.Windows.Forms.Button();
             this.btn_ModProductSave = new System.Windows.Forms.Button();
             this.btn_ModProductCancel = new System.Windows.Forms.Button();
+            this.btn_ModProdSearch = new System.Windows.Forms.Button();
+            this.txt_ModProdSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllModParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -219,7 +221,6 @@ namespace mschreiberc968_Project
             this.dgv_AllModParts.RowTemplate.Height = 28;
             this.dgv_AllModParts.Size = new System.Drawing.Size(595, 174);
             this.dgv_AllModParts.TabIndex = 33;
-            this.dgv_AllModParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -243,7 +244,7 @@ namespace mschreiberc968_Project
             this.btn_AddModParts.TabIndex = 35;
             this.btn_AddModParts.Text = "Add Parts";
             this.btn_AddModParts.UseVisualStyleBackColor = true;
-            this.btn_AddModParts.Click += new System.EventHandler(this.button1_Click);
+            this.btn_AddModParts.Click += new System.EventHandler(this.AddNewPart);
             // 
             // btn_DeleteModParts
             // 
@@ -254,7 +255,7 @@ namespace mschreiberc968_Project
             this.btn_DeleteModParts.TabIndex = 36;
             this.btn_DeleteModParts.Text = "Delete";
             this.btn_DeleteModParts.UseVisualStyleBackColor = true;
-            this.btn_DeleteModParts.Click += new System.EventHandler(this.button2_Click);
+            this.btn_DeleteModParts.Click += new System.EventHandler(this.DeleteAssociatedPart);
             // 
             // btn_ModProductSave
             // 
@@ -278,11 +279,29 @@ namespace mschreiberc968_Project
             this.btn_ModProductCancel.UseVisualStyleBackColor = true;
             this.btn_ModProductCancel.Click += new System.EventHandler(this.Btn_ModProductCancel);
             // 
+            // btn_ModProdSearch
+            // 
+            this.btn_ModProdSearch.Location = new System.Drawing.Point(942, 34);
+            this.btn_ModProdSearch.Name = "btn_ModProdSearch";
+            this.btn_ModProdSearch.Size = new System.Drawing.Size(75, 23);
+            this.btn_ModProdSearch.TabIndex = 39;
+            this.btn_ModProdSearch.Text = "Search";
+            this.btn_ModProdSearch.UseVisualStyleBackColor = true;
+            // 
+            // txt_ModProdSearch
+            // 
+            this.txt_ModProdSearch.Location = new System.Drawing.Point(1037, 34);
+            this.txt_ModProdSearch.Name = "txt_ModProdSearch";
+            this.txt_ModProdSearch.Size = new System.Drawing.Size(169, 22);
+            this.txt_ModProdSearch.TabIndex = 40;
+            // 
             // ModifyProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1238, 618);
+            this.Controls.Add(this.txt_ModProdSearch);
+            this.Controls.Add(this.btn_ModProdSearch);
             this.Controls.Add(this.btn_ModProductCancel);
             this.Controls.Add(this.btn_ModProductSave);
             this.Controls.Add(this.btn_DeleteModParts);
@@ -337,5 +356,7 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.Button btn_DeleteModParts;
         private System.Windows.Forms.Button btn_ModProductSave;
         private System.Windows.Forms.Button btn_ModProductCancel;
+        private System.Windows.Forms.Button btn_ModProdSearch;
+        private System.Windows.Forms.TextBox txt_ModProdSearch;
     }
 }

@@ -109,6 +109,14 @@ namespace mschreiberc968_Project
             //copy the values from allparts DGV to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
         }
-  
+
+        private void btn_DeleteParts_Click(object sender, EventArgs e)
+        {
+
+           foreach (DataGridViewRow row in dgv_AssociatedAddParts.SelectedRows)
+            {
+                dgv_AssociatedAddParts.Rows.RemoveAt(row.Index);
+            }
+        }
     }
 }

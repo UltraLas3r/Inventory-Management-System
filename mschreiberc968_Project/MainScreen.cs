@@ -163,6 +163,54 @@ namespace mschreiberc968_Project
 
         }
 
-       
+        
+
+        private void PartsSearchButton_Click(object sender, EventArgs e)
+        {
+            string searchContent = partsSearchBox.Text.Trim();
+            if (string.IsNullOrEmpty(partsSearchBox.Text))
+            {
+                MessageBox.Show("Enter a valid search term");
+                return;
+            }
+            else {
+                foreach (DataGridViewRow row in dgv_Parts.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                        {
+                        cell.Selected = true;
+                        break;
+                        }
+                    }
+                }
+            }
+        }
+        private void ProductsSearchButton_Click(object sender, EventArgs e)
+        {
+            string searchContent = productsSearchBox.Text.Trim();
+            if (string.IsNullOrEmpty(partsSearchBox.Text))
+            {
+                MessageBox.Show("Enter a valid search term");
+                return;
+            }
+
+            else
+            {
+
+                foreach (DataGridViewRow row in dgv_Products.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                        {
+                            cell.Selected = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
