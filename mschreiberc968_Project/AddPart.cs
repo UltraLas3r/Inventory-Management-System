@@ -201,11 +201,6 @@ namespace mschreiberc968_Project
                 return;
             }
 
-            if (int.Parse(addPartMax.Text) <= currentInventory)
-            {
-                MessageBox.Show("The Maximum value must be greater than the Inventory value of " + currentInventory);
-                return;
-            }
 
             //random number for PartID
             Random rnd = new Random();

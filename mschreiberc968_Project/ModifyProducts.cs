@@ -143,6 +143,14 @@ namespace mschreiberc968_Project
 
         private void DeleteAssociatedPart(object sender, EventArgs e)
         {
+            if (dgv_AssociatedProductParts.CurrentRow == null || dgv_AssociatedProductParts.CurrentRow.Selected)
+            {
+                RowCheckFunc();
+            }
+        }
+
+        private void RowCheckFunc()
+        {
             foreach (DataGridViewRow row in dgv_AllProdModParts.SelectedRows)
             {
                 dgv_AllProdModParts.Rows.RemoveAt(row.Index);

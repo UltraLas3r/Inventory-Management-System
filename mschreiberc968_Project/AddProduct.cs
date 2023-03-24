@@ -35,8 +35,6 @@ namespace mschreiberc968_Project
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
         {
-
-
             //NEED TO Save the connection between the object and the associated parts. 
             if (string.IsNullOrEmpty(txt_AddProductInventory.Text))
             {
@@ -44,6 +42,7 @@ namespace mschreiberc968_Project
 
                 return;
             }
+
             //validate integer amount compliance
             int currentInventory = Int32.Parse(txt_AddProductInventory.Text);
             int minStock = int.Parse(txt_AddProductMin.Text);
@@ -61,11 +60,6 @@ namespace mschreiberc968_Project
                 return;
             }
 
-            //if (maxStock <= currentInventory)
-            //{
-            //    MessageBox.Show("The Maximum value must be greater than the Inventory value of " + currentInventory);
-            //    return;
-            //}
 
             Random rnd = new Random();
             int num = rnd.Next(1000);
@@ -115,8 +109,15 @@ namespace mschreiberc968_Project
 
         private void btn_DeleteParts_Click(object sender, EventArgs e)
         {
+            if (dgv_AssociatedAddParts.CurrentRow == null || dgv_AssociatedAddParts.CurrentRow.Selected)
+            {
+                RowCheckFunc();
+            }
+        }
 
-           foreach (DataGridViewRow row in dgv_AssociatedAddParts.SelectedRows)
+        private void RowCheckFunc()
+        {
+            foreach (DataGridViewRow row in dgv_AssociatedAddParts.SelectedRows)
             {
                 dgv_AssociatedAddParts.Rows.RemoveAt(row.Index);
             }

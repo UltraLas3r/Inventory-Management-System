@@ -142,22 +142,29 @@ namespace mschreiberc968_Project
 
         private void DeleteParts_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgv_Parts.SelectedRows)
-            {
-                dgv_Parts.Rows.RemoveAt(row.Index);
-            }
+            RowCheckFunc();
         }
 
         private void DeleteProducts(object sender, EventArgs e)
         {
+            RowCheckFunc();
+
+        }
+
+        private void RowCheckFunc()
+        {
+
+            foreach (DataGridViewRow row in dgv_Parts.SelectedRows)
+            {
+                dgv_Parts.Rows.RemoveAt(row.Index);
+            }
             foreach (DataGridViewRow row in dgv_Products.SelectedRows)
             {
                 dgv_Products.Rows.RemoveAt(row.Index);
             }
-
         }
 
-        
+
 
         private void PartsSearchButton_Click(object sender, EventArgs e)
         {
