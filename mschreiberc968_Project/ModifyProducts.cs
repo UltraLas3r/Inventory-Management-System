@@ -71,7 +71,7 @@ namespace mschreiberc968_Project
         }
         private void modifyProductInventory_TextChanged(object sender, EventArgs e)
         {
-            if (txt_ModifyProductInventory.Text.Length > 0)
+            if (txt_ModifyProductInventory.Text.Length >= 0)
             {
                 CheckTextBoxForInt(txt_ModifyProductInventory);
             }
@@ -89,11 +89,14 @@ namespace mschreiberc968_Project
         {
             if (string.IsNullOrEmpty(txt_ModifyProductPriceCost.Text) || !Double.TryParse(txt_ModifyProductPriceCost.Text, out double n))
             {
+                CheckTextBoxForInt(txt_ModifyProductPriceCost);
+
                 btn_ModProductSave.Enabled = false;
             }
 
             else 
-            { 
+            {
+                txt_ModifyProductPriceCost.BackColor = Color.White;
                 btn_ModProductSave.Enabled = true; 
             }
         }
@@ -101,7 +104,7 @@ namespace mschreiberc968_Project
         {
             if (txt_ModifyProductMin.Text.Length > 0)
             {
-                CheckTextBoxForString(txt_ModifyProductInventory);
+                CheckTextBoxForInt(txt_ModifyProductMin);
             }
 
             else { txt_ModifyProductMin.BackColor = Color.LightCoral; }
@@ -117,7 +120,7 @@ namespace mschreiberc968_Project
         {
             if (txt_ModifyProductMax.Text.Length > 0)
             {
-                CheckTextBoxForString(txt_ModifyProductInventory);
+                CheckTextBoxForInt(txt_ModifyProductMax);
             }
 
             else { txt_ModifyProductMax.BackColor = Color.LightCoral; }
@@ -185,6 +188,11 @@ namespace mschreiberc968_Project
             {
                 textBox.BackColor = Color.White;
             }
+        }
+
+        private void btn_ModProdSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

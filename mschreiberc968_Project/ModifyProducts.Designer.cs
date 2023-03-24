@@ -120,7 +120,6 @@ namespace mschreiberc968_Project
             this.txt_modifyProductID.ReadOnly = true;
             this.txt_modifyProductID.Size = new System.Drawing.Size(351, 30);
             this.txt_modifyProductID.TabIndex = 25;
-            
             // 
             // lbl_ModProductMin
             // 
@@ -287,6 +286,7 @@ namespace mschreiberc968_Project
             this.btn_ModProdSearch.TabIndex = 39;
             this.btn_ModProdSearch.Text = "Search";
             this.btn_ModProdSearch.UseVisualStyleBackColor = true;
+            this.btn_ModProdSearch.Click += new System.EventHandler(this.btn_ModProdSearch_Click);
             // 
             // txt_ModProdSearch
             // 
