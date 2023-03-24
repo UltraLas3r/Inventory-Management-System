@@ -18,15 +18,11 @@ namespace mschreiberc968_Project
         public ModifyProducts()
         {
             InitializeComponent();
-            Display();    
+            
+        
         }
 
-        private void Display()
-        {
-            dgv_AllModParts.AutoGenerateColumns = true;
-            dgv_AllModParts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dgv_AllModParts.DataSource = Inventory.AllParts;
-        }
+        
 
         private void Btn_ModProductCancel(object sender, EventArgs e)
         {
@@ -44,8 +40,15 @@ namespace mschreiberc968_Project
             txt_ModifyProductPriceCost.Text = product.ProdPrice.ToString();
             txt_ModifyProductMin.Text = product.ProdMin.ToString();
             txt_ModifyProductMax.Text = product.ProdMax.ToString();
+            Display();
         }
 
+        private void Display()
+        {
+            dgv_AllProdModParts.AutoGenerateColumns = true;
+            dgv_AllProdModParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_AllProdModParts.DataSource = Inventory.AllParts;  
+        }
         public object mainScreenView()
         {
             MainScreen mainScreen = new MainScreen();
@@ -67,7 +70,6 @@ namespace mschreiberc968_Project
             }
 
             else { btn_ModProductSave.Enabled = true; }
-
         }
         private void modifyProductInventory_TextChanged(object sender, EventArgs e)
         {
@@ -130,7 +132,6 @@ namespace mschreiberc968_Project
                 btn_ModProductSave.Enabled = false;
             }
             else btn_ModProductSave.Enabled = true;
-
         }
 
         private void AddNewPart(object sender, EventArgs e)
@@ -138,17 +139,13 @@ namespace mschreiberc968_Project
             ///what is this button supposed to do??
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
+     
 
         private void DeleteAssociatedPart(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgv_AllModParts.SelectedRows)
+            foreach (DataGridViewRow row in dgv_AllProdModParts.SelectedRows)
             {
-                dgv_AllModParts.Rows.RemoveAt(row.Index);
+                dgv_AllProdModParts.Rows.RemoveAt(row.Index);
             }
         }
 
@@ -192,7 +189,13 @@ namespace mschreiberc968_Project
 
         private void btn_ModProdSearch_Click(object sender, EventArgs e)
         {
+            //NEED TO IMPLEMENT SEARCH FUNCTIONALITY FOR THIS
+        }
+
+        private void dgv_AllModParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
+
     }
 }

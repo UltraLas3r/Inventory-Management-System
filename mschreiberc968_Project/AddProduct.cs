@@ -24,7 +24,7 @@ namespace mschreiberc968_Project
         private void Display()
         {
             dgv_AllAddParts.AutoGenerateColumns = true;
-            dgv_AllAddParts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv_AllAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_AllAddParts.DataSource = Inventory.AllParts;
         }
         private void btn_AddProductCancel_Click(object sender, EventArgs e)
@@ -35,6 +35,9 @@ namespace mschreiberc968_Project
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
         {
+
+
+            //NEED TO Save the connection between the object and the associated parts. 
             if (string.IsNullOrEmpty(txt_AddProductInventory.Text))
             {
                 MessageBox.Show("Must have a product to add a part to.");
@@ -58,11 +61,11 @@ namespace mschreiberc968_Project
                 return;
             }
 
-            if (maxStock <= currentInventory)
-            {
-                MessageBox.Show("The Maximum value must be greater than the Inventory value of " + currentInventory);
-                return;
-            }
+            //if (maxStock <= currentInventory)
+            //{
+            //    MessageBox.Show("The Maximum value must be greater than the Inventory value of " + currentInventory);
+            //    return;
+            //}
 
             Random rnd = new Random();
             int num = rnd.Next(1000);
@@ -231,5 +234,7 @@ namespace mschreiberc968_Project
                 textBox.BackColor = Color.White;
             }
         }
+
+      
     }
 }
