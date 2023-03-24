@@ -168,9 +168,7 @@ namespace mschreiberc968_Project
             {
                 btn_AddProductSave.Enabled = true;
                 txt_AddProductPriceCost.BackColor = Color.White;
-
             }
-          
         }
 
         private void txt_AddProductMin_TextChanged(object sender, EventArgs e)

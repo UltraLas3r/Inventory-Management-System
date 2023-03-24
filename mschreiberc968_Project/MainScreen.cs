@@ -164,8 +164,6 @@ namespace mschreiberc968_Project
             }
         }
 
-
-
         private void PartsSearchButton_Click(object sender, EventArgs e)
         {
             string searchContent = partsSearchBox.Text.Trim();
