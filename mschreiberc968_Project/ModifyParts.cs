@@ -47,7 +47,7 @@ namespace mschreiberc968_Project
                 RadioOutsource.Checked = true;
                 lbl_ForRadioChange.Text = "Company Name";
 
-                OutSource outSourced = part as OutSource;
+                OutSourced outSourced = part as OutSourced;
                 modifyPartCompanyName.Text = outSourced.CompanyName;
             }
         }
@@ -76,14 +76,20 @@ namespace mschreiberc968_Project
             if (RadioInHouse.Checked)
             {
                 lbl_ForRadioChange.Text = "Machine ID #:";
-                //I NEED TO RUN THE TEXTBOX VALIDATION FOR MODIFYPARTCOMPANYNAME EVERYTIME
-                //I CHANGE THE RADIOBUTTON SELECTION
+                if (modifyPartCompanyName.Text.Length > 0)
+                {
+                    CheckTextBoxForInt(modifyPartCompanyName);
+                }
             }
-            else 
+
+            if (RadioOutsource.Checked)
             {
                 lbl_ForRadioChange.Text = "Company Name:";
+                if (modifyPartCompanyName.Text.Length > 0)
+                {
+                    CheckTextBoxForString(modifyPartCompanyName);
+                }
             }
-           
         }
 
         private void btn_Save(object sender, EventArgs e)
@@ -141,7 +147,7 @@ namespace mschreiberc968_Project
         else if (RadioOutsource.Checked)
         {
 
-            Part UpdatePartOS = new OutSource()
+            Part UpdatePartOS = new OutSourced()
             {
                 PartID = Int32.Parse(modifyPartID.Text),
                 Name = modifyPartName.Text,

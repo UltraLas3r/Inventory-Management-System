@@ -33,11 +33,19 @@ namespace mschreiberc968_Project
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             lbl_forRadioChoice.Text = "Company Name";
+            if (addPartCompanyName.Text.Length > 0)
+            {
+                CheckTextBoxForString(addPartCompanyName);
+            }
         }
 
         private void rb_InHouse_CheckedChanged(object sender, EventArgs e)
         {
             lbl_forRadioChoice.Text = "Machine ID";
+            if (addPartCompanyName.Text.Length > 0)
+            {
+                CheckTextBoxForInt(addPartCompanyName);
+            }
         }
 
         private void addPartID_TextChanged(object sender, EventArgs e)
@@ -221,7 +229,7 @@ namespace mschreiberc968_Project
 
             else if (rb_outsourced.Checked)
             {
-                OutSource newPartOS = new OutSource();
+                OutSourced newPartOS = new OutSourced();
 
                 newPartOS.PartID = num;
                 newPartOS.Name = addPartName.Text;

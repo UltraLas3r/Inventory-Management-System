@@ -16,7 +16,9 @@ namespace mschreiberc968_Project.Model
         public int ProdInStock { get; set; }
         public int ProdMin { get; set; }
         public int ProdMax { get; set; }
-        
+
+        BindingList<Part> AssociatedParts = new BindingList<Part>();
+
         public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
             ProductID = productID;
@@ -29,9 +31,8 @@ namespace mschreiberc968_Project.Model
 
         public Product()
         {
-        }
 
-        BindingList<Part> AssociatedParts = new BindingList<Part>();
+        }
 
         public void AddAssociatedPart(Part part)
         {

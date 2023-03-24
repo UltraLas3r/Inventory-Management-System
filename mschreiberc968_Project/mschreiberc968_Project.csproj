@@ -60,7 +60,7 @@
     </Compile>
     <Compile Include="Model\Inventory.cs" />
     <Compile Include="Model\InHouse.cs" />
-    <Compile Include="Model\OutSource.cs" />
+    <Compile Include="Model\OutSourced.cs" />
     <Compile Include="Model\Part.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="ModifyProducts.cs">

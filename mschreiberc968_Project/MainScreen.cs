@@ -167,7 +167,8 @@ namespace mschreiberc968_Project
                 MessageBox.Show("Enter a valid search term");
                 return;
             }
-            else {
+            else 
+            {
                 foreach (DataGridViewRow row in dgv_Parts.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
