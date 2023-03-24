@@ -19,6 +19,7 @@ namespace mschreiberc968_Project
         {
             InitializeComponent();
             Display();
+            lbl_MustAssociatePart.Visible = false;
         }
 
         private void Display()
@@ -35,7 +36,17 @@ namespace mschreiberc968_Project
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
         {
-            //NEED TO Save the connection between the object and the associated parts. 
+            //NEED TO Save the connection between the object and the associated parts.
+            //
+           
+
+            if (dgv_AssociatedAddParts.Rows.Count == 0)
+            {
+                lbl_MustAssociatePart.Visible = true;
+                return;
+            }
+
+
             if (string.IsNullOrEmpty(txt_AddProductInventory.Text))
             {
                 MessageBox.Show("Must have a product to add a part to.");
@@ -105,6 +116,9 @@ namespace mschreiberc968_Project
 
             //copy the values from allparts DGV to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
+
+            //disable the label
+            lbl_MustAssociatePart.Visible = false;
         }
 
         private void btn_DeleteParts_Click(object sender, EventArgs e)
@@ -234,6 +248,9 @@ namespace mschreiberc968_Project
             }
         }
 
-      
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

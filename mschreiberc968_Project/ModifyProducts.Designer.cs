@@ -377,6 +377,7 @@ namespace mschreiberc968_Project
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ModifyProducts";
             this.Text = "Modify Product";
+           
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllProdModParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AssociatedProductParts)).EndInit();
             this.ResumeLayout(false);
