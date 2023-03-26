@@ -148,7 +148,6 @@ namespace mschreiberc968_Project
         private void DeleteProducts(object sender, EventArgs e)
         {
             RowCheckFunc();
-
         }
 
         private void RowCheckFunc()

@@ -39,13 +39,11 @@ namespace mschreiberc968_Project
             //NEED TO Save the connection between the object and the associated parts.
             //
            
-
             if (dgv_AssociatedAddParts.Rows.Count == 0)
             {
                 lbl_MustAssociatePart.Visible = true;
                 return;
             }
-
 
             if (string.IsNullOrEmpty(txt_AddProductInventory.Text))
             {
@@ -70,7 +68,6 @@ namespace mschreiberc968_Project
                 MessageBox.Show("The Minimum value cannot be greater than the Inventory value of " + currentInventory);
                 return;
             }
-
 
             Random rnd = new Random();
             int num = rnd.Next(1000);
@@ -215,7 +212,6 @@ namespace mschreiberc968_Project
             else { btn_AddProductSave.Enabled = true; }
         }
 
-
         public void CheckTextBoxForString(TextBox textBox)
         {
             //This can be called to check the textbox for string values and will change the color depending on what exists.
@@ -248,9 +244,31 @@ namespace mschreiberc968_Project
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+     
+        private void txt_AddProdSearch_TextChanged(object sender, EventArgs e)
         {
-
+            {
+                string searchContent = txt_AddProdSearch.Text.Trim();
+                if (string.IsNullOrEmpty(txt_AddProdSearch.Text))
+                {
+                    MessageBox.Show("Enter a valid search term");
+                    return;
+                }
+                else
+                {
+                    foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                            {
+                                cell.Selected = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

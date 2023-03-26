@@ -294,7 +294,7 @@ namespace mschreiberc968_Project
             this.btn_AddModParts.TabIndex = 35;
             this.btn_AddModParts.Text = "Add Parts";
             this.btn_AddModParts.UseVisualStyleBackColor = true;
-            this.btn_AddModParts.Click += new System.EventHandler(this.AddNewPart);
+            this.btn_AddModParts.Click += new System.EventHandler(this.AddAssociatedPart);
             // 
             // btn_DeleteModParts
             // 

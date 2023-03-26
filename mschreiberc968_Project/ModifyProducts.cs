@@ -18,11 +18,8 @@ namespace mschreiberc968_Project
         public ModifyProducts()
         {
             InitializeComponent();
-            
-        
-        }
 
-        
+        }
 
         private void Btn_ModProductCancel(object sender, EventArgs e)
         {
@@ -134,9 +131,9 @@ namespace mschreiberc968_Project
             else btn_ModProductSave.Enabled = true;
         }
 
-        private void AddNewPart(object sender, EventArgs e)
+        private void AddAssociatedPart(object sender, EventArgs e)
         {
-            ///what is this button supposed to do??
+            ///Add a new part to the product from the parts list. this will bind the part to the product
         }
 
      

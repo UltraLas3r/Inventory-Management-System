@@ -36,6 +36,11 @@ namespace mschreiberc968_Project.Model
 
         public void AddAssociatedPart(Part part)
         {
+          
+
+
+
+
             AssociatedParts.Add(part);
         }
 
