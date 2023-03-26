@@ -71,9 +71,10 @@ namespace mschreiberc968_Project
 
             Random rnd = new Random();
             int num = rnd.Next(1000);
-            Product newProd = new Product();
+
 
             //Create the new product
+            Product newProd = new Product();
             if (minStock <= maxStock && currentInventory >= minStock)
             {   
                 newProd.ProductID = num;
@@ -105,13 +106,14 @@ namespace mschreiberc968_Project
 
             //clone the row
             DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
+
             //create a new row in associated parts dgv
             for (int i = 0; i < selectedRow.Cells.Count; i++)
             {
                 newRow.Cells[i].Value = selectedRow.Cells[i].Value;
             }
 
-            //copy the values from allparts DGV to associated parts dgv
+            //copy the values from allparts dgv to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
 
             //disable the label
@@ -211,6 +213,30 @@ namespace mschreiberc968_Project
             }
             else { btn_AddProductSave.Enabled = true; }
         }
+    
+        private void txt_AddProdSearch_TextChanged(object sender, EventArgs e)
+        {            
+            string searchContent = txt_AddProdSearch.Text.Trim();
+            if (string.IsNullOrEmpty(txt_AddProdSearch.Text))
+            {
+                MessageBox.Show("Enter a valid search term");
+                return;
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                        {
+                            cell.Selected = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 
         public void CheckTextBoxForString(TextBox textBox)
         {
@@ -241,33 +267,6 @@ namespace mschreiberc968_Project
             else
             {
                 textBox.BackColor = Color.White;
-            }
-        }
-
-     
-        private void txt_AddProdSearch_TextChanged(object sender, EventArgs e)
-        {
-            {
-                string searchContent = txt_AddProdSearch.Text.Trim();
-                if (string.IsNullOrEmpty(txt_AddProdSearch.Text))
-                {
-                    MessageBox.Show("Enter a valid search term");
-                    return;
-                }
-                else
-                {
-                    foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
-                    {
-                        foreach (DataGridViewCell cell in row.Cells)
-                        {
-                            if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
-                            {
-                                cell.Selected = true;
-                                break;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
