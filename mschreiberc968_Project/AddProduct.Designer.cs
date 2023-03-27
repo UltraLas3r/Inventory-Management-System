@@ -64,10 +64,10 @@ namespace mschreiberc968_Project
             // 
             // btn_AddProductCancel
             // 
-            this.btn_AddProductCancel.Location = new System.Drawing.Point(1117, 567);
+            this.btn_AddProductCancel.Location = new System.Drawing.Point(1257, 709);
             this.btn_AddProductCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddProductCancel.Name = "btn_AddProductCancel";
-            this.btn_AddProductCancel.Size = new System.Drawing.Size(100, 28);
+            this.btn_AddProductCancel.Size = new System.Drawing.Size(112, 35);
             this.btn_AddProductCancel.TabIndex = 59;
             this.btn_AddProductCancel.Text = "Cancel";
             this.btn_AddProductCancel.UseVisualStyleBackColor = true;
@@ -75,10 +75,10 @@ namespace mschreiberc968_Project
             // 
             // btn_AddProductSave
             // 
-            this.btn_AddProductSave.Location = new System.Drawing.Point(985, 567);
+            this.btn_AddProductSave.Location = new System.Drawing.Point(1108, 709);
             this.btn_AddProductSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddProductSave.Name = "btn_AddProductSave";
-            this.btn_AddProductSave.Size = new System.Drawing.Size(100, 28);
+            this.btn_AddProductSave.Size = new System.Drawing.Size(112, 35);
             this.btn_AddProductSave.TabIndex = 58;
             this.btn_AddProductSave.Text = "Save";
             this.btn_AddProductSave.UseVisualStyleBackColor = true;
@@ -86,10 +86,10 @@ namespace mschreiberc968_Project
             // 
             // btn_DeleteParts
             // 
-            this.btn_DeleteParts.Location = new System.Drawing.Point(1117, 516);
+            this.btn_DeleteParts.Location = new System.Drawing.Point(1257, 645);
             this.btn_DeleteParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_DeleteParts.Name = "btn_DeleteParts";
-            this.btn_DeleteParts.Size = new System.Drawing.Size(100, 28);
+            this.btn_DeleteParts.Size = new System.Drawing.Size(112, 35);
             this.btn_DeleteParts.TabIndex = 57;
             this.btn_DeleteParts.Text = "Delete";
             this.btn_DeleteParts.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@ namespace mschreiberc968_Project
             // 
             // btn_AddParts
             // 
-            this.btn_AddParts.Location = new System.Drawing.Point(1117, 266);
+            this.btn_AddParts.Location = new System.Drawing.Point(1257, 332);
             this.btn_AddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddParts.Name = "btn_AddParts";
-            this.btn_AddParts.Size = new System.Drawing.Size(100, 28);
+            this.btn_AddParts.Size = new System.Drawing.Size(112, 35);
             this.btn_AddParts.TabIndex = 56;
             this.btn_AddParts.Text = "Add Parts";
             this.btn_AddParts.UseVisualStyleBackColor = true;
@@ -118,13 +118,13 @@ namespace mschreiberc968_Project
             this.Column3,
             this.Column5,
             this.Column6});
-            this.dgv_AssociatedAddParts.Location = new System.Drawing.Point(622, 330);
+            this.dgv_AssociatedAddParts.Location = new System.Drawing.Point(700, 412);
             this.dgv_AssociatedAddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AssociatedAddParts.Name = "dgv_AssociatedAddParts";
             this.dgv_AssociatedAddParts.RowHeadersWidth = 62;
             this.dgv_AssociatedAddParts.RowTemplate.Height = 28;
             this.dgv_AssociatedAddParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AssociatedAddParts.Size = new System.Drawing.Size(595, 174);
+            this.dgv_AssociatedAddParts.Size = new System.Drawing.Size(669, 218);
             this.dgv_AssociatedAddParts.TabIndex = 55;
             // 
             // Column1
@@ -133,7 +133,7 @@ namespace mschreiberc968_Project
             this.Column1.HeaderText = "Part ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 76;
+            this.Column1.Width = 95;
             // 
             // Column2
             // 
@@ -141,6 +141,7 @@ namespace mschreiberc968_Project
             this.Column2.HeaderText = "Part Name";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
             // 
             // Column4
             // 
@@ -148,7 +149,7 @@ namespace mschreiberc968_Project
             this.Column4.HeaderText = "Price";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 67;
+            this.Column4.Width = 80;
             // 
             // Column3
             // 
@@ -156,7 +157,7 @@ namespace mschreiberc968_Project
             this.Column3.HeaderText = "Inventory";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 90;
+            this.Column3.Width = 110;
             // 
             // Column5
             // 
@@ -164,7 +165,7 @@ namespace mschreiberc968_Project
             this.Column5.HeaderText = "Min";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 57;
+            this.Column5.Width = 70;
             // 
             // Column6
             // 
@@ -172,28 +173,29 @@ namespace mschreiberc968_Project
             this.Column6.HeaderText = "Max";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 61;
+            this.Column6.Width = 74;
             // 
             // dgv_AllAddParts
             // 
+            this.dgv_AllAddParts.AllowUserToAddRows = false;
             this.dgv_AllAddParts.AllowUserToDeleteRows = false;
             this.dgv_AllAddParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllAddParts.Location = new System.Drawing.Point(622, 82);
+            this.dgv_AllAddParts.Location = new System.Drawing.Point(700, 102);
             this.dgv_AllAddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllAddParts.Name = "dgv_AllAddParts";
             this.dgv_AllAddParts.RowHeadersWidth = 62;
             this.dgv_AllAddParts.RowTemplate.Height = 28;
             this.dgv_AllAddParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AllAddParts.Size = new System.Drawing.Size(595, 174);
+            this.dgv_AllAddParts.Size = new System.Drawing.Size(669, 218);
             this.dgv_AllAddParts.TabIndex = 54;
             // 
             // lbl_AddProduct_AssociatedParts
             // 
             this.lbl_AddProduct_AssociatedParts.AutoSize = true;
             this.lbl_AddProduct_AssociatedParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProduct_AssociatedParts.Location = new System.Drawing.Point(619, 302);
+            this.lbl_AddProduct_AssociatedParts.Location = new System.Drawing.Point(696, 378);
             this.lbl_AddProduct_AssociatedParts.Name = "lbl_AddProduct_AssociatedParts";
-            this.lbl_AddProduct_AssociatedParts.Size = new System.Drawing.Size(305, 25);
+            this.lbl_AddProduct_AssociatedParts.Size = new System.Drawing.Size(373, 29);
             this.lbl_AddProduct_AssociatedParts.TabIndex = 53;
             this.lbl_AddProduct_AssociatedParts.Text = "Parts Associated with this Product";
             // 
@@ -201,9 +203,9 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProduct_AllParts.AutoSize = true;
             this.lbl_AddProduct_AllParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProduct_AllParts.Location = new System.Drawing.Point(619, 30);
+            this.lbl_AddProduct_AllParts.Location = new System.Drawing.Point(696, 38);
             this.lbl_AddProduct_AllParts.Name = "lbl_AddProduct_AllParts";
-            this.lbl_AddProduct_AllParts.Size = new System.Drawing.Size(84, 25);
+            this.lbl_AddProduct_AllParts.Size = new System.Drawing.Size(101, 29);
             this.lbl_AddProduct_AllParts.TabIndex = 52;
             this.lbl_AddProduct_AllParts.Text = "All Parts";
             // 
@@ -211,10 +213,10 @@ namespace mschreiberc968_Project
             // 
             this.txt_AddProductMax.BackColor = System.Drawing.Color.White;
             this.txt_AddProductMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_AddProductMax.Location = new System.Drawing.Point(406, 325);
+            this.txt_AddProductMax.Location = new System.Drawing.Point(457, 406);
             this.txt_AddProductMax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_AddProductMax.Name = "txt_AddProductMax";
-            this.txt_AddProductMax.Size = new System.Drawing.Size(109, 30);
+            this.txt_AddProductMax.Size = new System.Drawing.Size(122, 35);
             this.txt_AddProductMax.TabIndex = 51;
             this.txt_AddProductMax.TextChanged += new System.EventHandler(this.txt_AddProductMax_TextChanged);
             // 
@@ -222,10 +224,10 @@ namespace mschreiberc968_Project
             // 
             this.txt_AddProductMin.BackColor = System.Drawing.Color.White;
             this.txt_AddProductMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_AddProductMin.Location = new System.Drawing.Point(164, 325);
+            this.txt_AddProductMin.Location = new System.Drawing.Point(184, 406);
             this.txt_AddProductMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_AddProductMin.Name = "txt_AddProductMin";
-            this.txt_AddProductMin.Size = new System.Drawing.Size(109, 30);
+            this.txt_AddProductMin.Size = new System.Drawing.Size(122, 35);
             this.txt_AddProductMin.TabIndex = 50;
             this.txt_AddProductMin.TextChanged += new System.EventHandler(this.txt_AddProductMin_TextChanged);
             // 
@@ -233,10 +235,10 @@ namespace mschreiberc968_Project
             // 
             this.txt_AddProductPriceCost.BackColor = System.Drawing.Color.White;
             this.txt_AddProductPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_AddProductPriceCost.Location = new System.Drawing.Point(164, 262);
+            this.txt_AddProductPriceCost.Location = new System.Drawing.Point(184, 328);
             this.txt_AddProductPriceCost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_AddProductPriceCost.Name = "txt_AddProductPriceCost";
-            this.txt_AddProductPriceCost.Size = new System.Drawing.Size(351, 30);
+            this.txt_AddProductPriceCost.Size = new System.Drawing.Size(394, 35);
             this.txt_AddProductPriceCost.TabIndex = 49;
             this.txt_AddProductPriceCost.TextChanged += new System.EventHandler(this.txt_AddProductPriceCost_TextChanged);
             // 
@@ -244,10 +246,10 @@ namespace mschreiberc968_Project
             // 
             this.txt_AddProductInventory.BackColor = System.Drawing.Color.White;
             this.txt_AddProductInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_AddProductInventory.Location = new System.Drawing.Point(164, 216);
+            this.txt_AddProductInventory.Location = new System.Drawing.Point(184, 270);
             this.txt_AddProductInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_AddProductInventory.Name = "txt_AddProductInventory";
-            this.txt_AddProductInventory.Size = new System.Drawing.Size(351, 30);
+            this.txt_AddProductInventory.Size = new System.Drawing.Size(394, 35);
             this.txt_AddProductInventory.TabIndex = 48;
             this.txt_AddProductInventory.TextChanged += new System.EventHandler(this.txt_AddProductInventory_TextChanged);
             // 
@@ -255,30 +257,30 @@ namespace mschreiberc968_Project
             // 
             this.txt_AddProductName.BackColor = System.Drawing.Color.White;
             this.txt_AddProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_AddProductName.Location = new System.Drawing.Point(164, 164);
+            this.txt_AddProductName.Location = new System.Drawing.Point(184, 205);
             this.txt_AddProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_AddProductName.Name = "txt_AddProductName";
-            this.txt_AddProductName.Size = new System.Drawing.Size(351, 30);
+            this.txt_AddProductName.Size = new System.Drawing.Size(394, 35);
             this.txt_AddProductName.TabIndex = 47;
             this.txt_AddProductName.TextChanged += new System.EventHandler(this.txt_AddProductName_TextChanged);
             // 
             // txt_AddProductID
             // 
             this.txt_AddProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_AddProductID.Location = new System.Drawing.Point(164, 116);
+            this.txt_AddProductID.Location = new System.Drawing.Point(184, 145);
             this.txt_AddProductID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_AddProductID.Name = "txt_AddProductID";
             this.txt_AddProductID.ReadOnly = true;
-            this.txt_AddProductID.Size = new System.Drawing.Size(351, 30);
+            this.txt_AddProductID.Size = new System.Drawing.Size(394, 35);
             this.txt_AddProductID.TabIndex = 46;
             // 
             // lbl_AddProductMin
             // 
             this.lbl_AddProductMin.AutoSize = true;
             this.lbl_AddProductMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductMin.Location = new System.Drawing.Point(89, 330);
+            this.lbl_AddProductMin.Location = new System.Drawing.Point(100, 412);
             this.lbl_AddProductMin.Name = "lbl_AddProductMin";
-            this.lbl_AddProductMin.Size = new System.Drawing.Size(44, 25);
+            this.lbl_AddProductMin.Size = new System.Drawing.Size(52, 29);
             this.lbl_AddProductMin.TabIndex = 45;
             this.lbl_AddProductMin.Text = "Min";
             // 
@@ -286,9 +288,9 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProductMax.AutoSize = true;
             this.lbl_AddProductMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductMax.Location = new System.Drawing.Point(350, 328);
+            this.lbl_AddProductMax.Location = new System.Drawing.Point(394, 410);
             this.lbl_AddProductMax.Name = "lbl_AddProductMax";
-            this.lbl_AddProductMax.Size = new System.Drawing.Size(50, 25);
+            this.lbl_AddProductMax.Size = new System.Drawing.Size(57, 29);
             this.lbl_AddProductMax.TabIndex = 44;
             this.lbl_AddProductMax.Text = "Max";
             // 
@@ -296,9 +298,9 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProductPrice.AutoSize = true;
             this.lbl_AddProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductPrice.Location = new System.Drawing.Point(27, 267);
+            this.lbl_AddProductPrice.Location = new System.Drawing.Point(30, 334);
             this.lbl_AddProductPrice.Name = "lbl_AddProductPrice";
-            this.lbl_AddProductPrice.Size = new System.Drawing.Size(113, 25);
+            this.lbl_AddProductPrice.Size = new System.Drawing.Size(137, 29);
             this.lbl_AddProductPrice.TabIndex = 43;
             this.lbl_AddProductPrice.Text = "Price / Cost";
             // 
@@ -306,9 +308,9 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProductInventory.AutoSize = true;
             this.lbl_AddProductInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductInventory.Location = new System.Drawing.Point(27, 216);
+            this.lbl_AddProductInventory.Location = new System.Drawing.Point(30, 270);
             this.lbl_AddProductInventory.Name = "lbl_AddProductInventory";
-            this.lbl_AddProductInventory.Size = new System.Drawing.Size(92, 25);
+            this.lbl_AddProductInventory.Size = new System.Drawing.Size(109, 29);
             this.lbl_AddProductInventory.TabIndex = 42;
             this.lbl_AddProductInventory.Text = "Inventory";
             // 
@@ -316,9 +318,9 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProductName.AutoSize = true;
             this.lbl_AddProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductName.Location = new System.Drawing.Point(27, 169);
+            this.lbl_AddProductName.Location = new System.Drawing.Point(30, 211);
             this.lbl_AddProductName.Name = "lbl_AddProductName";
-            this.lbl_AddProductName.Size = new System.Drawing.Size(64, 25);
+            this.lbl_AddProductName.Size = new System.Drawing.Size(78, 29);
             this.lbl_AddProductName.TabIndex = 41;
             this.lbl_AddProductName.Text = "Name";
             // 
@@ -326,9 +328,9 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProductID.AutoSize = true;
             this.lbl_AddProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductID.Location = new System.Drawing.Point(27, 121);
+            this.lbl_AddProductID.Location = new System.Drawing.Point(30, 151);
             this.lbl_AddProductID.Name = "lbl_AddProductID";
-            this.lbl_AddProductID.Size = new System.Drawing.Size(31, 25);
+            this.lbl_AddProductID.Size = new System.Drawing.Size(36, 29);
             this.lbl_AddProductID.TabIndex = 40;
             this.lbl_AddProductID.Text = "ID";
             // 
@@ -336,33 +338,55 @@ namespace mschreiberc968_Project
             // 
             this.lbl_AddProductMain.AutoSize = true;
             this.lbl_AddProductMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_AddProductMain.Location = new System.Drawing.Point(27, 23);
+            this.lbl_AddProductMain.Location = new System.Drawing.Point(30, 29);
             this.lbl_AddProductMain.Name = "lbl_AddProductMain";
-            this.lbl_AddProductMain.Size = new System.Drawing.Size(120, 25);
+            this.lbl_AddProductMain.Size = new System.Drawing.Size(145, 29);
             this.lbl_AddProductMain.TabIndex = 39;
             this.lbl_AddProductMain.Text = "Add Product";
             // 
             // btn_AddProdSearch
             // 
-            this.btn_AddProdSearch.Location = new System.Drawing.Point(898, 30);
+            this.btn_AddProdSearch.Location = new System.Drawing.Point(1010, 38);
+            this.btn_AddProdSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_AddProdSearch.Name = "btn_AddProdSearch";
-            this.btn_AddProdSearch.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddProdSearch.Size = new System.Drawing.Size(84, 29);
             this.btn_AddProdSearch.TabIndex = 60;
             this.btn_AddProdSearch.Text = "Search";
             this.btn_AddProdSearch.UseVisualStyleBackColor = true;
             // 
             // txt_AddProdSearch
             // 
-            this.txt_AddProdSearch.Location = new System.Drawing.Point(989, 31);
+            this.txt_AddProdSearch.Location = new System.Drawing.Point(1113, 39);
+            this.txt_AddProdSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_AddProdSearch.Name = "txt_AddProdSearch";
-            this.txt_AddProdSearch.Size = new System.Drawing.Size(228, 22);
+            this.txt_AddProdSearch.Size = new System.Drawing.Size(256, 26);
             this.txt_AddProdSearch.TabIndex = 61;
+            this.txt_AddProdSearch.TextChanged += new System.EventHandler(this.txt_AddProdSearch_TextChanged);
             // 
+<<<<<<< HEAD
+=======
+            // lbl_MustAssociatePart
+            // 
+            this.lbl_MustAssociatePart.AutoSize = true;
+            this.lbl_MustAssociatePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_MustAssociatePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbl_MustAssociatePart.Location = new System.Drawing.Point(525, 645);
+            this.lbl_MustAssociatePart.Name = "lbl_MustAssociatePart";
+            this.lbl_MustAssociatePart.Size = new System.Drawing.Size(716, 29);
+            this.lbl_MustAssociatePart.TabIndex = 62;
+            this.lbl_MustAssociatePart.Text = "You must associate a part with the product you are trying to create.";
+            // 
+>>>>>>> a175f72151498f790849b23e4e2929b39be4a888
             // AddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1238, 618);
+=======
+            this.ClientSize = new System.Drawing.Size(1393, 772);
+            this.Controls.Add(this.lbl_MustAssociatePart);
+>>>>>>> a175f72151498f790849b23e4e2929b39be4a888
             this.Controls.Add(this.txt_AddProdSearch);
             this.Controls.Add(this.btn_AddProdSearch);
             this.Controls.Add(this.btn_AddProductCancel);

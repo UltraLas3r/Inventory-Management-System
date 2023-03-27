@@ -18,11 +18,9 @@ namespace mschreiberc968_Project
         public ModifyProducts()
         {
             InitializeComponent();
-            
-        
-        }
+            Display();
 
-        
+        }
 
         private void Btn_ModProductCancel(object sender, EventArgs e)
         {
@@ -47,7 +45,9 @@ namespace mschreiberc968_Project
         {
             dgv_AllProdModParts.AutoGenerateColumns = true;
             dgv_AllProdModParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_AllProdModParts.DataSource = Inventory.AllParts;  
+            dgv_AllProdModParts.DataSource = Inventory.AllParts;
+            dgv_AssociatedProductParts.ColumnCount = 6;
+           // dgv_AssociatedProductParts.DataSource = Product.AssociatedParts;
         }
         public object mainScreenView()
         {
@@ -134,9 +134,22 @@ namespace mschreiberc968_Project
             else btn_ModProductSave.Enabled = true;
         }
 
-        private void AddNewPart(object sender, EventArgs e)
+        private void AddNewAssociatedPart(object sender, EventArgs e)
         {
-            ///what is this button supposed to do??
+            //get the selected row
+            DataGridViewRow selectedRow = dgv_AllProdModParts.SelectedRows[0];
+
+            //clone the selected row
+            DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
+
+            //create a new row in associated parts dgv
+            for (int i = 0; i < selectedRow.Cells.Count; i++)
+            {
+                newRow.Cells[i].Value = selectedRow.Cells[i].Value;
+            }
+
+            //copy the values from allparts DGV to associated parts dgv
+            dgv_AssociatedProductParts.Rows.Add(newRow);
         }
 
      
@@ -159,6 +172,15 @@ namespace mschreiberc968_Project
 
         private void ModifyProductSaveButton(object sender, EventArgs e)
         { 
+            //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
+            //
+
+
+
+
+
+
+
             this.Hide();
             mainScreenView();
         }
@@ -197,14 +219,29 @@ namespace mschreiberc968_Project
 
         private void btn_ModProdSearch_Click(object sender, EventArgs e)
         {
-            //NEED TO IMPLEMENT SEARCH FUNCTIONALITY FOR THIS
+            string searchContent = txt_ModProdSearch.Text.Trim();
+            if (string.IsNullOrEmpty(txt_ModProdSearch.Text))
+            {
+                MessageBox.Show("Enter a valid search term");
+                return;
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgv_AllProdModParts.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                        {
+                            cell.Selected = true;
+                            break;
+                        }
+                    }
+                }
+
+            }
         }
 
-        private void dgv_AllModParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-       
+      
     }
 }
