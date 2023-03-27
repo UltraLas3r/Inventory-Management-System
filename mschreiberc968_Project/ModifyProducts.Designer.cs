@@ -46,18 +46,18 @@ namespace mschreiberc968_Project
             this.dgv_AssociatedModParts = new System.Windows.Forms.Label();
             this.dgv_AllProdModParts = new System.Windows.Forms.DataGridView();
             this.dgv_AssociatedProductParts = new System.Windows.Forms.DataGridView();
-            this.btn_AddModParts = new System.Windows.Forms.Button();
-            this.btn_DeleteModParts = new System.Windows.Forms.Button();
-            this.btn_ModProductSave = new System.Windows.Forms.Button();
-            this.btn_ModProductCancel = new System.Windows.Forms.Button();
-            this.btn_ModProdSearch = new System.Windows.Forms.Button();
-            this.txt_ModProdSearch = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_AddModParts = new System.Windows.Forms.Button();
+            this.btn_DeleteModParts = new System.Windows.Forms.Button();
+            this.btn_ModProductSave = new System.Windows.Forms.Button();
+            this.btn_ModProductCancel = new System.Windows.Forms.Button();
+            this.btn_ModProdSearch = new System.Windows.Forms.Button();
+            this.txt_ModProdSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllProdModParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AssociatedProductParts)).BeginInit();
             this.SuspendLayout();
@@ -219,17 +219,21 @@ namespace mschreiberc968_Project
             // 
             // dgv_AllProdModParts
             // 
+            this.dgv_AllProdModParts.AllowUserToAddRows = false;
+            this.dgv_AllProdModParts.AllowUserToDeleteRows = false;
             this.dgv_AllProdModParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_AllProdModParts.Location = new System.Drawing.Point(687, 108);
             this.dgv_AllProdModParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_AllProdModParts.Name = "dgv_AllProdModParts";
             this.dgv_AllProdModParts.RowHeadersWidth = 62;
             this.dgv_AllProdModParts.RowTemplate.Height = 28;
+            this.dgv_AllProdModParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_AllProdModParts.Size = new System.Drawing.Size(669, 218);
             this.dgv_AllProdModParts.TabIndex = 33;
             // 
             // dgv_AssociatedProductParts
             // 
+            this.dgv_AssociatedProductParts.AllowUserToAddRows = false;
             this.dgv_AssociatedProductParts.AllowUserToDeleteRows = false;
             this.dgv_AssociatedProductParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_AssociatedProductParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -246,6 +250,54 @@ namespace mschreiberc968_Project
             this.dgv_AssociatedProductParts.RowTemplate.Height = 28;
             this.dgv_AssociatedProductParts.Size = new System.Drawing.Size(669, 218);
             this.dgv_AssociatedProductParts.TabIndex = 34;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column1.HeaderText = "Part ID";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 95;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column2.HeaderText = "Part Name";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column3.HeaderText = "Price";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column4.HeaderText = "In Stock";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 104;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column5.HeaderText = "Min";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 70;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column6.HeaderText = "Max";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 74;
             // 
             // btn_AddModParts
             // 
@@ -309,54 +361,6 @@ namespace mschreiberc968_Project
             this.txt_ModProdSearch.Name = "txt_ModProdSearch";
             this.txt_ModProdSearch.Size = new System.Drawing.Size(190, 26);
             this.txt_ModProdSearch.TabIndex = 40;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column1.HeaderText = "Part ID";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 95;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column2.HeaderText = "Part Name";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 120;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column3.HeaderText = "Price";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column4.HeaderText = "In Stock";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 104;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column5.HeaderText = "Min";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 70;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column6.HeaderText = "Max";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 74;
             // 
             // ModifyProducts
             // 

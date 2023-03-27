@@ -178,6 +178,7 @@ namespace mschreiberc968_Project
             // 
             // dgv_AllAddParts
             // 
+            this.dgv_AllAddParts.AllowUserToAddRows = false;
             this.dgv_AllAddParts.AllowUserToDeleteRows = false;
             this.dgv_AllAddParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_AllAddParts.Location = new System.Drawing.Point(700, 102);
@@ -373,7 +374,6 @@ namespace mschreiberc968_Project
             this.lbl_MustAssociatePart.Size = new System.Drawing.Size(716, 29);
             this.lbl_MustAssociatePart.TabIndex = 62;
             this.lbl_MustAssociatePart.Text = "You must associate a part with the product you are trying to create.";
-       
             // 
             // AddProduct
             // 

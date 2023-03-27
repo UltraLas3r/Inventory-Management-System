@@ -139,7 +139,7 @@ namespace mschreiberc968_Project
             //get the selected row
             DataGridViewRow selectedRow = dgv_AllProdModParts.SelectedRows[0];
 
-            //clone the row
+            //clone the selected row
             DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
 
             //create a new row in associated parts dgv
