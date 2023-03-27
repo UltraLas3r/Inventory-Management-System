@@ -142,24 +142,27 @@ namespace mschreiberc968_Project
 
         private void DeleteParts_Click(object sender, EventArgs e)
         {
-            RowCheckFunc();
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dgv_Parts.SelectedRows)
+                {
+                    dgv_Parts.Rows.RemoveAt(row.Index);
+                }
+            }
+
         }
 
         private void DeleteProducts(object sender, EventArgs e)
         {
-            RowCheckFunc();
-        }
-
-        private void RowCheckFunc()
-        {
-
-            foreach (DataGridViewRow row in dgv_Parts.SelectedRows)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                dgv_Parts.Rows.RemoveAt(row.Index);
-            }
-            foreach (DataGridViewRow row in dgv_Products.SelectedRows)
-            {
-                dgv_Products.Rows.RemoveAt(row.Index);
+                foreach (DataGridViewRow row in dgv_Products.SelectedRows)
+                {
+                    dgv_Products.Rows.RemoveAt(row.Index);
+                }
             }
         }
 
@@ -211,7 +214,5 @@ namespace mschreiberc968_Project
                 }
             }
         }
-
-      
     }
 }

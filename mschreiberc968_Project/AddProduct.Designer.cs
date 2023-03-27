@@ -367,7 +367,7 @@ namespace mschreiberc968_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 618);
+            this.ClientSize = new System.Drawing.Size(1389, 769);
             this.Controls.Add(this.txt_AddProdSearch);
             this.Controls.Add(this.btn_AddProdSearch);
             this.Controls.Add(this.btn_AddProductCancel);

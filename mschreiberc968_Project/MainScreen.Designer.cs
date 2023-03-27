@@ -54,10 +54,10 @@ namespace mschreiberc968_Project
             // 
             // modifyParts
             // 
-            this.modifyParts.Location = new System.Drawing.Point(345, 412);
-            this.modifyParts.Margin = new System.Windows.Forms.Padding(4);
+            this.modifyParts.Location = new System.Drawing.Point(388, 515);
+            this.modifyParts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modifyParts.Name = "modifyParts";
-            this.modifyParts.Size = new System.Drawing.Size(106, 45);
+            this.modifyParts.Size = new System.Drawing.Size(119, 56);
             this.modifyParts.TabIndex = 1;
             this.modifyParts.Text = "Modify";
             this.modifyParts.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@ namespace mschreiberc968_Project
             // 
             // addParts
             // 
-            this.addParts.Location = new System.Drawing.Point(208, 412);
-            this.addParts.Margin = new System.Windows.Forms.Padding(4);
+            this.addParts.Location = new System.Drawing.Point(234, 515);
+            this.addParts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addParts.Name = "addParts";
-            this.addParts.Size = new System.Drawing.Size(111, 45);
+            this.addParts.Size = new System.Drawing.Size(125, 56);
             this.addParts.TabIndex = 3;
             this.addParts.Text = "Add";
             this.addParts.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@ namespace mschreiberc968_Project
             // 
             // deleteParts
             // 
-            this.deleteParts.Location = new System.Drawing.Point(490, 412);
-            this.deleteParts.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteParts.Location = new System.Drawing.Point(551, 515);
+            this.deleteParts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.deleteParts.Name = "deleteParts";
-            this.deleteParts.Size = new System.Drawing.Size(106, 45);
+            this.deleteParts.Size = new System.Drawing.Size(119, 56);
             this.deleteParts.TabIndex = 2;
             this.deleteParts.Text = "Delete";
             this.deleteParts.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@ namespace mschreiberc968_Project
             // 
             // addProducts
             // 
-            this.addProducts.Location = new System.Drawing.Point(884, 412);
-            this.addProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.addProducts.Location = new System.Drawing.Point(994, 515);
+            this.addProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addProducts.Name = "addProducts";
-            this.addProducts.Size = new System.Drawing.Size(106, 45);
+            this.addProducts.Size = new System.Drawing.Size(119, 56);
             this.addProducts.TabIndex = 4;
             this.addProducts.Text = "Add";
             this.addProducts.UseVisualStyleBackColor = true;
@@ -98,10 +98,10 @@ namespace mschreiberc968_Project
             // 
             // modifyProducts
             // 
-            this.modifyProducts.Location = new System.Drawing.Point(1015, 412);
-            this.modifyProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.modifyProducts.Location = new System.Drawing.Point(1142, 515);
+            this.modifyProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.modifyProducts.Name = "modifyProducts";
-            this.modifyProducts.Size = new System.Drawing.Size(106, 45);
+            this.modifyProducts.Size = new System.Drawing.Size(119, 56);
             this.modifyProducts.TabIndex = 5;
             this.modifyProducts.Text = "Modify";
             this.modifyProducts.UseVisualStyleBackColor = true;
@@ -109,10 +109,10 @@ namespace mschreiberc968_Project
             // 
             // exitApplication
             // 
-            this.exitApplication.Location = new System.Drawing.Point(1161, 487);
-            this.exitApplication.Margin = new System.Windows.Forms.Padding(4);
+            this.exitApplication.Location = new System.Drawing.Point(1306, 609);
+            this.exitApplication.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exitApplication.Name = "exitApplication";
-            this.exitApplication.Size = new System.Drawing.Size(106, 45);
+            this.exitApplication.Size = new System.Drawing.Size(119, 56);
             this.exitApplication.TabIndex = 7;
             this.exitApplication.Text = "Exit";
             this.exitApplication.UseVisualStyleBackColor = true;
@@ -120,10 +120,10 @@ namespace mschreiberc968_Project
             // 
             // deleteProducts
             // 
-            this.deleteProducts.Location = new System.Drawing.Point(1161, 412);
-            this.deleteProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteProducts.Location = new System.Drawing.Point(1306, 515);
+            this.deleteProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.deleteProducts.Name = "deleteProducts";
-            this.deleteProducts.Size = new System.Drawing.Size(106, 45);
+            this.deleteProducts.Size = new System.Drawing.Size(119, 56);
             this.deleteProducts.TabIndex = 6;
             this.deleteProducts.Text = "Delete";
             this.deleteProducts.UseVisualStyleBackColor = true;
@@ -132,45 +132,44 @@ namespace mschreiberc968_Project
             // dgv_Parts
             // 
             this.dgv_Parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Parts.Location = new System.Drawing.Point(32, 137);
+            this.dgv_Parts.Location = new System.Drawing.Point(36, 171);
             this.dgv_Parts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Parts.Name = "dgv_Parts";
             this.dgv_Parts.RowHeadersWidth = 62;
             this.dgv_Parts.RowTemplate.Height = 28;
-            this.dgv_Parts.Size = new System.Drawing.Size(564, 254);
+            this.dgv_Parts.Size = new System.Drawing.Size(634, 318);
             this.dgv_Parts.TabIndex = 8;
             this.dgv_Parts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Parts_CellClick);
-           // this.dgv_Parts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
+  
             // 
             // dgv_Products
             // 
             this.dgv_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Products.Location = new System.Drawing.Point(661, 137);
+            this.dgv_Products.Location = new System.Drawing.Point(744, 171);
             this.dgv_Products.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Products.Name = "dgv_Products";
             this.dgv_Products.RowHeadersWidth = 62;
             this.dgv_Products.RowTemplate.Height = 28;
-            this.dgv_Products.Size = new System.Drawing.Size(606, 254);
+            this.dgv_Products.Size = new System.Drawing.Size(682, 318);
             this.dgv_Products.TabIndex = 9;
             this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Products_CellContentClick);
-           // this.dgv_Products.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myProductsBindingComplete);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 16);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(340, 29);
+            this.label1.Size = new System.Drawing.Size(405, 32);
             this.label1.TabIndex = 10;
             this.label1.Text = "Inventory Management System";
             // 
             // partsSearchButton
             // 
-            this.partsSearchButton.Location = new System.Drawing.Point(197, 90);
+            this.partsSearchButton.Location = new System.Drawing.Point(222, 112);
             this.partsSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.partsSearchButton.Name = "partsSearchButton";
-            this.partsSearchButton.Size = new System.Drawing.Size(105, 31);
+            this.partsSearchButton.Size = new System.Drawing.Size(118, 39);
             this.partsSearchButton.TabIndex = 11;
             this.partsSearchButton.Text = "Search";
             this.partsSearchButton.UseVisualStyleBackColor = true;
@@ -178,10 +177,10 @@ namespace mschreiberc968_Project
             // 
             // productsSearchButton
             // 
-            this.productsSearchButton.Location = new System.Drawing.Point(866, 90);
+            this.productsSearchButton.Location = new System.Drawing.Point(974, 112);
             this.productsSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsSearchButton.Name = "productsSearchButton";
-            this.productsSearchButton.Size = new System.Drawing.Size(107, 31);
+            this.productsSearchButton.Size = new System.Drawing.Size(120, 39);
             this.productsSearchButton.TabIndex = 12;
             this.productsSearchButton.Text = "Search";
             this.productsSearchButton.UseVisualStyleBackColor = true;
@@ -189,27 +188,27 @@ namespace mschreiberc968_Project
             // 
             // partsSearchBox
             // 
-            this.partsSearchBox.Location = new System.Drawing.Point(308, 97);
+            this.partsSearchBox.Location = new System.Drawing.Point(346, 121);
             this.partsSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.partsSearchBox.Name = "partsSearchBox";
-            this.partsSearchBox.Size = new System.Drawing.Size(288, 22);
+            this.partsSearchBox.Size = new System.Drawing.Size(324, 26);
             this.partsSearchBox.TabIndex = 13;
             // 
             // productsSearchBox
             // 
-            this.productsSearchBox.Location = new System.Drawing.Point(979, 94);
+            this.productsSearchBox.Location = new System.Drawing.Point(1101, 118);
             this.productsSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productsSearchBox.Name = "productsSearchBox";
-            this.productsSearchBox.Size = new System.Drawing.Size(288, 22);
+            this.productsSearchBox.Size = new System.Drawing.Size(324, 26);
             this.productsSearchBox.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(27, 91);
+            this.label2.Location = new System.Drawing.Point(30, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 25);
+            this.label2.Size = new System.Drawing.Size(68, 29);
             this.label2.TabIndex = 15;
             this.label2.Text = "Parts";
             // 
@@ -217,17 +216,17 @@ namespace mschreiberc968_Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(656, 93);
+            this.label3.Location = new System.Drawing.Point(738, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 25);
+            this.label3.Size = new System.Drawing.Size(108, 29);
             this.label3.TabIndex = 16;
             this.label3.Text = "Products";
             // 
             // MainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 554);
+            this.ClientSize = new System.Drawing.Size(1448, 692);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.productsSearchBox);

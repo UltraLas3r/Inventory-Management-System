@@ -156,33 +156,43 @@ namespace mschreiberc968_Project
 
         private void DeleteAssociatedPart(object sender, EventArgs e)
         {
-            if (dgv_AssociatedProductParts.CurrentRow == null || dgv_AssociatedProductParts.CurrentRow.Selected)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                RowCheckFunc();
-            }
-        }
-
-        private void RowCheckFunc()
-        {
-            foreach (DataGridViewRow row in dgv_AllProdModParts.SelectedRows)
-            {
-                dgv_AllProdModParts.Rows.RemoveAt(row.Index);
-            }
+                if (dgv_AssociatedProductParts.CurrentRow == null || dgv_AssociatedProductParts.CurrentRow.Selected)
+                {
+                    foreach (DataGridViewRow row in dgv_AllProdModParts.SelectedRows)
+                    {
+                        dgv_AllProdModParts.Rows.RemoveAt(row.Index);
+                    }
+                }
+            }  
         }
 
         private void ModifyProductSaveButton(object sender, EventArgs e)
         {
-           // //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
-            
-           // Product selectedProduct = Inventory.Products[dgv_AllProdModParts.CurrentRow.Index];
+            // //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
 
-           // //filter the associated parts bindinglist based on the selected product
-           // var associatedPartsforSelectedProduct = Product.AssociatedParts
-           // .Where(Part => Part.PartID == selectedProduct.ProductID)
-           //     .ToList();
+            Product newProduct = new Product();
+            int minStock = int.Parse(txt_ModifyProductMin.Text);
+            int maxStock = int.Parse(txt_ModifyProductMax.Text);
+            int currentInventory = Int32.Parse(txt_ModifyProductInventory.Text);
 
-           // //bind the filtered associated parts list
-           //// dgv_AssociatedProductParts = associatedPartsforSelectedProduct;
+            Random rnd = new Random();
+            int num = rnd.Next(1000);
+
+
+            if (minStock <= maxStock && currentInventory >= minStock)
+            {
+            newProduct.ProductID = num;
+            newProduct.ProdName = txt_ModifyProductName.Text;
+            newProduct.ProdPrice = decimal.Parse(txt_ModifyProductPriceCost.Text);
+            newProduct.ProdInStock = int.Parse(txt_ModifyProductInventory.Text);
+            newProduct.ProdMin = int.Parse(txt_ModifyProductMin.Text);
+            newProduct.ProdMax = int.Parse(txt_ModifyProductMax.Text);
+                Inventory.Products.Add(newProduct);
+            }
+
 
 
             this.Hide();

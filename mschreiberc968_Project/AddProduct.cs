@@ -44,6 +44,9 @@ namespace mschreiberc968_Project
             int minStock = int.Parse(txt_AddProductMin.Text);
             int maxStock = int.Parse(txt_AddProductMax.Text);
 
+            Random rnd = new Random();
+            int num = rnd.Next(1000);
+
             if (minStock >= maxStock)
             {
                 MessageBox.Show("Minimum must be less than maximum");
@@ -56,8 +59,6 @@ namespace mschreiberc968_Project
                 return;
             }
 
-            Random rnd = new Random();
-            int num = rnd.Next(1000);
 
 
             //Create the new product
@@ -106,18 +107,19 @@ namespace mschreiberc968_Project
 
         private void btn_DeleteParts_Click(object sender, EventArgs e)
         {
-            if (dgv_AssociatedAddParts.CurrentRow == null || dgv_AssociatedAddParts.CurrentRow.Selected)
-            {
-                RowCheckFunc();
-            }
-        }
 
-        private void RowCheckFunc()
-        {
-            foreach (DataGridViewRow row in dgv_AssociatedAddParts.SelectedRows)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                dgv_AssociatedAddParts.Rows.RemoveAt(row.Index);
+                if (dgv_AssociatedAddParts.CurrentRow == null || dgv_AssociatedAddParts.CurrentRow.Selected)
+                {
+                    foreach (DataGridViewRow row in dgv_AssociatedAddParts.SelectedRows)
+                    {
+                        dgv_AssociatedAddParts.Rows.RemoveAt(row.Index);
+                    }
+                }
             }
+          
         }
 
         private void txt_AddProductName_TextChanged(object sender, EventArgs e)
