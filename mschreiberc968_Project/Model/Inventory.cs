@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -96,6 +97,12 @@ namespace mschreiberc968_Project.Model
                 }
             }
         }
+
+        //public DataTable GetAssociatedParts()
+        //{
+        //    //THIS FUNCTION MIGHT NOT BE NECESSARY
+        //    //return ModifyProducts.dgv_associatedProductParts;
+        //}
 
     //mock data 
         public static void LoadMockData()

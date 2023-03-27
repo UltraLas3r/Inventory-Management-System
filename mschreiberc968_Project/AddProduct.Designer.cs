@@ -363,30 +363,11 @@ namespace mschreiberc968_Project
             this.txt_AddProdSearch.TabIndex = 61;
             this.txt_AddProdSearch.TextChanged += new System.EventHandler(this.txt_AddProdSearch_TextChanged);
             // 
-<<<<<<< HEAD
-=======
-            // lbl_MustAssociatePart
-            // 
-            this.lbl_MustAssociatePart.AutoSize = true;
-            this.lbl_MustAssociatePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_MustAssociatePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_MustAssociatePart.Location = new System.Drawing.Point(525, 645);
-            this.lbl_MustAssociatePart.Name = "lbl_MustAssociatePart";
-            this.lbl_MustAssociatePart.Size = new System.Drawing.Size(716, 29);
-            this.lbl_MustAssociatePart.TabIndex = 62;
-            this.lbl_MustAssociatePart.Text = "You must associate a part with the product you are trying to create.";
-            // 
->>>>>>> a175f72151498f790849b23e4e2929b39be4a888
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1238, 618);
-=======
-            this.ClientSize = new System.Drawing.Size(1393, 772);
-            this.Controls.Add(this.lbl_MustAssociatePart);
->>>>>>> a175f72151498f790849b23e4e2929b39be4a888
             this.Controls.Add(this.txt_AddProdSearch);
             this.Controls.Add(this.btn_AddProdSearch);
             this.Controls.Add(this.btn_AddProductCancel);

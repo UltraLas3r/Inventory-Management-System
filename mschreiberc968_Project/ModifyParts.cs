@@ -158,6 +158,8 @@ namespace mschreiberc968_Project
                 CompanyName = modifyPartCompanyName.Text
             };
             Inventory.UpdatePart(UpdatePartOS.PartID, UpdatePartOS);
+
+              
         }
         this.Hide();
         mainScreenView();
@@ -250,12 +252,6 @@ namespace mschreiberc968_Project
                     modifyPartCompanyName.BackColor = Color.LightCoral;
                 }
 
-                if (modifyPartCompanyName.BackColor == Color.LightCoral)
-                {
-                    btn_ModPartSave.Enabled = false;
-                }
-                else
-                    btn_ModPartSave.Enabled = true;
             }
 
             if (RadioOutsource.Checked)
@@ -267,14 +263,7 @@ namespace mschreiberc968_Project
                 else
                 {
                     modifyPartCompanyName.BackColor = Color.LightCoral;
-                }
-
-                if (modifyPartCompanyName.BackColor == Color.LightCoral)
-                {
-                    btn_ModPartSave.Enabled = false;
-                }
-                else
-                    btn_ModPartSave.Enabled = true;
+                }  
             }
         }
 
@@ -292,6 +281,13 @@ namespace mschreiberc968_Project
             {
                 textBox.BackColor = Color.White;
             }
+
+            if (textBox.BackColor == Color.LightCoral)
+            {
+                btn_ModPartSave.Enabled = false;
+            }
+
+            else { btn_ModPartSave.Enabled = true; }
         }
 
         public void CheckTextBoxForInt(TextBox textBox)
@@ -308,6 +304,13 @@ namespace mschreiberc968_Project
             {
                 textBox.BackColor = Color.White;
             }
+
+            if (textBox.BackColor == Color.LightCoral)
+            {
+                btn_ModPartSave.Enabled = false;
+            }
+
+            else { btn_ModPartSave.Enabled = true; }
         }
     }
 }

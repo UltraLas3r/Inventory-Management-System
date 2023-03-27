@@ -68,15 +68,15 @@ namespace mschreiberc968_Project
             }
         }
 
-        private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dgv_Parts.ClearSelection();
-        }
+        //private void myBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    dgv_Parts.ClearSelection();
+        //}
 
-        private void myProductsBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dgv_Products.ClearSelection();
-        }
+        //private void myProductsBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    dgv_Products.ClearSelection();
+        //}
 
         private void dgv_Parts_CellClick(object sender, DataGridViewCellEventArgs e)
         {

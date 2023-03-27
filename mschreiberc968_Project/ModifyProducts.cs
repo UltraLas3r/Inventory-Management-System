@@ -171,14 +171,18 @@ namespace mschreiberc968_Project
         }
 
         private void ModifyProductSaveButton(object sender, EventArgs e)
-        { 
-            //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
-            //
+        {
+           // //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
+            
+           // Product selectedProduct = Inventory.Products[dgv_AllProdModParts.CurrentRow.Index];
 
+           // //filter the associated parts bindinglist based on the selected product
+           // var associatedPartsforSelectedProduct = Product.AssociatedParts
+           // .Where(Part => Part.PartID == selectedProduct.ProductID)
+           //     .ToList();
 
-
-
-
+           // //bind the filtered associated parts list
+           //// dgv_AssociatedProductParts = associatedPartsforSelectedProduct;
 
 
             this.Hide();

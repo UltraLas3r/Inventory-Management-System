@@ -140,7 +140,7 @@ namespace mschreiberc968_Project
             this.dgv_Parts.Size = new System.Drawing.Size(564, 254);
             this.dgv_Parts.TabIndex = 8;
             this.dgv_Parts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Parts_CellClick);
-            this.dgv_Parts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
+           // this.dgv_Parts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myBindingComplete);
             // 
             // dgv_Products
             // 
@@ -153,7 +153,7 @@ namespace mschreiberc968_Project
             this.dgv_Products.Size = new System.Drawing.Size(606, 254);
             this.dgv_Products.TabIndex = 9;
             this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Products_CellContentClick);
-            this.dgv_Products.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myProductsBindingComplete);
+           // this.dgv_Products.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.myProductsBindingComplete);
             // 
             // label1
             // 
