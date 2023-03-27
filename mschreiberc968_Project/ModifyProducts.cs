@@ -169,7 +169,7 @@ namespace mschreiberc968_Project
             }  
         }
 
-        private void ModifyProductSaveButton(object sender, EventArgs e)
+        public void ModifyProductSaveButton(object sender, EventArgs e)
         {
             // //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
 
@@ -177,21 +177,55 @@ namespace mschreiberc968_Project
             int minStock = int.Parse(txt_ModifyProductMin.Text);
             int maxStock = int.Parse(txt_ModifyProductMax.Text);
             int currentInventory = Int32.Parse(txt_ModifyProductInventory.Text);
-
+      
             Random rnd = new Random();
             int num = rnd.Next(1000);
-
-
+            
             if (minStock <= maxStock && currentInventory >= minStock)
             {
-            newProduct.ProductID = num;
-            newProduct.ProdName = txt_ModifyProductName.Text;
-            newProduct.ProdPrice = decimal.Parse(txt_ModifyProductPriceCost.Text);
-            newProduct.ProdInStock = int.Parse(txt_ModifyProductInventory.Text);
-            newProduct.ProdMin = int.Parse(txt_ModifyProductMin.Text);
-            newProduct.ProdMax = int.Parse(txt_ModifyProductMax.Text);
+                newProduct.ProductID = num;
+                newProduct.ProdName = txt_ModifyProductName.Text;
+                newProduct.ProdPrice = decimal.Parse(txt_ModifyProductPriceCost.Text);
+                newProduct.ProdInStock = int.Parse(txt_ModifyProductInventory.Text);
+                newProduct.ProdMin = int.Parse(txt_ModifyProductMin.Text);
+                newProduct.ProdMax = int.Parse(txt_ModifyProductMax.Text);
                 Inventory.Products.Add(newProduct);
             }
+
+            
+
+
+            //associated parts
+            //if (dgv_AssociatedProductParts.RowCount >= 1)
+            //{
+            //     int modProdID = int.Parse(txt_modifyProductID.Text);
+
+            //        Product updateProd = new Product(
+            //        modProdID,
+            //        txt_ModifyProductName.Text.ToString(),
+            //        decimal.Parse(txt_ModifyProductPriceCost.Text),
+            //        int.Parse(txt_ModifyProductInventory.Text),
+            //        int.Parse(txt_ModifyProductMin.Text),
+            //        int.Parse(txt_ModifyProductMax.Text));
+
+            //    //I might not have the UpdateProduct function working correctly??
+            //    Inventory.UpdateProduct(modProdID, updateProd);
+
+            //    for (int i = dgv_AssociatedProductParts.RowCount - 3; i >= 0; i--)
+            //    {
+            //        Part modifyProdID = (Part)dgv_AssociatedProductParts.Rows[i].DataBoundItem;
+
+            //        Product.AssociatedParts.Add(modifyProdID);
+            //    }
+            //}
+
+            //foreach (DataGridView row in dgv_AssociatedProductParts.Cells)
+            //{
+            //    if (row.SelectedCells[0].Value != null)
+            //    {
+            //        newProduct.AddAssociatedPart(Inventory.LookupPart(Int32.Parse(row.SelectedCells[0].Value.ToString())));
+            //    }
+            //}
 
 
 

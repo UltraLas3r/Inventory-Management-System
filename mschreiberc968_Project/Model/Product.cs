@@ -31,7 +31,7 @@ namespace mschreiberc968_Project.Model
 
         public Product()
         {
-
+           
         }
 
         public void AddAssociatedPart(Part part)

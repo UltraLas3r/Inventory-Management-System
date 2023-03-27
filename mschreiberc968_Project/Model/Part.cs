@@ -17,6 +17,9 @@ namespace mschreiberc968_Project.Model
         public int Min { get; set; }
         public int Max { get; set; }
     }   
+
+
+
 }
 
 
