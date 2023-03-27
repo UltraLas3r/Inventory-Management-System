@@ -58,7 +58,6 @@ namespace mschreiberc968_Project
             this.lbl_AddProductMain = new System.Windows.Forms.Label();
             this.btn_AddProdSearch = new System.Windows.Forms.Button();
             this.txt_AddProdSearch = new System.Windows.Forms.TextBox();
-            this.lbl_MustAssociatePart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AssociatedAddParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAddParts)).BeginInit();
             this.SuspendLayout();
@@ -359,24 +358,11 @@ namespace mschreiberc968_Project
             this.txt_AddProdSearch.Size = new System.Drawing.Size(228, 22);
             this.txt_AddProdSearch.TabIndex = 61;
             // 
-            // lbl_MustAssociatePart
-            // 
-            this.lbl_MustAssociatePart.AutoSize = true;
-            this.lbl_MustAssociatePart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_MustAssociatePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbl_MustAssociatePart.Location = new System.Drawing.Point(501, 519);
-            this.lbl_MustAssociatePart.Name = "lbl_MustAssociatePart";
-            this.lbl_MustAssociatePart.Size = new System.Drawing.Size(584, 25);
-            this.lbl_MustAssociatePart.TabIndex = 62;
-            this.lbl_MustAssociatePart.Text = "You must associate a part with the product you are trying to create.";
-            this.lbl_MustAssociatePart.Click += new System.EventHandler(this.label1_Click);
-            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1238, 618);
-            this.Controls.Add(this.lbl_MustAssociatePart);
             this.Controls.Add(this.txt_AddProdSearch);
             this.Controls.Add(this.btn_AddProdSearch);
             this.Controls.Add(this.btn_AddProductCancel);
@@ -441,6 +427,5 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Label lbl_MustAssociatePart;
     }
 }

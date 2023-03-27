@@ -46,14 +46,6 @@ namespace mschreiberc968_Project
                 return;
             }
 
-
-            if (string.IsNullOrEmpty(txt_AddProductInventory.Text))
-            {
-                MessageBox.Show("Must have a product to add a part to.");
-
-                return;
-            }
-
             //validate integer amount compliance
             int currentInventory = Int32.Parse(txt_AddProductInventory.Text);
             int minStock = int.Parse(txt_AddProductMin.Text);
@@ -248,9 +240,6 @@ namespace mschreiberc968_Project
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+   
     }
 }
