@@ -105,10 +105,9 @@ namespace mschreiberc968_Project
 
         private void btn_AddParts_Click(object sender, EventArgs e)
         {
-            //get the selected row
-            DataGridViewRow selectedRow = dgv_AllAddParts.SelectedRows[0];
-
-            //clone the selected row
+            dgv_AssociatedAddParts.DataSource = Inventory.AllParts;
+            //get the selected row and clone it
+            DataGridViewRow selectedRow = dgv_AllAddParts.SelectedRows[0];       
             DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
 
            //create a new row in associated parts dgv
@@ -118,10 +117,17 @@ namespace mschreiberc968_Project
             }
 
             //add a new entry to the newEmptyGrid list...
-            dgv_AssociatedAddParts.ColumnCount = 6;
+            //dgv_AssociatedAddParts.ColumnCount = 6;
             
             //copy the values from allparts dgv to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
+
+
+            //new idea?? copy the concept from addPart.cs line 225-238. I need to figure out how to take 
+            //cell values from the topdgv and clone/paste them into new cells in the bottom dgv. 
+            //there might be an example online about this .
+            Product newProduct = new Product();
+            newProduct.ProductID = selectedRow.Cells[0].Value;
         }
 
         private void btn_DeleteParts_Click(object sender, EventArgs e)
