@@ -32,7 +32,7 @@ namespace mschreiberc968_Project
             BindingList<Product> newEmptyGrid = new BindingList<Product>();
             dgv_AssociatedAddParts.AutoGenerateColumns = true;
             dgv_AssociatedAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_AssociatedAddParts.DataSource = newEmptyGrid;
+           
 
 
         }
@@ -57,7 +57,7 @@ namespace mschreiberc968_Project
             }
             catch 
             {
-                MessageBox.Show("Error: Inventory, Price, Max and Min text fields must contain a numeber.");
+                MessageBox.Show("Error: Inventory, Price, Max and Min text fields must contain a number.");
                 return;
             }
 
@@ -118,6 +118,7 @@ namespace mschreiberc968_Project
             }
 
             //add a new entry to the newEmptyGrid list...
+            dgv_AssociatedAddParts.ColumnCount = 6;
             
             //copy the values from allparts dgv to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
