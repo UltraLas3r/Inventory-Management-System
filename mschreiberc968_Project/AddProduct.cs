@@ -29,10 +29,10 @@ namespace mschreiberc968_Project
             dgv_AllAddParts.DataSource = Inventory.AllParts;
 
             //for bottom grid 
-            
+            BindingList<Product> newEmptyGrid = new BindingList<Product>();
             dgv_AssociatedAddParts.AutoGenerateColumns = true;
             dgv_AssociatedAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            
+            dgv_AssociatedAddParts.DataSource = newEmptyGrid;
 
 
         }
@@ -111,19 +111,20 @@ namespace mschreiberc968_Project
             //clone the selected row
             DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
 
-            //create a new row in associated parts dgv
+           //create a new row in associated parts dgv
             for (int i = 0; i < selectedRow.Cells.Count; i++)
             {
                 newRow.Cells[i].Value = selectedRow.Cells[i].Value;
             }
 
+            //add a new entry to the newEmptyGrid list...
+            
             //copy the values from allparts dgv to associated parts dgv
             dgv_AssociatedAddParts.Rows.Add(newRow);
         }
 
         private void btn_DeleteParts_Click(object sender, EventArgs e)
         {
-
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -135,7 +136,6 @@ namespace mschreiberc968_Project
                     }
                 }
             }
-          
         }
 
         private void txt_AddProductName_TextChanged(object sender, EventArgs e)

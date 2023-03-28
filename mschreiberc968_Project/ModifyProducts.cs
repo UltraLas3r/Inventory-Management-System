@@ -41,10 +41,11 @@ namespace mschreiberc968_Project
             dgv_AssociatedProductParts.ColumnCount = 6;
 
             //for bottom grid 
+           BindingList<Product> newEmpyGrid = new BindingList<Product>();
             dgv_AssociatedProductParts.AutoGenerateColumns = false;
            // dgv_AssociatedProductParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             GridAssociatedParts = product.AssociatedParts;
-            dgv_AssociatedProductParts.DataSource = GridAssociatedParts;
+            dgv_AssociatedProductParts.DataSource = newEmpyGrid;
 
         }
         public object mainScreenView()
