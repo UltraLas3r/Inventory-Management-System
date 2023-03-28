@@ -14,19 +14,27 @@ namespace mschreiberc968_Project
     public partial class AddProduct : Form
     {
         MainScreen mainS = new MainScreen();
-        
+        public BindingList<Part> partsToAdd = new BindingList<Part>();
         public AddProduct()
         {
             InitializeComponent();
             Display();
-            
         }
 
         private void Display()
         {
+            txt_AddProductName.Focus();
             dgv_AllAddParts.AutoGenerateColumns = true;
             dgv_AllAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_AllAddParts.DataSource = Inventory.AllParts;
+
+            //for bottom grid 
+            
+            dgv_AssociatedAddParts.AutoGenerateColumns = true;
+            dgv_AssociatedAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
+
+
         }
         private void btn_AddProductCancel_Click(object sender, EventArgs e)
         {
@@ -36,13 +44,23 @@ namespace mschreiberc968_Project
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
         {
-            //NEED TO Save the connection between the object and the associated parts.
-           
-
             //validate integer amount compliance
-            int currentInventory = Int32.Parse(txt_AddProductInventory.Text);
-            int minStock = int.Parse(txt_AddProductMin.Text);
-            int maxStock = int.Parse(txt_AddProductMax.Text);
+            int currentInventory;
+            int minStock;
+            int maxStock;
+
+            try
+            {
+                currentInventory = Int32.Parse(txt_AddProductInventory.Text);
+                minStock = int.Parse(txt_AddProductMin.Text);
+                maxStock = int.Parse(txt_AddProductMax.Text);
+            }
+            catch 
+            {
+                MessageBox.Show("Error: Inventory, Price, Max and Min text fields must contain a numeber.");
+                return;
+            }
+
 
             Random rnd = new Random();
             int num = rnd.Next(1000);
@@ -59,8 +77,6 @@ namespace mschreiberc968_Project
                 return;
             }
 
-
-
             //Create the new product
             Product newProd = new Product();
             if (minStock <= maxStock && currentInventory >= minStock)
@@ -76,11 +92,11 @@ namespace mschreiberc968_Project
 
             // Adds currently selectd parts to product associated parts
             foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
-            {
-                if (row.Cells[0].Value != null)
-                {
-                    newProd.AddAssociatedPart(Inventory.LookupPart(Int32.Parse(row.Cells[0].Value.ToString())));
-                }
+            { 
+                Part part = row.DataBoundItem as Part;
+
+                newProd.AddAssociatedPart(part);
+
             }
 
             this.Hide();
@@ -255,5 +271,6 @@ namespace mschreiberc968_Project
                 textBox.BackColor = Color.White;
             }
         }
+
     }
 }

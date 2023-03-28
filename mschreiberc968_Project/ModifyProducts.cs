@@ -15,17 +15,9 @@ namespace mschreiberc968_Project
     {
         MainScreen mainS = new MainScreen();
         private int modProductID;
+        public BindingList<Part> GridAssociatedParts = new BindingList<Part>();
         public ModifyProducts()
         {
-            InitializeComponent();
-            Display();
-
-        }
-
-        private void Btn_ModProductCancel(object sender, EventArgs e)
-        {
-            this.Hide();
-            mainS.Visible = true;
         }
 
         public ModifyProducts(Product product, int ProductID)
@@ -38,16 +30,22 @@ namespace mschreiberc968_Project
             txt_ModifyProductPriceCost.Text = product.ProdPrice.ToString();
             txt_ModifyProductMin.Text = product.ProdMin.ToString();
             txt_ModifyProductMax.Text = product.ProdMax.ToString();
-            Display();
+            Display(product);
         }
 
-        private void Display()
+        private void Display(Product product)
         {
-            dgv_AllProdModParts.AutoGenerateColumns = true;
-            dgv_AllProdModParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_AllProdModParts.DataSource = Inventory.AllParts;
+            dgv_AllParts.AutoGenerateColumns = true;
+            //dgv_AllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_AllParts.DataSource = Inventory.AllParts;
             dgv_AssociatedProductParts.ColumnCount = 6;
-           // dgv_AssociatedProductParts.DataSource = Product.AssociatedParts;
+
+            //for bottom grid 
+            dgv_AssociatedProductParts.AutoGenerateColumns = false;
+           // dgv_AssociatedProductParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            GridAssociatedParts = product.AssociatedParts;
+            dgv_AssociatedProductParts.DataSource = GridAssociatedParts;
+
         }
         public object mainScreenView()
         {
@@ -117,7 +115,6 @@ namespace mschreiberc968_Project
             }
             else btn_ModProductSave.Enabled = true;
         }
-
         private void modifyProductMax_TextChanged(object sender, EventArgs e)
         {
             if (txt_ModifyProductMax.Text.Length > 0)
@@ -133,26 +130,25 @@ namespace mschreiberc968_Project
             }
             else btn_ModProductSave.Enabled = true;
         }
-
         private void AddNewAssociatedPart(object sender, EventArgs e)
         {
+            Product newProd = new Product();
             //get the selected row
-            DataGridViewRow selectedRow = dgv_AllProdModParts.SelectedRows[0];
+           
+            DataGridViewRow selectedRow = dgv_AllParts.SelectedRows[0];
 
             //clone the selected row
             DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
 
             //create a new row in associated parts dgv
-            for (int i = 0; i < selectedRow.Cells.Count; i++)
+            foreach (DataGridViewRow row in dgv_AllParts.Rows)
             {
-                newRow.Cells[i].Value = selectedRow.Cells[i].Value;
+                Part part = row.DataBoundItem as Part;
+
+                newProd.AddAssociatedPart(part);
             }
 
-            //copy the values from allparts DGV to associated parts dgv
-            dgv_AssociatedProductParts.Rows.Add(newRow);
         }
-
-     
 
         private void DeleteAssociatedPart(object sender, EventArgs e)
         {
@@ -161,9 +157,9 @@ namespace mschreiberc968_Project
             {
                 if (dgv_AssociatedProductParts.CurrentRow == null || dgv_AssociatedProductParts.CurrentRow.Selected)
                 {
-                    foreach (DataGridViewRow row in dgv_AllProdModParts.SelectedRows)
+                    foreach (DataGridViewRow row in dgv_AllParts.SelectedRows)
                     {
-                        dgv_AllProdModParts.Rows.RemoveAt(row.Index);
+                        dgv_AllParts.Rows.RemoveAt(row.Index);
                     }
                 }
             }  
@@ -171,8 +167,6 @@ namespace mschreiberc968_Project
 
         public void ModifyProductSaveButton(object sender, EventArgs e)
         {
-            // //create a new associated parts bindinglist entry that includes the rows from the parts DGV. 
-
             Product newProduct = new Product();
             int minStock = int.Parse(txt_ModifyProductMin.Text);
             int maxStock = int.Parse(txt_ModifyProductMax.Text);
@@ -192,34 +186,32 @@ namespace mschreiberc968_Project
                 Inventory.Products.Add(newProduct);
             }
 
-            
+            if (dgv_AssociatedProductParts.RowCount >= 1)
+            {
+                int prodIDForModifiedProduct = int.Parse(txt_modifyProductID.Text);
+
+                Product updateProd = new Product(
+                prodIDForModifiedProduct,
+                txt_ModifyProductName.Text.ToString(),
+                decimal.Parse(txt_ModifyProductPriceCost.Text),
+                int.Parse(txt_ModifyProductInventory.Text),
+                int.Parse(txt_ModifyProductMin.Text),
+                int.Parse(txt_ModifyProductMax.Text));
+
+                //I might not have the UpdateProduct function working correctly??
+                Inventory.UpdateProduct(prodIDForModifiedProduct, updateProd);
+
+                for (int i = dgv_AssociatedProductParts.RowCount - 3; i >= 0; i--)
+                {
+                    Part partAssociatedWithProduct = (Part)dgv_AssociatedProductParts.Rows[i].DataBoundItem;
+
+                    //Product.AssociatedParts.Add(partAssociatedWithProduct);
+                }
+            }
 
 
-            //associated parts
-            //if (dgv_AssociatedProductParts.RowCount >= 1)
-            //{
-            //     int modProdID = int.Parse(txt_modifyProductID.Text);
-
-            //        Product updateProd = new Product(
-            //        modProdID,
-            //        txt_ModifyProductName.Text.ToString(),
-            //        decimal.Parse(txt_ModifyProductPriceCost.Text),
-            //        int.Parse(txt_ModifyProductInventory.Text),
-            //        int.Parse(txt_ModifyProductMin.Text),
-            //        int.Parse(txt_ModifyProductMax.Text));
-
-            //    //I might not have the UpdateProduct function working correctly??
-            //    Inventory.UpdateProduct(modProdID, updateProd);
-
-            //    for (int i = dgv_AssociatedProductParts.RowCount - 3; i >= 0; i--)
-            //    {
-            //        Part modifyProdID = (Part)dgv_AssociatedProductParts.Rows[i].DataBoundItem;
-
-            //        Product.AssociatedParts.Add(modifyProdID);
-            //    }
-            //}
-
-            //foreach (DataGridView row in dgv_AssociatedProductParts.Cells)
+            ////this is where I am having a lot of problems
+            //foreach (DataGridView row in dgv_AssociatedProductParts.SelectedCells)
             //{
             //    if (row.SelectedCells[0].Value != null)
             //    {
@@ -227,7 +219,8 @@ namespace mschreiberc968_Project
             //    }
             //}
 
-
+            
+            
 
             this.Hide();
             mainScreenView();
@@ -275,7 +268,7 @@ namespace mschreiberc968_Project
             }
             else
             {
-                foreach (DataGridViewRow row in dgv_AllProdModParts.Rows)
+                foreach (DataGridViewRow row in dgv_AllParts.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
@@ -290,6 +283,12 @@ namespace mschreiberc968_Project
             }
         }
 
-      
+        private void Btn_ModProductCancel(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainS.Visible = true;
+        }
+
+
     }
 }
