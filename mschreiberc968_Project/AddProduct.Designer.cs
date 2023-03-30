@@ -33,8 +33,8 @@ namespace mschreiberc968_Project
             this.btn_AddProductSave = new System.Windows.Forms.Button();
             this.btn_DeleteParts = new System.Windows.Forms.Button();
             this.btn_AddParts = new System.Windows.Forms.Button();
-            this.dgv_AssociatedAddParts = new System.Windows.Forms.DataGridView();
-            this.dgv_AllAddParts = new System.Windows.Forms.DataGridView();
+            this.dgv_BottomAssociatedAddParts = new System.Windows.Forms.DataGridView();
+            this.dgv_TopAllParts = new System.Windows.Forms.DataGridView();
             this.lbl_AddProduct_AssociatedParts = new System.Windows.Forms.Label();
             this.lbl_AddProduct_AllParts = new System.Windows.Forms.Label();
             this.txt_AddProductMax = new System.Windows.Forms.TextBox();
@@ -52,8 +52,8 @@ namespace mschreiberc968_Project
             this.lbl_AddProductMain = new System.Windows.Forms.Label();
             this.btn_AddProdSearch = new System.Windows.Forms.Button();
             this.txt_AddProdSearch = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_AssociatedAddParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAddParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_BottomAssociatedAddParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TopAllParts)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_AddProductCancel
@@ -98,35 +98,35 @@ namespace mschreiberc968_Project
             this.btn_AddParts.TabIndex = 56;
             this.btn_AddParts.Text = "Add Parts";
             this.btn_AddParts.UseVisualStyleBackColor = true;
-            this.btn_AddParts.Click += new System.EventHandler(this.btn_AddParts_Click);
+            this.btn_AddParts.Click += new System.EventHandler(this.btn_AddPartsToBottomDGV);
             // 
-            // dgv_AssociatedAddParts
+            // dgv_BottomAssociatedAddParts
             // 
-            this.dgv_AssociatedAddParts.AllowUserToAddRows = false;
-            this.dgv_AssociatedAddParts.AllowUserToDeleteRows = false;
-            this.dgv_AssociatedAddParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AssociatedAddParts.Location = new System.Drawing.Point(622, 330);
-            this.dgv_AssociatedAddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgv_AssociatedAddParts.Name = "dgv_AssociatedAddParts";
-            this.dgv_AssociatedAddParts.RowHeadersWidth = 62;
-            this.dgv_AssociatedAddParts.RowTemplate.Height = 28;
-            this.dgv_AssociatedAddParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AssociatedAddParts.Size = new System.Drawing.Size(595, 174);
-            this.dgv_AssociatedAddParts.TabIndex = 55;
+            this.dgv_BottomAssociatedAddParts.AllowUserToAddRows = false;
+            this.dgv_BottomAssociatedAddParts.AllowUserToDeleteRows = false;
+            this.dgv_BottomAssociatedAddParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_BottomAssociatedAddParts.Location = new System.Drawing.Point(622, 330);
+            this.dgv_BottomAssociatedAddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_BottomAssociatedAddParts.Name = "dgv_BottomAssociatedAddParts";
+            this.dgv_BottomAssociatedAddParts.RowHeadersWidth = 62;
+            this.dgv_BottomAssociatedAddParts.RowTemplate.Height = 28;
+            this.dgv_BottomAssociatedAddParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_BottomAssociatedAddParts.Size = new System.Drawing.Size(595, 174);
+            this.dgv_BottomAssociatedAddParts.TabIndex = 55;
             // 
-            // dgv_AllAddParts
+            // dgv_TopAllParts
             // 
-            this.dgv_AllAddParts.AllowUserToAddRows = false;
-            this.dgv_AllAddParts.AllowUserToDeleteRows = false;
-            this.dgv_AllAddParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_AllAddParts.Location = new System.Drawing.Point(622, 82);
-            this.dgv_AllAddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgv_AllAddParts.Name = "dgv_AllAddParts";
-            this.dgv_AllAddParts.RowHeadersWidth = 62;
-            this.dgv_AllAddParts.RowTemplate.Height = 28;
-            this.dgv_AllAddParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AllAddParts.Size = new System.Drawing.Size(595, 174);
-            this.dgv_AllAddParts.TabIndex = 54;
+            this.dgv_TopAllParts.AllowUserToAddRows = false;
+            this.dgv_TopAllParts.AllowUserToDeleteRows = false;
+            this.dgv_TopAllParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TopAllParts.Location = new System.Drawing.Point(622, 82);
+            this.dgv_TopAllParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_TopAllParts.Name = "dgv_TopAllParts";
+            this.dgv_TopAllParts.RowHeadersWidth = 62;
+            this.dgv_TopAllParts.RowTemplate.Height = 28;
+            this.dgv_TopAllParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_TopAllParts.Size = new System.Drawing.Size(595, 174);
+            this.dgv_TopAllParts.TabIndex = 54;
             // 
             // lbl_AddProduct_AssociatedParts
             // 
@@ -311,8 +311,8 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.btn_AddProductSave);
             this.Controls.Add(this.btn_DeleteParts);
             this.Controls.Add(this.btn_AddParts);
-            this.Controls.Add(this.dgv_AssociatedAddParts);
-            this.Controls.Add(this.dgv_AllAddParts);
+            this.Controls.Add(this.dgv_BottomAssociatedAddParts);
+            this.Controls.Add(this.dgv_TopAllParts);
             this.Controls.Add(this.lbl_AddProduct_AssociatedParts);
             this.Controls.Add(this.lbl_AddProduct_AllParts);
             this.Controls.Add(this.txt_AddProductMax);
@@ -331,8 +331,8 @@ namespace mschreiberc968_Project
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddProduct";
             this.Text = "Add Product";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_AssociatedAddParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllAddParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_BottomAssociatedAddParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TopAllParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,8 +344,8 @@ namespace mschreiberc968_Project
         private System.Windows.Forms.Button btn_AddProductSave;
         private System.Windows.Forms.Button btn_DeleteParts;
         private System.Windows.Forms.Button btn_AddParts;
-        private System.Windows.Forms.DataGridView dgv_AssociatedAddParts;
-        private System.Windows.Forms.DataGridView dgv_AllAddParts;
+        private System.Windows.Forms.DataGridView dgv_BottomAssociatedAddParts;
+        private System.Windows.Forms.DataGridView dgv_TopAllParts;
         private System.Windows.Forms.Label lbl_AddProduct_AssociatedParts;
         private System.Windows.Forms.Label lbl_AddProduct_AllParts;
         private System.Windows.Forms.TextBox txt_AddProductMax;

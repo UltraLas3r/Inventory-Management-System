@@ -15,6 +15,10 @@ namespace mschreiberc968_Project
     {
         MainScreen mainS = new MainScreen();
         public BindingList<Part> partsToAdd = new BindingList<Part>();
+        Product newProduct = new Product();
+
+
+
         public AddProduct()
         {
             InitializeComponent();
@@ -24,17 +28,15 @@ namespace mschreiberc968_Project
         private void Display()
         {
             txt_AddProductName.Focus();
-            dgv_AllAddParts.AutoGenerateColumns = true;
-            dgv_AllAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_AllAddParts.DataSource = Inventory.AllParts;
+            dgv_TopAllParts.AutoGenerateColumns = true;
+            dgv_TopAllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_TopAllParts.DataSource = Inventory.AllParts;
 
             //for bottom grid 
-            BindingList<Product> newEmptyGrid = new BindingList<Product>();
-            dgv_AssociatedAddParts.AutoGenerateColumns = true;
-            dgv_AssociatedAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-           
-
-
+            dgv_BottomAssociatedAddParts.DataSource = newProduct.AssociatedParts;
+            dgv_BottomAssociatedAddParts.AutoGenerateColumns = true;
+            dgv_BottomAssociatedAddParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+        
         }
         private void btn_AddProductCancel_Click(object sender, EventArgs e)
         {
@@ -91,7 +93,7 @@ namespace mschreiberc968_Project
             }
 
             // Adds currently selectd parts to product associated parts
-            foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
+            foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
             { 
                 Part part = row.DataBoundItem as Part;
 
@@ -103,31 +105,22 @@ namespace mschreiberc968_Project
             mainS.Visible = true;
         }
 
-        private void btn_AddParts_Click(object sender, EventArgs e)
+        private void btn_AddPartsToBottomDGV(object sender, EventArgs e)
         {
-            dgv_AssociatedAddParts.DataSource = Inventory.AllParts;
-            //get the selected row and clone it
-            DataGridViewRow selectedRow = dgv_AllAddParts.SelectedRows[0];       
-            DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
-
-           //create a new row in associated parts dgv
-            for (int i = 0; i < selectedRow.Cells.Count; i++)
+            if (dgv_TopAllParts.CurrentRow == null || !dgv_TopAllParts.CurrentRow.Selected)
             {
-                newRow.Cells[i].Value = selectedRow.Cells[i].Value;
+                MessageBox.Show("Must select a part to associate");
+
+                return;
+
             }
+            else
+            {
+                Part part = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
 
-            //add a new entry to the newEmptyGrid list...
-            //dgv_AssociatedAddParts.ColumnCount = 6;
-            
-            //copy the values from allparts dgv to associated parts dgv
-            dgv_AssociatedAddParts.Rows.Add(newRow);
+                newProduct.AddAssociatedPart(part);
 
-
-            //new idea?? copy the concept from addPart.cs line 225-238. I need to figure out how to take 
-            //cell values from the topdgv and clone/paste them into new cells in the bottom dgv. 
-            //there might be an example online about this .
-            Product newProduct = new Product();
-            newProduct.ProductID = selectedRow.Cells[0].Value;
+            }
         }
 
         private void btn_DeleteParts_Click(object sender, EventArgs e)
@@ -135,11 +128,11 @@ namespace mschreiberc968_Project
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                if (dgv_AssociatedAddParts.CurrentRow == null || dgv_AssociatedAddParts.CurrentRow.Selected)
+                if (dgv_BottomAssociatedAddParts.CurrentRow == null || dgv_BottomAssociatedAddParts.CurrentRow.Selected)
                 {
-                    foreach (DataGridViewRow row in dgv_AssociatedAddParts.SelectedRows)
+                    foreach (DataGridViewRow row in dgv_BottomAssociatedAddParts.SelectedRows)
                     {
-                        dgv_AssociatedAddParts.Rows.RemoveAt(row.Index);
+                        dgv_BottomAssociatedAddParts.Rows.RemoveAt(row.Index);
                     }
                 }
             }
@@ -233,7 +226,7 @@ namespace mschreiberc968_Project
             }
             else
             {
-                foreach (DataGridViewRow row in dgv_AllAddParts.Rows)
+                foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {

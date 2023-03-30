@@ -15,6 +15,7 @@ namespace mschreiberc968_Project
     {
         MainScreen mainS = new MainScreen();
         private int modProductID;
+
         public BindingList<Part> GridAssociatedParts = new BindingList<Part>();
         public ModifyProducts()
         {
@@ -35,17 +36,17 @@ namespace mschreiberc968_Project
 
         private void Display(Product product)
         {
-            dgv_AllParts.AutoGenerateColumns = true;
+            dgv_TopAllParts.AutoGenerateColumns = true;
             //dgv_AllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_AllParts.DataSource = Inventory.AllParts;
-            dgv_AssociatedProductParts.ColumnCount = 6;
+            dgv_TopAllParts.DataSource = Inventory.AllParts;
+            dgv_BottomAssociatedParts.ColumnCount = 6;
 
             //for bottom grid 
-           BindingList<Product> newEmpyGrid = new BindingList<Product>();
-            dgv_AssociatedProductParts.AutoGenerateColumns = false;
+          
+            dgv_BottomAssociatedParts.AutoGenerateColumns = false;
            // dgv_AssociatedProductParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             GridAssociatedParts = product.AssociatedParts;
-            dgv_AssociatedProductParts.DataSource = newEmpyGrid;
+            dgv_BottomAssociatedParts.DataSource = GridAssociatedParts;
 
         }
         public object mainScreenView()
@@ -133,20 +134,22 @@ namespace mschreiberc968_Project
         }
         private void AddNewAssociatedPart(object sender, EventArgs e)
         {
-            Product newProd = new Product();
-            //get the selected row
-           
-            DataGridViewRow selectedRow = dgv_AllParts.SelectedRows[0];
-
-            //clone the selected row
-            DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
-
-            //create a new row in associated parts dgv
-            foreach (DataGridViewRow row in dgv_AllParts.Rows)
+            if (dgv_TopAllParts.CurrentRow == null || !dgv_TopAllParts.CurrentRow.Selected)
             {
-                Part part = row.DataBoundItem as Part;
+                MessageBox.Show("Must select a part to associate");
 
-                newProd.AddAssociatedPart(part);
+                return;
+
+            }
+            else
+            {
+                Part part = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
+
+                //todo fix the reference for the part
+                GridAssociatedParts.Add(part);
+
+                dgv_BottomAssociatedParts.DataSource = GridAssociatedParts;
+
             }
 
         }
@@ -156,11 +159,11 @@ namespace mschreiberc968_Project
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                if (dgv_AssociatedProductParts.CurrentRow == null || dgv_AssociatedProductParts.CurrentRow.Selected)
+                if (dgv_BottomAssociatedParts.CurrentRow == null || dgv_BottomAssociatedParts.CurrentRow.Selected)
                 {
-                    foreach (DataGridViewRow row in dgv_AllParts.SelectedRows)
+                    foreach (DataGridViewRow row in dgv_TopAllParts.SelectedRows)
                     {
-                        dgv_AllParts.Rows.RemoveAt(row.Index);
+                        dgv_TopAllParts.Rows.RemoveAt(row.Index);
                     }
                 }
             }  
@@ -187,7 +190,7 @@ namespace mschreiberc968_Project
                 Inventory.Products.Add(newProduct);
             }
 
-            if (dgv_AssociatedProductParts.RowCount >= 1)
+            if (dgv_BottomAssociatedParts.RowCount >= 1)
             {
                 int prodIDForModifiedProduct = int.Parse(txt_modifyProductID.Text);
 
@@ -202,9 +205,9 @@ namespace mschreiberc968_Project
                 //I might not have the UpdateProduct function working correctly??
                 Inventory.UpdateProduct(prodIDForModifiedProduct, updateProd);
 
-                for (int i = dgv_AssociatedProductParts.RowCount - 3; i >= 0; i--)
+                for (int i = dgv_BottomAssociatedParts.RowCount - 3; i >= 0; i--)
                 {
-                    Part partAssociatedWithProduct = (Part)dgv_AssociatedProductParts.Rows[i].DataBoundItem;
+                    Part partAssociatedWithProduct = (Part)dgv_BottomAssociatedParts.Rows[i].DataBoundItem;
 
                     //Product.AssociatedParts.Add(partAssociatedWithProduct);
                 }
@@ -269,7 +272,7 @@ namespace mschreiberc968_Project
             }
             else
             {
-                foreach (DataGridViewRow row in dgv_AllParts.Rows)
+                foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
