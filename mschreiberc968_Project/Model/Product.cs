@@ -52,13 +52,8 @@ namespace mschreiberc968_Project.Model
                 return true;
             }
         }
-
-        public void AddAssociatedProduct(Part part)
-        {
-            AssociatedParts.Add(part);
-        }
     }
-   }
+}
 
 
 

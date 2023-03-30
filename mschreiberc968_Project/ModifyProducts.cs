@@ -16,7 +16,7 @@ namespace mschreiberc968_Project
         MainScreen mainS = new MainScreen();
         private int modProductID;
 
-        public BindingList<Part> GridAssociatedParts = new BindingList<Part>();
+        public BindingList<Part> gridAssociatedParts = new BindingList<Part>();
         public ModifyProducts()
         {
         }
@@ -39,14 +39,17 @@ namespace mschreiberc968_Project
             dgv_TopAllParts.AutoGenerateColumns = true;
             //dgv_AllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_TopAllParts.DataSource = Inventory.AllParts;
-            dgv_BottomAssociatedParts.ColumnCount = 6;
+            
 
             //for bottom grid 
-          
-            dgv_BottomAssociatedParts.AutoGenerateColumns = false;
-           // dgv_AssociatedProductParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            GridAssociatedParts = product.AssociatedParts;
-            dgv_BottomAssociatedParts.DataSource = GridAssociatedParts;
+            gridAssociatedParts = product.AssociatedParts;
+            dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
+            dgv_BottomAssociatedParts.AutoGenerateColumns = true;
+            //dgv_BottomAssociatedParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
+
+      
+           
 
         }
         public object mainScreenView()
@@ -146,9 +149,9 @@ namespace mschreiberc968_Project
                 Part part = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
 
                 //todo fix the reference for the part
-                GridAssociatedParts.Add(part);
+                gridAssociatedParts.Add(part);
 
-                dgv_BottomAssociatedParts.DataSource = GridAssociatedParts;
+                dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
 
             }
 
@@ -161,9 +164,9 @@ namespace mschreiberc968_Project
             {
                 if (dgv_BottomAssociatedParts.CurrentRow == null || dgv_BottomAssociatedParts.CurrentRow.Selected)
                 {
-                    foreach (DataGridViewRow row in dgv_TopAllParts.SelectedRows)
+                    foreach (DataGridViewRow row in dgv_BottomAssociatedParts.SelectedRows)
                     {
-                        dgv_TopAllParts.Rows.RemoveAt(row.Index);
+                        dgv_BottomAssociatedParts.Rows.RemoveAt(row.Index);
                     }
                 }
             }  
@@ -212,19 +215,6 @@ namespace mschreiberc968_Project
                     //Product.AssociatedParts.Add(partAssociatedWithProduct);
                 }
             }
-
-
-            ////this is where I am having a lot of problems
-            //foreach (DataGridView row in dgv_AssociatedProductParts.SelectedCells)
-            //{
-            //    if (row.SelectedCells[0].Value != null)
-            //    {
-            //        newProduct.AddAssociatedPart(Inventory.LookupPart(Int32.Parse(row.SelectedCells[0].Value.ToString())));
-            //    }
-            //}
-
-            
-            
 
             this.Hide();
             mainScreenView();

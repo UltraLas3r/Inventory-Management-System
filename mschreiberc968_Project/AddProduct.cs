@@ -14,10 +14,10 @@ namespace mschreiberc968_Project
     public partial class AddProduct : Form
     {
         MainScreen mainS = new MainScreen();
-        public BindingList<Part> partsToAdd = new BindingList<Part>();
+
+        public BindingList<Part> gridAssociatedParts = new BindingList<Part>();
+
         Product newProduct = new Product();
-
-
 
         public AddProduct()
         {
@@ -26,7 +26,7 @@ namespace mschreiberc968_Project
         }
 
         private void Display()
-        {
+        {   //for top grid
             txt_AddProductName.Focus();
             dgv_TopAllParts.AutoGenerateColumns = true;
             dgv_TopAllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -42,6 +42,22 @@ namespace mschreiberc968_Project
         {
             this.Hide();
             mainS.Visible = true;
+        }
+
+        private void btn_AddPartsToBottomDGV(object sender, EventArgs e)
+        {
+            if (dgv_TopAllParts.CurrentRow == null || !dgv_TopAllParts.CurrentRow.Selected)
+            {
+                MessageBox.Show("Must select a part to associate");
+
+                return;
+            }
+            else
+            {
+                Part partToAdd = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
+
+                newProduct.AddAssociatedPart(partToAdd);
+            }
         }
 
         private void btn_AddProductSave_Click(object sender, EventArgs e)
@@ -63,7 +79,6 @@ namespace mschreiberc968_Project
                 return;
             }
 
-
             Random rnd = new Random();
             int num = rnd.Next(1000);
 
@@ -80,49 +95,31 @@ namespace mschreiberc968_Project
             }
 
             //Create the new product
-            Product newProd = new Product();
+            
             if (minStock <= maxStock && currentInventory >= minStock)
             {   
-                newProd.ProductID = num;
-                newProd.ProdName = txt_AddProductName.Text;
-                newProd.ProdPrice = decimal.Parse(txt_AddProductPriceCost.Text);
-                newProd.ProdInStock = int.Parse(txt_AddProductInventory.Text);
-                newProd.ProdMin = int.Parse(txt_AddProductMin.Text);
-                newProd.ProdMax = int.Parse(txt_AddProductMax.Text);
-                Inventory.Products.Add(newProd);
+                newProduct.ProductID = num;
+                newProduct.ProdName = txt_AddProductName.Text;
+                newProduct.ProdPrice = decimal.Parse(txt_AddProductPriceCost.Text);
+                newProduct.ProdInStock = int.Parse(txt_AddProductInventory.Text);
+                newProduct.ProdMin = int.Parse(txt_AddProductMin.Text);
+                newProduct.ProdMax = int.Parse(txt_AddProductMax.Text);
+                Inventory.Products.Add(newProduct);
             }
 
-            // Adds currently selectd parts to product associated parts
+            // Adds currently selectd parts to associated parts list
             foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
-            { 
+            {
                 Part part = row.DataBoundItem as Part;
 
-                newProd.AddAssociatedPart(part);
-
+                newProduct.AddAssociatedPart(part);
             }
 
             this.Hide();
             mainS.Visible = true;
         }
 
-        private void btn_AddPartsToBottomDGV(object sender, EventArgs e)
-        {
-            if (dgv_TopAllParts.CurrentRow == null || !dgv_TopAllParts.CurrentRow.Selected)
-            {
-                MessageBox.Show("Must select a part to associate");
-
-                return;
-
-            }
-            else
-            {
-                Part part = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
-
-                newProduct.AddAssociatedPart(part);
-
-            }
-        }
-
+     
         private void btn_DeleteParts_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
