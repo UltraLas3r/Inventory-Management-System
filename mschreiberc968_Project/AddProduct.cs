@@ -49,7 +49,6 @@ namespace mschreiberc968_Project
             if (dgv_TopAllParts.CurrentRow == null || !dgv_TopAllParts.CurrentRow.Selected)
             {
                 MessageBox.Show("Must select a part to associate");
-
                 return;
             }
             else
@@ -57,6 +56,8 @@ namespace mschreiberc968_Project
                 Part partToAdd = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
 
                 newProduct.AddAssociatedPart(partToAdd);
+
+                dgv_BottomAssociatedAddParts.DataSource = newProduct.AssociatedParts;
             }
         }
 
@@ -95,9 +96,9 @@ namespace mschreiberc968_Project
             }
 
             //Create the new product
-            
+
             if (minStock <= maxStock && currentInventory >= minStock)
-            {   
+            {
                 newProduct.ProductID = num;
                 newProduct.ProdName = txt_AddProductName.Text;
                 newProduct.ProdPrice = decimal.Parse(txt_AddProductPriceCost.Text);

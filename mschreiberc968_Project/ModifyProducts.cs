@@ -169,7 +169,7 @@ namespace mschreiberc968_Project
             int minStock = int.Parse(txt_ModifyProductMin.Text);
             int maxStock = int.Parse(txt_ModifyProductMax.Text);
             int currentInventory = Int32.Parse(txt_ModifyProductInventory.Text);
-      
+            
             Random rnd = new Random();
             int num = rnd.Next(1000);
             
@@ -197,16 +197,12 @@ namespace mschreiberc968_Project
                 int.Parse(txt_ModifyProductMax.Text));
 
                 //I might not have the UpdateProduct function working correctly??
+                //I NEED TO DELETE THE OLD PRODUCT -- THE ONE I MODIFIED and REPLACE IT WITH THE NEW PRODUCT
                 Inventory.UpdateProduct(prodIDForModifiedProduct, updateProd);
 
-                for (int i = dgv_BottomAssociatedParts.RowCount - 3; i >= 0; i--)
-                {
-                    Part partAssociatedWithProduct = (Part)dgv_BottomAssociatedParts.Rows[i].DataBoundItem;
-
-                    //Product.AssociatedParts.Add(partAssociatedWithProduct);
-                }
+                dgv_TopAllParts.DataSource = Inventory.AllParts; 
             }
-
+            
             this.Hide();
             mainScreenView();
         }
