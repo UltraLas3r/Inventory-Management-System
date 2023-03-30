@@ -39,18 +39,12 @@ namespace mschreiberc968_Project
             dgv_TopAllParts.AutoGenerateColumns = true;
             //dgv_AllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_TopAllParts.DataSource = Inventory.AllParts;
-            
-
+ 
             //for bottom grid 
             gridAssociatedParts = product.AssociatedParts;
             dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
             dgv_BottomAssociatedParts.AutoGenerateColumns = true;
             //dgv_BottomAssociatedParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            
-
-      
-           
-
         }
         public object mainScreenView()
         {
@@ -140,9 +134,7 @@ namespace mschreiberc968_Project
             if (dgv_TopAllParts.CurrentRow == null || !dgv_TopAllParts.CurrentRow.Selected)
             {
                 MessageBox.Show("Must select a part to associate");
-
                 return;
-
             }
             else
             {
@@ -152,7 +144,6 @@ namespace mschreiberc968_Project
                 gridAssociatedParts.Add(part);
 
                 dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
-
             }
 
         }
