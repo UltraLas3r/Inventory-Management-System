@@ -16,6 +16,8 @@ namespace mschreiberc968_Project
         MainScreen mainS = new MainScreen();
         private int modProductID;
 
+        Product newProduct = new Product();
+
         public BindingList<Part> gridAssociatedParts = new BindingList<Part>();
         public ModifyProducts()
         {
@@ -34,7 +36,7 @@ namespace mschreiberc968_Project
             Display(product);
         }
 
-        private void Display(Product product)
+        private void Display(Product newProduct)
         {
             dgv_TopAllParts.DataSource = Inventory.AllParts;
             dgv_TopAllParts.AutoGenerateColumns = true;
@@ -42,7 +44,7 @@ namespace mschreiberc968_Project
             
  
             //for bottom grid 
-            gridAssociatedParts = product.AssociatedParts;
+            gridAssociatedParts = newProduct.AssociatedParts;
             dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
             dgv_BottomAssociatedParts.AutoGenerateColumns = true;
             dgv_BottomAssociatedParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -139,13 +141,13 @@ namespace mschreiberc968_Project
             }
             else
             {
-                Part part = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
+                Part partToAdd = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
 
                 //TODO fix the reference for the part
                 //for some reason the mainscreen datagrid for product is duplicating products
-                gridAssociatedParts.Add(part);
+                newProduct.AddAssociatedPart(partToAdd);
 
-                dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
+                dgv_BottomAssociatedParts.DataSource = newProduct.AssociatedParts;
             }
 
         }
@@ -171,7 +173,8 @@ namespace mschreiberc968_Project
             int minStock = int.Parse(txt_ModifyProductMin.Text);
             int maxStock = int.Parse(txt_ModifyProductMax.Text);
             int currentInventory = Int32.Parse(txt_ModifyProductInventory.Text);
-            
+
+            //generate random number for product ID
             Random rnd = new Random();
             int num = rnd.Next(1000);
             

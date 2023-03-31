@@ -80,6 +80,7 @@ namespace mschreiberc968_Project
                 return;
             }
 
+            //generate random number for product ID
             Random rnd = new Random();
             int num = rnd.Next(1000);
 
@@ -105,7 +106,7 @@ namespace mschreiberc968_Project
                 newProduct.ProdInStock = int.Parse(txt_AddProductInventory.Text);
                 newProduct.ProdMin = int.Parse(txt_AddProductMin.Text);
                 newProduct.ProdMax = int.Parse(txt_AddProductMax.Text);
-                Inventory.Products.Add(newProduct);
+                Inventory.Products.Add(newProduct); //adds the new product to the Products binding list
             }
 
             // the below code DOES NOT WORK AND NEEDS TO BE REMOVED!!
