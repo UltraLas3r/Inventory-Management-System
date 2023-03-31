@@ -36,15 +36,16 @@ namespace mschreiberc968_Project
 
         private void Display(Product product)
         {
-            dgv_TopAllParts.AutoGenerateColumns = true;
-            //dgv_AllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_TopAllParts.DataSource = Inventory.AllParts;
+            dgv_TopAllParts.AutoGenerateColumns = true;
+            dgv_TopAllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
  
             //for bottom grid 
             gridAssociatedParts = product.AssociatedParts;
             dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
             dgv_BottomAssociatedParts.AutoGenerateColumns = true;
-            //dgv_BottomAssociatedParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_BottomAssociatedParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
         public object mainScreenView()
         {
@@ -140,7 +141,8 @@ namespace mschreiberc968_Project
             {
                 Part part = dgv_TopAllParts.CurrentRow.DataBoundItem as Part;
 
-                //todo fix the reference for the part
+                //TODO fix the reference for the part
+                //for some reason the mainscreen datagrid for product is duplicating products
                 gridAssociatedParts.Add(part);
 
                 dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
@@ -200,9 +202,20 @@ namespace mschreiberc968_Project
                 //I NEED TO DELETE THE OLD PRODUCT -- THE ONE I MODIFIED and REPLACE IT WITH THE NEW PRODUCT
                 Inventory.UpdateProduct(prodIDForModifiedProduct, updateProd);
 
+                Inventory.RemoveProduct(modProductID); //this doesnt do anything
+
                 dgv_TopAllParts.DataSource = Inventory.AllParts; 
             }
             
+            foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
+            {
+                Part part = row.DataBoundItem as Part;
+
+                newProduct.AddAssociatedPart(part);
+
+            }
+
+
             this.Hide();
             mainScreenView();
         }

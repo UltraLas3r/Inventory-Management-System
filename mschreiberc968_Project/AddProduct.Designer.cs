@@ -105,7 +105,7 @@ namespace mschreiberc968_Project
             this.dgv_BottomAssociatedAddParts.AllowUserToAddRows = false;
             this.dgv_BottomAssociatedAddParts.AllowUserToDeleteRows = false;
             this.dgv_BottomAssociatedAddParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_BottomAssociatedAddParts.Location = new System.Drawing.Point(622, 330);
+            this.dgv_BottomAssociatedAddParts.Location = new System.Drawing.Point(628, 330);
             this.dgv_BottomAssociatedAddParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_BottomAssociatedAddParts.Name = "dgv_BottomAssociatedAddParts";
             this.dgv_BottomAssociatedAddParts.RowHeadersWidth = 62;
