@@ -109,14 +109,6 @@ namespace mschreiberc968_Project
                 Inventory.Products.Add(newProduct); //adds the new product to the Products binding list
             }
 
-            // the below code DOES NOT WORK AND NEEDS TO BE REMOVED!!
-            //foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
-            //{
-            //    Part part = row.DataBoundItem as Part;
-
-            //    newProduct.AddAssociatedPart(part);
-            //}
-
             this.Hide();
             mainS.Visible = true;
         }

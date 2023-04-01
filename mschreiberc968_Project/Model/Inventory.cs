@@ -50,8 +50,16 @@ namespace mschreiberc968_Project.Model
 
         public static void UpdateProduct(int productID, Product product)
         {
-            RemoveProduct(productID);
-            AddProduct(product);
+            //RemoveProduct(productID);
+            //AddProduct(product);
+
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].ProductID == productID)
+                {
+                    Products[i] = product;
+                }
+            }
         }
 
         //PARTS

@@ -173,49 +173,26 @@ namespace mschreiberc968_Project
             int minStock = int.Parse(txt_ModifyProductMin.Text);
             int maxStock = int.Parse(txt_ModifyProductMax.Text);
             int currentInventory = Int32.Parse(txt_ModifyProductInventory.Text);
+            int productID = int.Parse(txt_modifyProductID.Text);
 
-            //generate random number for product ID
-            Random rnd = new Random();
-            int num = rnd.Next(1000);
-            
+
             if (minStock <= maxStock && currentInventory >= minStock)
             {
-                newProduct.ProductID = num;
+                newProduct.ProductID = int.Parse(txt_modifyProductID.Text);
                 newProduct.ProdName = txt_ModifyProductName.Text;
                 newProduct.ProdPrice = decimal.Parse(txt_ModifyProductPriceCost.Text);
                 newProduct.ProdInStock = int.Parse(txt_ModifyProductInventory.Text);
                 newProduct.ProdMin = int.Parse(txt_ModifyProductMin.Text);
                 newProduct.ProdMax = int.Parse(txt_ModifyProductMax.Text);
-                Inventory.Products.Add(newProduct);
+                Inventory.UpdateProduct(productID, newProduct);
             }
 
-            if (dgv_BottomAssociatedParts.RowCount >= 1)
-            {
-                int prodIDForModifiedProduct = int.Parse(txt_modifyProductID.Text);
-
-                Product updateProd = new Product(
-                prodIDForModifiedProduct,
-                txt_ModifyProductName.Text.ToString(),
-                decimal.Parse(txt_ModifyProductPriceCost.Text),
-                int.Parse(txt_ModifyProductInventory.Text),
-                int.Parse(txt_ModifyProductMin.Text),
-                int.Parse(txt_ModifyProductMax.Text));
-
-                //I might not have the UpdateProduct function working correctly??
-                //I NEED TO DELETE THE OLD PRODUCT -- THE ONE I MODIFIED and REPLACE IT WITH THE NEW PRODUCT
-                Inventory.UpdateProduct(prodIDForModifiedProduct, updateProd);
-
-                Inventory.RemoveProduct(modProductID); //this doesnt do anything
-
-                dgv_TopAllParts.DataSource = Inventory.AllParts; 
-            }
             
             foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
             {
                 Part part = row.DataBoundItem as Part;
 
                 newProduct.AddAssociatedPart(part);
-
             }
 
 

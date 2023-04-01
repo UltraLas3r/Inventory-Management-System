@@ -200,7 +200,6 @@ namespace mschreiberc968_Project
 
             else
             {
-
                 foreach (DataGridViewRow row in dgv_Products.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)

@@ -5,9 +5,6 @@ namespace mschreiberc968_Project
 {
     partial class MainScreen
     {
-      
-
-
 
         private System.ComponentModel.IContainer components = null;
 
