@@ -52,6 +52,17 @@ namespace mschreiberc968_Project.Model
                 return true;
             }
         }
+
+        public Part LookupAssociatedPart(int PartID)
+        {
+            foreach (Part _part in AssociatedParts)
+            {
+                if (_part.PartID == PartID)
+                { return _part; }
+
+            }
+            return null;
+        }
     }
 }
 

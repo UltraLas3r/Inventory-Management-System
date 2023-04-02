@@ -137,7 +137,6 @@ namespace mschreiberc968_Project
             this.dgv_Parts.Size = new System.Drawing.Size(634, 318);
             this.dgv_Parts.TabIndex = 8;
             this.dgv_Parts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Parts_CellClick);
-  
             // 
             // dgv_Products
             // 
@@ -242,7 +241,7 @@ namespace mschreiberc968_Project
             this.Controls.Add(this.modifyParts);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainScreen";
-            this.Text = "Form1";
+            this.Text = "Main Form";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Parts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Products)).EndInit();
             this.ResumeLayout(false);

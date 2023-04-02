@@ -156,6 +156,24 @@ namespace mschreiberc968_Project
 
         private void DeleteProducts(object sender, EventArgs e)
         {
+            int productID = 32;
+            int howManyAssociatedParts = 
+            if (howManyAssociatedParts == 0)
+            {
+                foreach (DataGridViewRow row in dgv_Products.SelectedRows)
+                {
+                    dgv_Products.Rows.RemoveAt(row.Index);
+                }
+            }
+
+            else
+            {
+               MessageBox.Show("Unable to delete a product with Associated Parts", MessageBoxButtons.OKCancel);
+                return;
+            }
+        
+
+
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {

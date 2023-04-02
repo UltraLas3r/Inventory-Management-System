@@ -10,10 +10,6 @@ namespace mschreiberc968_Project.Model
     {
         public string CompanyName { get; set; }
     
-        public OutSourced()
-        {
-        }
-
         public OutSourced(int partID, string name, decimal price, int inStock, int min, int max, string companyName)
         {
             PartID = partID;
@@ -24,5 +20,10 @@ namespace mschreiberc968_Project.Model
             Max = max;
             CompanyName = companyName;
         }
+
+        public OutSourced()
+        {
+        }
+
     }
 }

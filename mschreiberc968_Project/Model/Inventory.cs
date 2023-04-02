@@ -50,9 +50,6 @@ namespace mschreiberc968_Project.Model
 
         public static void UpdateProduct(int productID, Product product)
         {
-            //RemoveProduct(productID);
-            //AddProduct(product);
-
             for (int i = 0; i < Products.Count; i++)
             {
                 if (Products[i].ProductID == productID)
@@ -106,7 +103,7 @@ namespace mschreiberc968_Project.Model
             }
         }
 
-         //mock data generation 
+        //mock data generation 
         public static void LoadMockData()
         {
             //create mock inhouse parts
@@ -133,7 +130,6 @@ namespace mschreiberc968_Project.Model
             Products.Add(mockProduct3);
         }
     }
-
  }
 
     
