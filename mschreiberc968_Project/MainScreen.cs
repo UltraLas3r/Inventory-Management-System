@@ -168,7 +168,7 @@ namespace mschreiberc968_Project
 
         private void PartsSearchButton_Click(object sender, EventArgs e)
         {
-            string searchContent = partsSearchBox.Text.Trim();
+            string searchContentOne = partsSearchBox.Text.Trim();
             if (string.IsNullOrEmpty(partsSearchBox.Text))
             {
                 MessageBox.Show("Enter a valid search term");
@@ -180,7 +180,7 @@ namespace mschreiberc968_Project
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                        if (cell.Value != null && cell.Value.ToString().Contains(searchContentOne))
                         {
                         cell.Selected = true;
                         break;
@@ -191,8 +191,8 @@ namespace mschreiberc968_Project
         }
         private void ProductsSearchButton_Click(object sender, EventArgs e)
         {
-            string searchContent = productsSearchBox.Text.Trim();
-            if (string.IsNullOrEmpty(partsSearchBox.Text))
+            string searchContentTwo = productsSearchBox.Text.Trim();
+            if (string.IsNullOrEmpty(productsSearchBox.Text))
             {
                 MessageBox.Show("Enter a valid search term");
                 return;
@@ -204,7 +204,7 @@ namespace mschreiberc968_Project
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
+                        if (cell.Value != null && cell.Value.ToString().Contains(searchContentTwo))
                         {
                             cell.Selected = true;
                             break;

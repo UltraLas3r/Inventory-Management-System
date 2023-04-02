@@ -187,14 +187,12 @@ namespace mschreiberc968_Project
                 Inventory.UpdateProduct(productID, newProduct);
             }
 
-            
-            foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
+            foreach (DataGridViewRow row in dgv_BottomAssociatedParts.Rows)
             {
                 Part part = row.DataBoundItem as Part;
 
                 newProduct.AddAssociatedPart(part);
             }
-
 
             this.Hide();
             mainScreenView();
