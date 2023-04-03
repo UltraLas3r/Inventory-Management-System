@@ -158,9 +158,9 @@ namespace mschreiberc968_Project
         {
             Product prod = dgv_Products.CurrentRow.DataBoundItem as Product;
 
-            
+
             //checks to see if there is an associated part
-            
+
             if (prod.AssociatedParts.Count > 0)
             {
                 MessageBox.Show("Cannot delete a Product with a part assigned to it. Please removed any associated parts.");
@@ -178,13 +178,13 @@ namespace mschreiberc968_Project
                     }
                 }
             }
-
-            else    
+            else
+            {
                 foreach (DataGridViewRow row in dgv_Products.SelectedRows)
                 {
                     dgv_Products.Rows.RemoveAt(row.Index);
                 }
-            
+            }
         }
 
         private void PartsSearchButton_Click(object sender, EventArgs e)
