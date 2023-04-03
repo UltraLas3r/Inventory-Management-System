@@ -156,32 +156,35 @@ namespace mschreiberc968_Project
 
         private void DeleteProducts(object sender, EventArgs e)
         {
-            int productID = 32;
-            int howManyAssociatedParts = 
-            if (howManyAssociatedParts == 0)
-            {
-                foreach (DataGridViewRow row in dgv_Products.SelectedRows)
-                {
-                    dgv_Products.Rows.RemoveAt(row.Index);
-                }
-            }
+            Product prod = dgv_Products.CurrentRow.DataBoundItem as Product;
 
-            else
+            
+            //checks to see if there is an associated part
+            
+            if (prod.AssociatedParts.Count > 0)
             {
-               MessageBox.Show("Unable to delete a product with Associated Parts", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Cannot delete a Product with a part assigned to it. Please removed any associated parts.");
                 return;
             }
-        
 
-
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            else if (prod.AssociatedParts.Count == 0)
             {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in dgv_Products.SelectedRows)
+                    {
+                        dgv_Products.Rows.RemoveAt(row.Index);
+                    }
+                }
+            }
+
+            else    
                 foreach (DataGridViewRow row in dgv_Products.SelectedRows)
                 {
                     dgv_Products.Rows.RemoveAt(row.Index);
                 }
-            }
+            
         }
 
         private void PartsSearchButton_Click(object sender, EventArgs e)
