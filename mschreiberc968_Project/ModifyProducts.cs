@@ -40,9 +40,12 @@ namespace mschreiberc968_Project
         {
             dgv_TopAllParts.DataSource = Inventory.AllParts;
             dgv_TopAllParts.AutoGenerateColumns = true;
+            dgv_TopAllParts.ReadOnly = true;
+            dgv_TopAllParts.MultiSelect = false;
+            dgv_TopAllParts.AllowUserToAddRows = false;
             dgv_TopAllParts.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.DisplayedCells;
-            
- 
+            dgv_TopAllParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             //for bottom grid 
             gridAssociatedParts = newProduct.AssociatedParts;
             dgv_BottomAssociatedParts.DataSource = gridAssociatedParts;
@@ -233,25 +236,35 @@ namespace mschreiberc968_Project
         private void btn_ModProdSearch_Click(object sender, EventArgs e)
         {
             string searchContent = txt_ModProdSearch.Text.Trim();
+
             if (string.IsNullOrEmpty(txt_ModProdSearch.Text))
             {
                 MessageBox.Show("Enter a valid search term");
                 return;
             }
-            else
+
+            else if (searchContent.Length > 0)
             {
+                bool cellContainsSearchTerm = false;
+
                 foreach (DataGridViewRow row in dgv_TopAllParts.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
                         if (cell.Value != null && cell.Value.ToString().Contains(searchContent))
                         {
+                            cellContainsSearchTerm = true;
                             cell.Selected = true;
                             break;
                         }
                     }
                 }
 
+                if (cellContainsSearchTerm == false)
+                {
+                    MessageBox.Show("No results found, try again.");
+                    return;
+                }
             }
         }
 

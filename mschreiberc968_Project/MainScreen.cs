@@ -195,42 +195,64 @@ namespace mschreiberc968_Project
                 MessageBox.Show("Enter a valid search term");
                 return;
             }
-            else 
+
+            else if (searchContentOne.Length > 0)
             {
+                bool cellContainsSearchTerm = false;
+
                 foreach (DataGridViewRow row in dgv_Parts.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
                         if (cell.Value != null && cell.Value.ToString().Contains(searchContentOne))
                         {
+                            cellContainsSearchTerm = true;
                         cell.Selected = true;
                         break;
                         }
                     }
                 }
+
+                if (cellContainsSearchTerm == false)
+                {
+
+                    MessageBox.Show("No results found, try again.");
+                    return;
+
+                }
             }
         }
         private void ProductsSearchButton_Click(object sender, EventArgs e)
-        {
+        {    
             string searchContentTwo = productsSearchBox.Text.Trim();
+            
             if (string.IsNullOrEmpty(productsSearchBox.Text))
             {
                 MessageBox.Show("Enter a valid search term");
                 return;
             }
 
-            else
+            else if (searchContentTwo.Length > 0)
             {
+                bool cellContainsSearchTerm = false;
+
                 foreach (DataGridViewRow row in dgv_Products.Rows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
                         if (cell.Value != null && cell.Value.ToString().Contains(searchContentTwo))
                         {
+                            cellContainsSearchTerm = true;
                             cell.Selected = true;
                             break;
                         }
                     }
+                }
+
+                if (cellContainsSearchTerm == false)
+                {
+                        MessageBox.Show("No results found, try again.");
+                        return;
                 }
             }
         }
